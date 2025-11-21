@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- NEW: Page Title -->
+    <title>About Fexo | Our Mission & Team</title>
+
+    <!-- SEO: Meta Description -->
+    <meta name="description" content="Fexo is an expert team of AI researchers, engineers, and BFSI domain veterans dedicated to solving the industry's most complex document challenges. We believe it's possible.">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .hero-bg {
+            background: linear-gradient(110deg, #f7ebf6 0%, #ffffff 60%);
+        }
+        .cta-button {
+            transition: all 0.3s ease;
+        }
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .team-card {
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+        .team-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
+            border-color: #c580dd;
+        }
+        [x-cloak] { display: none !important; }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+
+    <!-- Top Banner for StartUpIndia -->
+    <div id="top-banner" class="bg-gray-50 border-b border-gray-200">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-2 flex flex-col sm:flex-row justify-center items-center space-y-1 sm:space-y-0 sm:space-x-4">
+            <img class="h-8" src="https://placehold.co/200x32/f3f4f6/000000?text=StartUpIndia+Logo" alt="StartUpIndia Recognition Logo" onerror="this.src='https://placehold.co/200x32/f3f4f6/000000?text=StartUpIndia+Logo'">
+            <p class="text-xs sm:text-sm font-medium text-gray-700">
+                Recognized by DPIIT: Certificate No. DIPP186545
+            </p>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="bg-white border-b border-gray-200 sticky top-0 z-50">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" aria-label="Fexo Homepage">
+                    <img src="assests\1.svg" alt="Fexo: It's Possible Logo" width="140" height="45" />
+                    </a>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex md:items-center md:space-x-8">
+                    <!-- Updated links to point to homepage sections -->
+                    <a href="index.html#demo" class="text-gray-600 hover:text-[#c580dd] font-medium">Interactive Demo</a>
+                    <a href="index.html#platform" class="text-gray-600 hover:text-[#c580dd] font-medium">Platform</a>
+                    <a href="index.html#solutions" class="text-gray-600 hover:text-[#c580dd] font-medium">Solutions</a>
+                    <a href="index.html#proof" class="text-gray-600 hover:text-[#c580dd] font-medium">Customer Impact</a>
+                    <a href="index.html#security" class="text-gray-600 hover:text-[#c580dd] font-medium">Security</a>
+                    <a href="index.html#contact" class="bg-[#f77422] text-white px-4 py-2 rounded-lg text-sm font-medium shadow-sm hover:bg-[#e66a1e] cta-button">
+                        Book a Demo
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button aria-label="Toggle mobile menu" id="mobile-menu-button" class="text-gray-700 hover:text-[#7b0daa] p-2 rounded-md">
+                        <svg id="menu-icon-open" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                        <svg id="menu-icon-close" class="h-6 w-6 hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden border-t border-gray-200">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html#solutions" class="text-gray-600 hover:bg-gray-100 hover:text-[#7b0daa] block px-3 py-2 rounded-md text-base font-medium">Solutions</a>
+                <a href="index.html#demo" class="text-gray-600 hover:bg-gray-100 hover:text-[#7b0daa] block px-3 py-2 rounded-md text-base font-medium">Interactive Demo</a>
+                <a href="index.html#platform" class="text-gray-600 hover:bg-gray-100 hover:text-[#7b0daa] block px-3 py-2 rounded-md text-base font-medium">Platform</a>
+                <a href="index.html#proof" class="text-gray-600 hover:bg-gray-100 hover:text-[#7b0daa] block px-3 py-2 rounded-md text-base font-medium">Customer Impact</a>
+                <a href="index.html#security" class="text-gray-600 hover:bg-gray-100 hover:text-[#7b0daa] block px-3 py-2 rounded-md text-base font-medium">Security</a>
+                <a href="index.html#contact" class="bg-[#f77422] text-white block w-full text-left px-4 py-2 rounded-lg text-base font-medium shadow-sm hover:bg-[#e66a1e] cta-button">
+                    Book a Demo
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+
+        <!-- Hero Section -->
+        <section class="hero-bg">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32 text-center">
+                <!-- NEW: H1 and Sub-headline -->
+                <h1 class="text-4xl md:text-5xl font-extrabold text-[#3d0754]">
+                    We're Building the AI Co-pilot for Intelligent Finance.
+                </h1>
+                <p class="mt-6 text-lg text-gray-600 max-w-3xl mx-auto">
+                    Fexo is an expert team of AI researchers, engineers, and BFSI domain veterans dedicated to solving the industry's most complex document challenges. We believe it's possible.
+                </p>
+            </div>
+        </section>
+
+        <!-- Our Mission Section -->
+        <section class="py-20 md:py-28 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-3xl mx-auto text-center">
+                    <span class="text-[#7b0daa] font-semibold">OUR MISSION</span>
+                    <p class="mt-4 text-3xl md:text-4xl font-extrabold text-[#3d0754] leading-tight">
+                        "To eliminate manual 'grunt work' from the financial industry, enabling experts to focus on what matters: driving growth and managing risk."
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Fexo Story Section -->
+        <section class="py-20 md:py-28 bg-gray-50">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                    <div class="text-left">
+                        <span class="text-[#7b0daa] font-semibold">THE FEXO STORY</span>
+                        <h2 class="text-3xl md:text-4xl font-extrabold text-[#3d0754] mt-2">
+                            Built for the Hardest Problems
+                        </h2>
+                        <p class="mt-4 text-lg text-gray-600">
+                            Founded in 2024, Fexo was born from a simple observation: the most critical decisions in finance, lending, and insurance were still bottlenecked by manual, error-prone paperwork.
+                        </p>
+                        <p class="mt-4 text-lg text-gray-600">
+                            Generic AI couldn't understand the nuance of a non-MCA financial statement or a handwritten FIR. We built FexoLM, our **proprietary agentic AI**, to solve this specific, high-value problem. Today, we are a dedicated team driven by a single goal: to build the most intelligent, reliable, and secure automation platform for BFSI and Audit.
+                        </p>
+                    </div>
+                    <div>
+                        <img src="https://placehold.co/600x400/f7ebf6/7b0daa?text=Fexo+Team+Working" alt="The Fexo team collaborating" class="rounded-xl shadow-xl border-4 border-white">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Team Section -->
+        <section class="py-20 md:py-28 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto">
+                    <span class="text-[#7b0daa] font-semibold">OUR TEAM</span>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-[#3d0754] mt-2">
+                        Meet Our Leadership
+                    </h2>
+                </div>
+                <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+                    
+                    <!-- Team Member 1 -->
+                    <div class="team-card bg-white p-6 rounded-xl text-center">
+                        <img class="w-32 h-32 rounded-full mx-auto bg-gray-200" src="https://placehold.co/128x128/e0e7ff/6366f1?text=CEO" alt="Headshot of Fexo CEO">
+                        <h3 class="text-xl font-semibold text-gray-900 mt-5">Firstname Lastname</h3>
+                        <p class="text-[#7b0daa] font-medium mt-1">Co-Founder & CEO</p>
+                        <a href="#" target="_blank" rel="noopener" class="text-gray-400 hover:text-[#f77422] mt-2 inline-block">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.783-1.75-1.75s.784-1.75 1.75-1.75 1.75.783 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd"/></svg>
+                        </a>
+                    </div>
+
+                    <!-- Team Member 2 -->
+                    <div class="team-card bg-white p-6 rounded-xl text-center">
+                        <img class="w-32 h-32 rounded-full mx-auto bg-gray-200" src="https://placehold.co/128x128/e0e7ff/6366f1?text=CTO" alt="Headshot of Fexo CTO">
+                        <h3 class="text-xl font-semibold text-gray-900 mt-5">Firstname Lastname</h3>
+                        <p class="text-[#7b0daa] font-medium mt-1">Co-Founder & CTO</p>
+                        <a href="#" target="_blank" rel="noopener" class="text-gray-400 hover:text-[#f77422] mt-2 inline-block">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.783-1.75-1.75s.784-1.75 1.75-1.75 1.75.783 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd"/></svg>
+                        </a>
+                    </div>
+
+                    <!-- Team Member 3 -->
+                    <div class="team-card bg-white p-6 rounded-xl text-center">
+                        <img class="w-32 h-32 rounded-full mx-auto bg-gray-200" src="https://placehold.co/128x128/e0e7ff/6366f1?text=Head" alt="Headshot of Fexo Head of Product">
+                        <h3 class="text-xl font-semibold text-gray-900 mt-5">Firstname Lastname</h3>
+                        <p class="text-[#7b0daa] font-medium mt-1">Head of Product</p>
+                        <a href="#" target="_blank" rel="noopener" class="text-gray-400 hover:text-[#f77422] mt-2 inline-block">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.783-1.75-1.75s.784-1.75 1.75-1.75 1.75.783 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd"/></svg>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- RE-USED: Security & Trust Section -->
+        <section id="security" class="py-20 md:py-28 bg-gray-50 border-t border-gray-200">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto">
+                    <span class="text-[#7b0daa] font-semibold">TRUST & RECOGNITION</span>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-[#3d0754] mt-2">
+                        Our Partners & Certifications
+                    </h2>
+                </div>
+
+                <div class="mt-16 max-w-4xl mx-auto">
+                    <!-- Security & GTM Section Content -->
+                    <div class="bg-white p-8 md:p-12 rounded-2xl border border-gray-200 shadow-lg">
+                        <img class="h-12" src="https://placehold.co/150x48/1f2937/ffffff?text=ISO+27001+Certified" alt="ISO 27001 Certified for Information Security" onerror="this.src='https://placehold.co/150x48/1f2937/ffffff?text=ISO+27001+Certified'">
+                        <h3 class="text-2xl font-bold text-gray-900 mt-6">Enterprise-Grade Security & Trust</h3>
+                        <p class="mt-2 text-gray-600">
+                            We are built for the enterprise. <strong class="text-gray-700">ISO/IEC 27001:2022 Certified</strong> for Information Security Management Systems (ISMS), ensuring your data is always protected by enterprise-grade security.
+                        </p>
+                        
+                        <div class="mt-8 border-t border-gray-200 pt-8">
+                            <img class="h-10" src="https://placehold.co/180x40/4285F4/ffffff?text=Google+Cloud+Partner" alt="Fexo is a Google Cloud Partner" onerror="this.src='https://placehold.co/180x40/4285F4/ffffff?text=Google+Cloud+Partner'">
+                             <h3 class="text-2xl font-bold text-gray-900 mt-6">Available on Google Cloud Marketplace</h3>
+                            <p class="mt-2 text-gray-600">
+                                As an official Google Cloud Partner, our solution is trusted and available on the Google Marketplace. This accelerates procurement and allows Google's sales teams to bring Fexo directly to you.
+                            </p>
+                        </div>
+
+                        <!-- Technology Partners Section -->
+                        <div class="mt-8 border-t border-gray-200 pt-8">
+                            <h4 class="text-xl font-semibold text-gray-900">Our Technology Partners</h4>
+                            <p class="mt-2 text-gray-600">
+                                We partner with the best to build the most powerful, scalable, and secure AI.
+                            </p>
+                            <div class="grid grid-cols-2 gap-x-8 gap-y-6 mt-6">
+                                <img class="h-8" src="https://placehold.co/120x32/808080/ffffff?text=Microsoft" alt="Microsoft Partner" onerror="this.src='https://placehold.co/120x32/808080/ffffff?text=Microsoft'">
+                                <img class="h-8" src="https://placehold.co/120x32/808080/ffffff?text=AWS" alt="AWS Partner" onerror="this.src='https://placehold.co/120x32/808080/ffffff?text=AWS'">
+                                <img class="h-8" src="https://placehold.co/120x32/808080/ffffff?text=Nvidia" alt="Nvidia Partner" onerror="this.src='https://placehold.co/120x32/808080/ffffff?text=Nvidia'">
+                                <img class="h-8" src="https://placehold.co/120x32/808080/ffffff?text=Intel" alt="Intel Partner" onerror="this.src='https://placehold.co/120x32/808080/ffffff?text=Intel'">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA (Careers) -->
+        <section id="contact" class="bg-[#7b0daa]">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-24 text-center">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-white">
+                    Want to help us build the future?
+                </h2>
+                <p class="mt-4 text-lg text-[#f7ebf6] max-w-2xl mx-auto">
+                    We're looking for passionate builders, researchers, and problem-solvers. See our open roles and find your fit.
+                </p>
+                <div class="mt-10">
+                    <!-- Updated button text and link -->
+                    <a href="careers.html" class="bg-white text-[#f77422] px-10 py-3 rounded-lg text-base font-medium shadow-lg hover:bg-gray-100 cta-button">
+                        View Open Positions
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Logo & Info -->
+                <div>
+                    <!-- Updated to link to index.html -->
+                    <a href="index.html" aria-label="Fexo Homepage">
+                    <img src="assests\1.svg" alt="Fexo: It's Possible Logo" width="140" height="40" />
+                    </a>
+                    <p class="mt-2 text-sm">Unstructured Documents, Structured Results. Accurately.</p>
+                    <p class="mt-4 text-sm">
+                        Fexo GenAI Technologies Pvt. Ltd.
+                    </p>
+                </div>
+                <!-- Navigation Links -->
+                <div>
+                    <h4 class="text-sm font-semibold text-gray-200 uppercase tracking-wider">Solutions</h4>
+                    <ul class="mt-4 space-y-2">
+                        <!-- Updated links -->
+                        <li><a href="banking.html" class="hover:text-white">Banking & Lending</a></li>
+                        <li><a href="insurance.html" class="hover:text-white">Insurance</a></li>
+                        <li><a href="audit.html" class="hover:text-white">Audit & Compliance</a></li>
+                        <li><a href="invoice.html" class="hover:text-white">Invoice Automation</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-sm font-semibold text-gray-200 uppercase tracking-wider">Company</h4>
+                    <ul class="mt-4 space-y-2">
+                        <!-- Updated links -->
+                        <li><a href="about.html" class="hover:text-white">About Us</a></li>
+                        <li><a href="careers.html" class="hover:text-white">Careers</a></li>
+                        <li><a href="index.html#security" class="hover:text-white">Security & Trust</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-sm font-semibold text-gray-200 uppercase tracking-wider">Connect</h4>
+                    <ul class="mt-4 space-y-2">
+                        <li><a href="https://www.linkedin.com/company/fexo/" target="_blank" rel="noopener noreferrer" class="hover:text-white">LinkedIn</a></li>
+                        <li><a href="#contact" class="hover:text-white">Contact Sales</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-gray-800 pt-8 text-center text-sm">
+                <p>&copy; 2025 Fexo GenAI Technologies Pvt. Ltd. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const openIcon = document.getElementById('menu-icon-open');
+        const closeIcon = document.getElementById('menu-icon-close');
+
+        if (menuButton) {
+            menuButton.addEventListener('click', () => {
+                const isOpen = mobileMenu.classList.toggle('hidden');
+                if (openIcon && closeIcon) {
+                    openIcon.classList.toggle('hidden', !isOpen);
+                    closeIcon.classList.toggle('hidden', isOpen);
+                }
+            });
+        }
+        
+        if (mobileMenu) {
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    if (openIcon && closeIcon) {
+                        openIcon.classList.remove('hidden');
+                        closeIcon.classList.add('hidden');
+                    }
+                });
+            });
+        }
+    </script>
+    
+    <!-- Alpine.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</body>
+</html>

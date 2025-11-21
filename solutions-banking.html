@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Page Title from Brief -->
+    <title>AI for Banking & Lending | Fexo</title>
+
+    <!-- SEO Meta Description -->
+    <meta name="description" content="Fexo's AI Co-pilot automates complex document workflows for banking and lending. Analyze non-MCA statements, ITRs, and more to make faster, safer lending decisions.">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .hero-bg { background: linear-gradient(110deg, #f7ebf6 0%, #ffffff 60%); }
+        .cta-button { transition: all 0.3s ease; }
+        .cta-button:hover { transform: translateY(-2px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); }
+        .metric-card { border: 1px solid #e2e8f0; transition: all 0.3s ease; }
+        .metric-card:hover { transform: translateY(-4px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); border-color: #7b0daa; }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-white border-b border-gray-200 sticky top-0 z-50">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" aria-label="Fexo Homepage">
+                    <img src="assests\1.svg" alt="Fexo: It's Possible Logo" width="140" height="45" />
+                    </a>
+                </div>
+                
+                <!-- Desktop Navigation (Updated Links) -->
+                <div class="hidden md:flex md:items-center md:space-x-8">
+                   <a href="index.html#demo" class="text-gray-600 hover:text-[#c580dd] font-medium">Interactive Demo</a>
+                    <a href="index.html#platform" class="text-gray-600 hover:text-[#c580dd] font-medium">Platform</a>
+                    <a href="index.html#solutions" class="text-gray-600 hover:text-[#c580dd] font-medium">Solutions</a>
+                    <a href="index.html#proof" class="text-gray-600 hover:text-[#c580dd] font-medium">Customer Impact</a>
+                    <a href="index.html#security" class="text-gray-600 hover:text-[#c580dd] font-medium">Security</a>
+                    <a href="#contact" class="bg-[#f77422] text-white px-4 py-2 rounded-lg text-sm font-medium shadow-sm hover:bg-[#e66a1e] cta-button">
+                        Book a Demo
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button aria-label="Toggle mobile menu" id="mobile-menu-button" class="text-gray-700 hover:text-[#7b0daa] p-2 rounded-md">
+                        <svg id="menu-icon-open" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                        <svg id="menu-icon-close" class="h-6 w-6 hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu (Updated Links) -->
+        <div id="mobile-menu" class="md:hidden hidden border-t border-gray-200">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="solutions-banking.html" class="bg-gray-100 text-[#7b0daa] block px-3 py-2 rounded-md text-base font-medium">Banking</a> <!-- Current Page -->
+                <a href="solutions-insurance.html" class="text-gray-600 hover:bg-gray-100 hover:text-[#7b0daa] block px-3 py-2 rounded-md text-base font-medium">Insurance</a>
+                <a href="solutions-audit.html" class="text-gray-600 hover:bg-gray-100 hover:text-[#7b0daa] block px-3 py-2 rounded-md text-base font-medium">Audit</a>
+                <a href="index.html#demo" class="text-gray-600 hover:bg-gray-100 hover:text-[#7b0daa] block px-3 py-2 rounded-md text-base font-medium">Interactive Demo</a>
+                <a href="company-about.html" class="text-gray-600 hover:bg-gray-100 hover:text-[#7b0daa] block px-3 py-2 rounded-md text-base font-medium">About Us</a>
+                <a href="#contact" class="bg-[#f77422] text-white block w-full text-left px-4 py-2 rounded-lg text-base font-medium shadow-sm hover:bg-[#e66a1e] cta-button">
+                    Book a Demo
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+
+        <!-- Hero Section -->
+        <section class="hero-bg">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28 text-center">
+                <!-- H1 from Brief -->
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#3d0754] leading-tight">
+                    Intelligent Automation for Banking & Lending
+                </h1>
+                <!-- Sub-headline from Brief -->
+                <p class="mt-6 text-lg text-gray-600 max-w-2xl mx-auto">
+                    From loan origination to credit monitoring, Fexo's AI Co-pilot automates your most complex document workflows for faster, safer lending decisions.
+                </p>
+                <div class="mt-10">
+                    <a href="#contact" class="bg-[#f77422] text-white px-8 py-3 rounded-lg text-base font-medium shadow-sm hover:bg-[#e66a1e] cta-button">
+                        Book Your Personalized Demo
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Problem Section -->
+        <section class="py-20 md:py-28 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <span class="text-[#7b0daa] font-semibold">THE PROBLEM</span>
+                        <h2 class="text-3xl md:text-4xl font-extrabold text-[#3d0754] mt-2">
+                            Slow, Risky, and Unscalable
+                        </h2>
+                        <!-- Problem Text from Brief -->
+                        <p class="mt-4 text-lg text-gray-600">
+                            Manual credit analysis is slow, risky, and unscalable. Lenders spend 6+ hours per case manually reading bank statements, non-standard financials, and ITRs. This creates bottlenecks, increases risk, and leads to a slow customer experience.
+                        </p>
+                    </div>
+                    <img src="https://placehold.co/600x400/f7ebf6/7b0daa?text=Manual+Paperwork+Bottleneck" alt="Manual credit analysis paperwork" class="rounded-xl shadow-xl">
+                </div>
+            </div>
+        </section>
+
+        <!-- The Solution Section -->
+        <section class="py-20 md:py-28 bg-gray-50">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <img src="https://placehold.co/600x400/f7ebf6/7b0daa?text=Automated+Credit+Memo" alt="Fexo AI generating an automated credit memo" class="rounded-xl shadow-xl md:order-last">
+                    <div>
+                        <span class="text-[#7b0daa] font-semibold">THE SOLUTION</span>
+                        <h2 class="text-3xl md:text-4xl font-extrabold text-[#3d0754] mt-2">
+                            The Co-pilot for Credit Assessment
+                        </h2>
+                        <!-- Solution Text from Brief -->
+                        <p class="mt-4 text-lg text-gray-600">
+                            Fexo's Co-pilot automates the entire process. It ingests all documents (even non-MCA and voice notes), performs quantitative and qualitative analysis, monitors external risk, and generates a fully-auditable Credit Assessment Memo in minutes, not hours.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Features Section -->
+        <section class="py-20 md:py-28 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto">
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-[#3d0754]">
+                        Key Features for Lenders
+                    </h2>
+                </div>
+                <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Features from Brief -->
+                    <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                        <h4 class="text-lg font-semibold text-[#3d0754]">Full Spectrum Financial Analysis</h4>
+                        <p class="mt-2 text-gray-600">(MCA & non-MCA statements)</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                        <h4 class="text-lg font-semibold text-[#3d0754]">Triangulated Business Insights</h4>
+                        <p class="mt-2 text-gray-600">(Statements, ITRs, GST, Voice)</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                        <h4 class="text-lg font-semibold text-[#3d0754]">External Risk Monitoring</h4>
+                        <p class="mt-2 text-gray-600">(Web, 3rd-party data, industry analysis)</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                        <h4 class="text-lg font-semibold text-[#3d0754]">Automated Credit Memo Generation</h4>
+                        <p class="mt-2 text-gray-600">(Creates the final, auditable report)</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                        <h4 class="text-lg font-semibold text-[#3d0754]">Covenant Monitoring</h4>
+                        <p class="mt-2 text-gray-600">(Automated post-disbursal monitoring of loan covenants)</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                        <h4 class="text-lg font-semibold text-[#3d0754]">KYC/KYB Automation</h4>
+                        <p class="mt-2 text-gray-600">(Speeds up onboarding with document verification)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Re-used Sections -->
+        <!-- The Proof (Tangible ROI) -->
+        <section id="proof" class="py-20 md:py-28 bg-gray-50 border-t border-gray-200">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto">
+                    <span class="text-[#7b0daa] font-semibold">THE FEXO IMPACT</span>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-[#3d0754] mt-2">
+                        Automate Complex Document Analysis. Accelerate Decisions. Multiply Impact.
+                    </h2>
+                    <p class="mt-4 text-lg text-gray-600">
+                        Our clients see measurable real-world immediate ROI, not theoretical "AI benefits". We transform operational efficiency into a powerful engine for business growth.
+                    </p>
+                </div>
+                <!-- ROI Metrics -->
+                <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Metric 1 -->
+                    <div class="metric-card bg-white p-8 rounded-xl shadow-lg">
+                        <span class="text-6xl font-extrabold text-[#7b0daa]">6</span>
+                        <h3 class="text-xl font-semibold text-gray-900 mt-4">Hours of Manual Work Eliminated</h3>
+                        <p class="text-gray-600 mt-2">
+                            Per case. Our Small Finance Bank client went from 6+ hours of intense manual analytics to a fully automated credit memo.
+                        </p>
+                    </div>
+                    <!-- Metric 2 -->
+                    <div class="metric-card bg-white p-8 rounded-xl shadow-lg">
+                        <span class="text-6xl font-extrabold text-[#7b0daa]">4-5x</span>
+                        <h3 class="text-xl font-semibold text-gray-900 mt-4">Increase in Case Capacity</h3>
+                        <p class="text-gray-600 mt-2">
+                            Our NBFC partner now handles 4-5x the number of daily cases, enabling them to scale lending operations and grow revenue without increasing headcount.
+                        </p>
+                    </div>
+                    <!-- Metric 3 -->
+                    <div class="metric-card bg-white p-8 rounded-xl shadow-lg">
+                        <span class="text-6xl font-extrabold text-[#7b0daa]">3</span>
+                        <h3 class="text-xl font-semibold text-gray-900 mt-4">Weeks to Value</h3>
+                        <p class="text-gray-600 mt-2">
+                            For new verticals. Went from paid PoC to delivering complex audit reports in just 3 weeks, saving 15-20 hours of manual work per case.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Platform (FexoLM) & Security -->
+        <section id="platform" class="py-20 md:py-28 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-start"> 
+                    <!-- Platform Text -->
+                    <div>
+                        <span class="text-[#7b0daa] font-semibold">POWERED BY FEXOLM</span>
+                        <h2 class="text-3xl md:text-4xl font-extrabold text-[#3d0754] mt-2">
+                            An AI That Speaks Fluent Finance
+                        </h2>
+                        <p class="mt-4 text-lg text-gray-600">
+                            Generic AI models do not understand nuance. Ours does. FexoLM is our <strong class="text-[#3d0754]">proprietary agentic AI</strong>, trained exclusively on BFSI documents. It is not just a model; It is a dynamic co-pilot that works for you.
+                        </p>
+                        <ul class="mt-8 space-y-4">
+                            <!-- ... (6 Platform Bullets Copied from index.html) ... -->
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 bg-[#f7ebf6] text-[#7b0daa] w-8 h-8 rounded-lg flex items-center justify-center">
+                                    <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" /></svg>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-semibold text-gray-900">Higher Accuracy</h4>
+                                    <p class="text-gray-600">Achieve 98%+ precision extracting financial data from any format (PDFs, images, scans), dramatically reducing false positives.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 bg-[#f7ebf6] text-[#7b0daa] w-8 h-8 rounded-lg flex items-center justify-center">
+                                    <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244" />
+                                    </svg>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-semibold text-gray-900">Factual & Trustworthy</h4>
+                                    <p class="text-gray-600">No AI hallucinations. FexoLM provides an evidence-based approach, citing the exact source for every insight it generates.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 bg-[#f7ebf6] text-[#7b0daa] w-8 h-8 rounded-lg flex items-center justify-center">
+                                    <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75" />
+                                    </svg>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-semibold text-gray-900">Dynamic & Agentic Workflows</h4>
+                                    <p class="text-gray-600">Agentic AI workflow manager adapts to your unique logic, allowing for customization and scalability beyond rigid, pre-built rules.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 bg-[#f7ebf6] text-[#7b0daa] w-8 h-8 rounded-lg flex items-center justify-center">
+                                    <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
+                                    </svg>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-semibold text-gray-900">Consistent & Reliable</h4>
+                                    <p class="text-gray-600">Generic LLMs provide inconsistent results. FexoLM delivers reliable, deterministic outcomes in your required custom format, every time.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 bg-[#f7ebf6] text-[#7b0daa] w-8 h-8 rounded-lg flex items-center justify-center">
+                                    <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z" />
+                                    </svg>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-semibold text-gray-900">Faster Deployment</h4>
+                                    <p class="text-gray-600">Pre-trained for BFSI & Audit. Go live in weeks (SaaS or private cloud) with pre-built APIs for seamless integration.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 bg-[#f7ebf6] text-[#7b0daa] w-8 h-8 rounded-lg flex items-center justify-center">
+                                    <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 20.25h12m-7.5-3.75v3.75m-3.75-3.75v3.75m-3.75-3.75v3.75m9-15.75l-3.75 1.625m3.75 1.625V4.125m3.75 1.625V4.125m0 0L9.75 5.75M12 20.25v-3.75m0 0h-3.75m3.75 0h3.75M3 16.5v-3.75m0 0h18M3 12.75h18m-18 0V9m0 0h18m-18 0V5.25m18 0V9m-18 0h18m0 0v3.75m0 0v3.75m0 0h-18m18 0h-18" />
+                                    </svg>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-semibold text-gray-900">Private Cloud & On-Prem</h4>
+                                    <p class="text-gray-600">Meet data sovereignty needs with flexible deployment. Fexo can be deployed on-prem in your private cloud, ensuring 100% data control.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Security & GTM Section -->
+                    <div id="security" class="bg-gray-50 p-8 md:p-12 rounded-2xl border border-gray-200">
+                        <img class="h-12" src="https://placehold.co/150x48/1f2937/ffffff?text=ISO+27001+Certified" alt="ISO 27001 Certified for Information Security" onerror="this.src='https://placehold.co/150x48/1f2937/ffffff?text=ISO+27001+Certified'">
+                        <h3 class="text-2xl font-bold text-gray-900 mt-6">Enterprise-Grade Security & Trust</h3>
+                        <p class="mt-2 text-gray-600">
+                            We are built for the enterprise. <strong class="text-gray-700">ISO/IEC 27001:2022 Certified</strong> for Information Security Management Systems (ISMS), ensuring your data is always protected by enterprise-grade security.
+                        </p>
+                        <div class="mt-8 border-t border-gray-200 pt-8">
+                            <img class="h-10" src="https://placehold.co/180x40/4285F4/ffffff?text=Google+Cloud+Partner" alt="Fexo is a Google Cloud Partner" onerror="this.src='https://placehold.co/180x40/4285F4/ffffff?text=Google+Cloud+Partner'">
+                             <h3 class="text-2xl font-bold text-gray-900 mt-6">Available on Google Cloud Marketplace</h3>
+                            <p class="mt-2 text-gray-600">
+                                As an official Google Cloud Partner, our solution is trusted and available on the Google Marketplace. This accelerates procurement and allows Google's sales teams to bring Fexo directly to you.
+                            </p>
+                        </div>
+                        <div class="mt-8 border-t border-gray-200 pt-8">
+                            <h4 class="text-xl font-semibold text-gray-900">Our Technology Partners</h4>
+                            <p class="mt-2 text-gray-600">
+                                We partner with the best to build the most powerful, scalable, and secure AI.
+                            </p>
+                            <div class="grid grid-cols-2 gap-x-8 gap-y-6 mt-6">
+                                <img class="h-8" src="https://placehold.co/120x32/808080/ffffff?text=Microsoft" alt="Microsoft Partner" onerror="this.src='https://placehold.co/120x32/808080/ffffff?text=Microsoft'">
+                                <img class="h-8" src="https://placehold.co/120x32/808080/ffffff?text=AWS" alt="AWS Partner" onerror="this.src='https://placehold.co/120x32/808080/ffffff?text=AWS'">
+                                <img class="h-8" src="https://placehold.co/120x32/808080/ffffff?text=Nvidia" alt="Nvidia Partner" onerror="this.src='https://placehold.co/120x32/808080/ffffff?text=Nvidia'">
+                                <img class="h-8" src="https://placehold.co/120x32/808080/ffffff?text=Intel" alt="Intel Partner" onerror="this.src='https://placehold.co/120x32/808080/ffffff?text=Intel'">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section id="contact" class="bg-[#7b0daa]">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-24 text-center">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-white">
+                    Ready to 5x Your Team's Capacity?
+                </h2>
+                <p class="mt-4 text-lg text-[#f7ebf6] max-w-2xl mx-auto">
+                    See how our Intelligent Co-pilot automates complex workflows in weeks — not months. Schedule a demo to reduce risk, accelerate growth, and unlock ROI from Day One.
+                </p>
+                <div class="mt-10">
+                    <a href="#" class="bg-white text-[#f77422] px-10 py-3 rounded-lg text-base font-medium shadow-lg hover:bg-gray-100 cta-button">
+                        Book Your Personalized Demo
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer (Updated Links) -->
+    <footer class="bg-gray-900 text-gray-400">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Logo & Info -->
+                <div>
+                    <a href="index.html" aria-label="Fexo Homepage">
+                    <img src="assests\1.svg" alt="Fexo: It's Possible Logo" width="140" height="40" />
+                    </a>
+                    <p class="mt-2 text-sm">Unstructured Documents, Structured Results. Accurately.</p>
+                    <p class="mt-4 text-sm">
+                        Fexo GenAI Technologies Pvt. Ltd.
+                    </p>
+                </div>
+                <!-- Navigation Links -->
+                <div>
+                    <h4 class="text-sm font-semibold text-gray-200 uppercase tracking-wider">Solutions</h4>
+                    <ul class="mt-4 space-y-2">
+                        <li><a href="solutions-banking.html" class="hover:text-white">Banking & Lending</a></li>
+                        <li><a href="solutions-insurance.html" class="hover:text-white">Insurance</a></li>
+                        <li><a href="solutions-audit.html" class="hover:text-white">Audit & Compliance</a></li>
+                        <li><a href="solutions-invoice.html" class="hover:text-white">Invoice Automation</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-sm font-semibold text-gray-200 uppercase tracking-wider">Company</h4>
+                    <ul class="mt-4 space-y-2">
+                        <li><a href="company-about.html" class="hover:text-white">About Us</a></li>
+                        <li><a href="company-careers.html" class="hover:text-white">Careers</a></li>
+                        <li><a href="index.html#security" class="hover:text-white">Security & Trust</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-sm font-semibold text-gray-200 uppercase tracking-wider">Connect</h4>
+                    <ul class="mt-4 space-y-2">
+                        <li><a href="https://www.linkedin.com/company/fexo/" target="_blank" rel="noopener noreferrer" class="hover:text-white">LinkedIn</a></li>
+                        <li><a href="#contact" class="hover:text-white">Contact Sales</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-gray-800 pt-8 text-center text-sm">
+                <p>&copy; 2025 Fexo GenAI Technologies Pvt. Ltd. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const openIcon = document.getElementById('menu-icon-open');
+        const closeIcon = document.getElementById('menu-icon-close');
+        if (menuButton) {
+            menuButton.addEventListener('click', () => {
+                const isOpen = mobileMenu.classList.toggle('hidden');
+                if (openIcon && closeIcon) {
+                    openIcon.classList.toggle('hidden', !isOpen);
+                    closeIcon.classList.toggle('hidden', isOpen);
+                }
+            });
+        }
+        if (mobileMenu) {
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    if (openIcon && closeIcon) {
+                        openIcon.classList.remove('hidden');
+                        closeIcon.classList.add('hidden');
+                    }
+                });
+            });
+        }
+    </script>
+</body>
+</html>
