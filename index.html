@@ -11,13 +11,75 @@
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="index.css">
     <!-- Google Fonts - Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="index.css">
     <!-- Alpine.js CDN - MOVED to end of body -->
 </head>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const navLinks = document.querySelectorAll(".nav-item");
+
+  // Only track these sections for highlighting
+  const navSectionIds = ["proof", "solutions", "demo", "platform", "contact"];
+  const sections = navSectionIds
+    .map(id => document.getElementById(id))
+    .filter(Boolean);
+
+  const ACTIVE_CLASS = "active-nav";
+  let suppressScroll = false;
+
+  function setActive(id) {
+    navLinks.forEach(a => a.classList.remove(ACTIVE_CLASS));
+    const el = document.querySelector(`#nav-${id}`);
+    if (el) el.classList.add(ACTIVE_CLASS);
+  }
+
+  function updateActiveSection() {
+    if (suppressScroll) return;
+
+    const midpoint = window.innerHeight / 2;
+
+    let currentSection = sections.find(sec => {
+      const rect = sec.getBoundingClientRect();
+      return rect.top <= midpoint && rect.bottom >= midpoint;
+    });
+
+    if (currentSection) {
+      setActive(currentSection.id);
+    } else {
+      // IF in HOME → remove highlight entirely
+      navLinks.forEach(a => a.classList.remove(ACTIVE_CLASS));
+    }
+  }
+
+  // Highlight on click (without glitches)
+  navLinks.forEach(a => {
+    a.addEventListener("click", () => {
+      const hash = a.getAttribute("href").split("#")[1];
+      if (!hash) return;
+
+      setActive(hash);
+
+      suppressScroll = true;
+      setTimeout(() => {
+        suppressScroll = false;
+        updateActiveSection();
+      }, 350);
+    });
+  });
+
+  window.addEventListener("scroll", updateActiveSection);
+  window.addEventListener("resize", updateActiveSection);
+
+  updateActiveSection();
+});
+</script>
+
+
 <body class="bg-white text-gray-800">
 
     <!-- NEW: Top Banner for StartUpIndia -->
@@ -39,16 +101,16 @@
                 <div class="flex-shrink-0 flex items-center">
                     <!-- UPDATED: Link to index.html -->
                     <a href="index.html" aria-label="Fexo Homepage">
-                    <img src="assests\1.svg" alt="Fexo: It's Possible Logo" width="140" height="40" />
+                    <img src="assests\logo1.svg" alt="Fexo: It's Possible Logo" width="140" height="40" />
                     </a>
                 </div>
                 
                 <!-- Desktop Navigation -->
-                <div class="hidden md:flex md:items-center md:space-x-8">
-                   <a href="index.html#demo" class="text-gray-600 hover:text-[#c580dd] font-medium">Interactive Demo</a>
-                    <a href="index.html#platform" class="text-gray-600 hover:text-[#c580dd] font-medium">Platform</a>
-                    <a href="index.html#proof" class="text-gray-600 hover:text-[#c580dd] font-medium">Customer Impact</a>
-                    <a href="index.html#solutions" class="text-gray-600 hover:text-[#c580dd] font-medium">Solutions</a>
+                <div class="hidden md:flex md:items-center md:space-x-1">
+                    <a id="nav-proof" href="index.html#proof" class="nav-item text-gray-600 hover:text-[#c580dd] font-medium">Customer Impact</a>
+                    <a id="nav-solutions" href="index.html#solutions" class="nav-item text-gray-600 hover:text-[#c580dd] font-medium">Solutions</a>
+                    <a id="nav-demo" href="index.html#demo" class="nav-item text-gray-600 hover:text-[#c580dd] font-medium">Interactive Demo</a>
+                    <a id="nav-platform" href="index.html#platform" class="nav-item text-gray-600 hover:text-[#c580dd] font-medium">Platform</a>
                     <a href="#contact" class="bg-[#f77422] text-white px-4 py-2 rounded-lg text-sm font-medium shadow-sm hover:bg-[#e66a1e] cta-button">
                         Book a Demo
                     </a>
@@ -97,7 +159,7 @@
                     <div class="text-center md:text-left">
                         
                         <!-- SEO: H1 tag for primary keyword -->
-                        <h1 class="inline-block text-[#3d0754] font-semibold px-4 py-1 rounded-full text-xl mb-5 justify">
+                        <h1 class="inline-block text-[#3d0754] font-semibold py-1 rounded-full text-xl mb-1">
                             The Intelligent Co-pilot for BFSI & Audit
                         </h1>
                         
@@ -125,11 +187,15 @@
                     </div>
                     <!-- Hero Image/Graphic -->
                     <div class="relative">
-                        <!-- SEO: Updated alt tag -->
+                        <!-- SEO: Updated alt tag --> 
                         <img src="https://placehold.co/600x450/f7ebf6/7b0daa?text=Fexo+AI+Platform+UI" alt="Fexo AI Co-pilot analyzing a financial document" class="rounded-xl shadow-2xl border-4 border-white" onerror="this.src='https://placehold.co/600x450/f7ebf6/7b0daa?text=Fexo+AI+Platform+UI'">
                         <div class="absolute -bottom-8 -left-8 bg-white p-4 rounded-lg shadow-xl border border-gray-200 flex items-center space-x-3">
                             <div class="bg-green-100 text-green-700 p-2 rounded-full">
                                 <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                            </div>
+                            <div>
+                                <p class="text-sm font-semibold text-gray-800">Case Processed</p>
+                                <p class="text-xs text-gray-500">Auto-Analyzed & Verified</p>
                             </div>
                         </div>
                     </div>
@@ -147,15 +213,15 @@
                     <!-- Logos -->
                     <div class="flex justify-center">
                         <!-- SEO: Updated alt tag -->
-                        <img class="h-10 opacity-60" src="https://placehold.co/150x40/9ca3af/ffffff?text=Small+Finance+Banks" alt="Fexo client: Small Finance Banks" onerror="this.src='https://placehold.co/150x40/9ca3af/ffffff?text=Small+Finance+Banks'">
+                        <img class="h-20" src="assests\3.svg" alt="Fexo client: Small Finance Banks" onerror="this.src='https://placehold.co/150x40/9ca3af/ffffff?text=Small+Finance+Banks'">
                     </div>
                     <div class="flex justify-center">
                         <!-- SEO: Updated alt tag -->
-                        <img class="h-10 opacity-60" src="https://placehold.co/150x40/9ca3af/ffffff?text=Leading+NBFCs" alt="Fexo client: Leading NBFCs" onerror="this.src='https://placehold.co/150x40/9ca3af/ffffff?text=Leading+NBFCs'">
+                        <img class="h-10" src="assests\4.svg" alt="Fexo client: Leading NBFCs" onerror="this.src='https://placehold.co/150x40/9ca3af/ffffff?text=Leading+NBFCs'">
                     </div>
                     <div class="flex justify-center">
                         <!-- SEO: Updated alt tag -->
-                        <img class="h-10 opacity-60" src="https://placehold.co/150x40/9ca3af/ffffff?text=Government+%26+Compliance" alt="Fexo client: Government & Compliance" onerror="this.src='https://placehold.co/150x40/9ca3af/ffffff?text=Government+%26+Compliance'">
+                        <img class="h-10" src="assests\5.svg" alt="Fexo client: Government & Compliance" onerror="this.src='https://placehold.co/150x40/9ca3af/ffffff?text=Government+%26+Compliance'">
                     </div>
                 </div>
             </div>
@@ -172,7 +238,7 @@
                         Automate Complex Document Analysis. Accelerate Decisions. Multiply Impact.
                     </h2>
                     <p class="mt-4 text-lg text-gray-600">
-                        Our clients see measurable real-world immediate ROI, not theoretical "AI benefits". We transform operational efficiency into a powerful engine for business growth.
+                        Our clients see measurable real-world immediate ROI, not theoretical "AI benefits".<br> We transform operational efficiency into a powerful engine for business growth.
                     </p>
                 </div>
 
@@ -219,7 +285,7 @@
                     <h2 class="text-3xl md:text-4xl font-extrabold text-[#3d0754] mt-2">
                         One Product. Purpose-Built for Banking, Insurance and Audits.
                     </h2>
-                    <p class="mt-4 text-lg text-gray-600">
+                    <p class="whitespace-nowrap mt-4 text-lg text-gray-600">
                         Delivering BFSI-grade accuracy, reliability and scale for your most critical doc-intensive workflows.
                     </to>
                 </div>
@@ -237,17 +303,23 @@
                             End-to-end automation of Wholesale and SME lending doc-processes — from analysis to Credit Assessment Memos — for faster, safer lending decisions.
                         </p>
                         <ul class="mt-4 space-y-3 text-gray-700">
-                            <li class="flex items-start">
-                                <svg class="w-6 h-6 mr-2 text-green-500 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                            <li class="flex items-start gap-2">
+                            <div class="bg-green-100 text-green-700 p-2 rounded-full">
+                                <svg class="w-5 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                            </div>
                                 <span>MCA & complex non-MCA financial statements (quant & qual analytics)</span>
                             </li>
-                            <li class="flex items-start">
-                                <svg class="w-6 h-6 mr-2 text-green-500 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                            <li class="flex items-start gap-2">
+                            <div class="bg-green-100 text-green-700 p-2 rounded-full">
+                                <svg class="w-5 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                            </div>
                                 <span>Triangulated business insights (statements, ITRs, voice)</span>
                             </li>
-                            <li class="flex items-start">
-                                <svg class="w-6 h-6 mr-2 text-green-500 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
-                                <span>External risk monitoring & industry analysis</span>
+                            <li class="flex items-start gap-2">
+                            <div class="bg-green-100 text-green-700 p-2 rounded-full">
+                                <svg class="w-5 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                            </div>
+                            <span>External risk monitoring & industry analysis</span>
                             </li>
                         </ul>
                         <!-- NEW: Link to solution page -->
@@ -258,23 +330,33 @@
 
                     <!-- Solution 2: Insurance Claims -->
                     <div class="solution-card bg-white p-8 rounded-xl shadow-lg border border-gray-200 flex flex-col">
-                       
+                       <div class="solution-icon bg-[#f7ebf6] text-[#7b0daa] w-12 h-12 rounded-lg flex items-center justify-center">
+                            <!-- Icon: Shield (Insurance) -->
+                            <svg class="w-7 h-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        </div>
+                        
                         <h3 class="text-xl font-semibold text-gray-900 mt-5">Insurance Claims</h3>
                         <p class="text-gray-600 mt-2 flex-grow">
                             Automate manual processing and reduce human errors, fast-tracking claim responses by 10x for quicker, more accurate settlements.
                         </p>
                          <ul class="mt-4 space-y-3 text-gray-700">
-                            <li class="flex items-start">
-                                <svg class="w-6 h-6 mr-2 text-green-500 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                            <li class="flex items-start gap-2">
+                            <div class="bg-green-100 text-green-700 p-2 rounded-full">
+                                <svg class="w-5 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                            </div>
                                 <span>Handwritten & vernacular document AI (FIRs, claim forms, invoices)</span>
                             </li>
-                            <li class="flex items-start">
-                                <svg class="w-6 h-6 mr-2 text-green-500 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                            <li class="flex items-start gap-2">
+                            <div class="bg-green-100 text-green-700 p-2 rounded-full">
+                                <svg class="w-5 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                            </div>
                                 <span>Cross-document triangulation & authenticity checks</span>
                             </li>
-                            <li class="flex items-start">
-                                <svg class="w-6 h-6 mr-2 text-green-500 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
-                                <span>Automated claim summaries for STP* & mismatch alerts</span>
+                            <li class="flex items-start gap-2">
+                            <div class="bg-green-100 text-green-700 p-2 rounded-full">
+                                <svg class="w-5 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                            </div>
+                                <span>Automated claim summaries for STP<sup>*</sup> & mismatch alerts</span>
                             </li>
                         </ul>
                         <!-- NEW: Link to solution page -->
@@ -286,22 +368,32 @@
 
                     <!-- Solution 3: Audit & Compliance -->
                     <div class="solution-card bg-white p-8 rounded-xl shadow-lg border border-gray-200 flex flex-col">
-                       
+                       <div class="solution-icon bg-[#f7ebf6] text-[#7b0daa] w-12 h-12 rounded-lg flex items-center justify-center">
+                            <!-- Icon: ClipboardCheck (Audit) -->
+                            <svg class="w-7 h-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><path d="m9 14 2 2 4-4"/></svg>
+                        </div>
+
                         <h3 class="text-xl font-semibold text-gray-900 mt-5">Audit & Compliance</h3>
                         <p class="text-gray-600 mt-2 flex-grow">
                             Automate complex public sector and enterprise audits, from ITRs to land deeds, to minimize risk and save 100s of hours of manual work.
                         </p>
                          <ul class="mt-4 space-y-3 text-gray-700">
-                            <li class="flex items-start">
-                                <svg class="w-6 h-6 mr-2 text-green-500 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                            <li class="flex items-start gap-2">
+                            <div class="bg-green-100 text-green-700 p-2 rounded-full">
+                                <svg class="w-5 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                            </div>
                                 <span>Public Sector Annual Report audits (IndAS compliance)</span>
                             </li>
-                            <li class="flex items-start">
-                                <svg class="w-6 h-6 mr-2 text-green-500 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                            <li class="flex items-start gap-2">
+                            <div class="bg-green-100 text-green-700 p-2 rounded-full">
+                                <svg class="w-5 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                            </div>
                                 <span>Multi-year audit of ITRs and financial documents of Enterprises</span>
                             </li>
-                            <li class="flex items-start">
-                                <svg class="w-6 h-6 mr-2 text-green-500 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                            <li class="flex items-start gap-2">
+                            <div class="bg-green-100 text-green-700 p-2 rounded-full">
+                                <svg class="w-5 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                            </div>
                                 <span>Audit of vernacular sale deed transaction documents</span>
                             </li>
                         </ul>
@@ -311,7 +403,11 @@
                         </a>
                     </div>
                 </div>
-                
+                <!-- STP Footnote -->
+
+                <p class="text-center text-gray-500 text-sm mt-12">
+                <sup>*</sup>STP: Straight Through Processing
+                </p>
             </div>
         </section>
 
@@ -325,7 +421,7 @@
                     <h2 class="text-3xl md:text-4xl font-extrabold text-[#3d0754] mt-2">
                         Experience the Fexo Co-pilot, Instantly
                     </h2>
-                    <p class="mt-4 text-lg text-gray-600">
+                    <p class="whitespace-nowrap mt-4 text-lg text-gray-600">
                         Select a BFSI use case to see how our AI analyzes complex, unstructured data in seconds.
                     </p>
                 </div>
@@ -335,15 +431,15 @@
                     <div class="flex items-center justify-center border-b border-gray-200" role="tablist">
                         <!-- UPDATED: Hover color -->
                         <button @click="selectTab('lending')" :aria-selected="activeTab === 'lending'" role="tab"
-                            class="demo-tab -mb-px py-3 px-6 border-b-2 border-transparent text-gray-600 hover:text-[#c580dd]">
+                            class="demo-tab -mb-px py-3 px-11 border-b-2 border-transparent text-gray-600 hover:text-[#c580dd]">
                             Banking & Lending
                         </button>
                         <button @click="selectTab('claims')" :aria-selected="activeTab === 'claims'" role="tab"
-                            class="demo-tab -mb-px py-3 px-6 border-b-2 border-transparent text-gray-600 hover:text-[#c580dd]">
+                            class="demo-tab -mb-px py-3 px-11 border-b-2 border-transparent text-gray-600 hover:text-[#c580dd]">
                             Insurance Claims
                         </button>
                         <button @click="selectTab('audit')" :aria-selected="activeTab === 'audit'" role="tab"
-                            class="demo-tab -mb-px py-3 px-6 border-b-2 border-transparent text-gray-600 hover:text-[#c580dd]">
+                            class="demo-tab -mb-px py-3 px-11 border-b-2 border-transparent text-gray-600 hover:text-[#c580dd]">
                             Audit & Compliance
                         </button>
                     </div>
@@ -384,7 +480,7 @@
                                 </div>
                             </div>
                             <p class="text-xs text-gray-500 mt-4 text-center">
-                                *This is a simplified demo. The production FexoLM provides deeper, BFSI-grade analysis with higher factual accuracy.
+                                *This is a simplified demo. The proprietary FexoLM provides deeper insights and enhanced analysis.
                             </p>
                         </div>
                     </div>
@@ -508,14 +604,14 @@
 
                         <!-- Technology Partners Section -->
                         <div class="mt-8 border-t border-gray-200 pt-8">
-                            <h4 class="text-xl font-semibold text-gray-900">Our Technology Partners</h4>
+                            <h3 class="text-2xl font-bold text-gray-900 mt-6">Our Technology Partners</h3>
                             <p class="mt-2 text-gray-600">
                                 We partner with the best to build the most powerful, scalable, and secure AI.
                             </p>
                             <div class="grid grid-cols-2 gap-x-8 gap-y-6 mt-6">
                                 <!-- SEO: Updated alt tags -->
                                 <img class="h-8" src="https://placehold.co/120x32/808080/ffffff?text=Microsoft" alt="Microsoft Partner" onerror="this.src='https://placehold.co/120x32/808080/ffffff?text=Microsoft'">
-                                <img class="h-8" src="https://placehold.co/120x32/808080/ffffff?text=AWS" alt="AWS Partner" onerror="this.src='https://placehold.co/120x32/808080/ffffff?text=AWS'">
+                                <img class="h-8" src="assests\1.svg" alt="AWS Partner" onerror="this.src='https://placehold.co/120x32/808080/ffffff?text=AWS'">
                                 <img class="h-8" src="https://placehold.co/120x32/808080/ffffff?text=Nvidia" alt="Nvidia Partner" onerror="this.src='https://placehold.co/120x32/808080/ffffff?text=Nvidia'">
                                 <img class="h-8" src="https://placehold.co/120x32/808080/ffffff?text=Intel" alt="Intel Partner" onerror="this.src='https://placehold.co/120x32/808080/ffffff?text=Intel'">
                             </div>
@@ -524,20 +620,117 @@
                 </div>
             </div>
         </section>
+        <!-- NEW: Insights & Resources Section (SEO Booster) -->
+        <section id="insights" class="py-20 md:py-28 bg-white border-t border-gray-200">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto">
+                    <span class="text-[#7b0daa] font-semibold">INSIGHTS & RESOURCES</span>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-[#3d0754] mt-2">
+                        Latest Thinking on AI & Finance
+                    </h2>
+                    <p class="mt-4 text-lg text-gray-600">
+                        Deep dives into agentic AI, regulatory compliance, and the future of automation in BFSI.
+                    </p>
+                </div>
+
+                <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+                    
+                    <!-- Article 1: Whitepaper -->
+                    <a href="article.html" class="group block h-full">
+                        <div class="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 h-full flex flex-col">
+                            <div class="h-48 bg-[#f7ebf6] flex items-center justify-center overflow-hidden">
+                                <!-- Placeholder for Article Image -->
+                                <img src="https://placehold.co/600x400/f7ebf6/7b0daa?text=Whitepaper" alt="Whitepaper Cover" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300">
+                            </div>
+                            <div class="p-6 flex-1 flex flex-col">
+                                <div class="flex items-center space-x-2 text-sm text-[#7b0daa] font-medium mb-3">
+                                    <span class="bg-indigo-50 px-2 py-1 rounded">Whitepaper</span>
+                                    <span>• 8 min read</span>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-900 group-hover:text-[#7b0daa] transition-colors">
+                                    The Future of Agentic AI in Banking
+                                </h3>
+                                <p class="mt-2 text-gray-600 text-sm flex-1">
+                                    Why traditional OCR is dead and how agentic workflows are enabling 100% automation for complex lending.
+                                </p>
+                                <div class="mt-4 flex items-center text-[#f77422] font-medium text-sm">
+                                    Read Now <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Article 2: Case Study -->
+                    <a href="article.html" class="group block h-full">
+                        <div class="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 h-full flex flex-col">
+                            <div class="h-48 bg-[#f7ebf6] flex items-center justify-center overflow-hidden">
+                                <img src="https://placehold.co/600x400/f7ebf6/7b0daa?text=Case+Study" alt="Case Study Image" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300">
+                            </div>
+                            <div class="p-6 flex-1 flex flex-col">
+                                <div class="flex items-center space-x-2 text-sm text-[#7b0daa] font-medium mb-3">
+                                    <span class="bg-indigo-50 px-2 py-1 rounded">Case Study</span>
+                                    <span>• 5 min read</span>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-900 group-hover:text-[#7b0daa] transition-colors">
+                                    How [Client] Reduced Fraud by 40%
+                                </h3>
+                                <p class="mt-2 text-gray-600 text-sm flex-1">
+                                    A deep look into how a leading insurer used triangulation to spot discrepancies in handwritten FIRs.
+                                </p>
+                                <div class="mt-4 flex items-center text-[#f77422] font-medium text-sm">
+                                    Read Case Study <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Article 3: Technical Guide -->
+                    <a href="article.html" class="group block h-full">
+                        <div class="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 h-full flex flex-col">
+                            <div class="h-48 bg-[#f7ebf6] flex items-center justify-center overflow-hidden">
+                                <img src="https://placehold.co/600x400/f7ebf6/7b0daa?text=Compliance+Guide" alt="Compliance Guide Image" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300">
+                            </div>
+                            <div class="p-6 flex-1 flex flex-col">
+                                <div class="flex items-center space-x-2 text-sm text-[#7b0daa] font-medium mb-3">
+                                    <span class="bg-indigo-50 px-2 py-1 rounded">Technical Guide</span>
+                                    <span>• 12 min read</span>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-900 group-hover:text-[#7b0daa] transition-colors">
+                                    Mastering IndAS 116 Compliance
+                                </h3>
+                                <p class="mt-2 text-gray-600 text-sm flex-1">
+                                    A technical guide for auditors on using AI to automate lease obligation checks across annual reports.
+                                </p>
+                                <div class="mt-4 flex items-center text-[#f77422] font-medium text-sm">
+                                    Read Guide <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+                
+                <div class="mt-12 text-center">
+                    <a href="#" class="text-[#7b0daa] font-semibold hover:text-[#3d0754] inline-flex items-center transition-colors">
+                        View All Articles & Resources
+                        <svg class="w-5 h-5 ml-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
+                    </a>
+                </div>
+            </div>
+        </section>
 
         <!-- Final CTA -->
-        <!-- UPDATED: Section BG color -->
         <section id="contact" class="bg-[#7b0daa]">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-24 text-center">
                 <h2 class="text-3xl md:text-4xl font-extrabold text-white">
                     Ready to 5x Your Team's Capacity?
                 </h2>
-                <!-- UPDATED: Text color for light-on-dark -->
+                <!-- Text color for light-on-dark -->
                 <p class="mt-4 text-lg text-[#f7ebf6] max-w-2xl mx-auto">
                     See how our Intelligent Co-pilot automates complex workflows in weeks — not months. Schedule a demo to reduce risk, accelerate growth, and unlock ROI from Day One.
                 </p>
                 <div class="mt-10">
-                    <!-- UPDATED: Button text color to CTA Orange -->
+                    <!-- Button text color to CTA Orange -->
                     <a href="#" class="bg-white text-[#f77422] px-10 py-3 rounded-lg text-base font-medium shadow-lg hover:bg-gray-100 cta-button">
                         Book Your Personalized Demo
                     </a>
@@ -554,7 +747,7 @@
                 <div>
                     <!-- UPDATED: Link to index.html -->
                     <a href="index.html" aria-label="Fexo Homepage">
-                    <img src="assests\1.svg" alt="Fexo: It's Possible Logo" width="140" height="40" />
+                    <img src="assests\logo2.svg" alt="Fexo: It's Possible Logo" width="140" height="40" />
                     </a>
 
                     <p class="mt-4 text-sm">
@@ -578,15 +771,8 @@
                         <!-- UPDATED: Links to new pages -->
                         <li><a href="company-about.html" class="hover:text-white">About Us</a></li>
                         <li><a href="company-careers.html" class="hover:text-white">Careers</a></li>
-                        <li><a href="index.html#security" class="hover:text-white">Security & Trust</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-sm font-semibold text-gray-200 uppercase tracking-wider">Company</h4>
-                    <ul class="mt-4 space-y-2">
-                        <li><a href="#" class="hover:text-white">About Us</a></li>
-                        <li><a href="#" class="hover:text-white">Careers</a></li>
-                        <li><a href="#security" class="hover:text-white">Security & Trust</a></li>
+                        <li><a href="index.html#security" class="hover:text-white">Terms of Service</a></li>
+                        <li><a href="">Privacy Policy</a></li>
                     </ul>
                 </div>
                 <div>
@@ -645,20 +831,28 @@
                 content: {
                     lending: {
                         document: `
-**Excerpt from Bank Statement - ABC Enterprises**
-Date: 01-10-2025 to 31-10-2025
-...
-05-10-2025 | Cheque Deposit | 1,50,000.00
-08-10-2025 | NEFT Transfer - SALARY OCT | 4,25,000.00
-10-10-2025 | RTGS - XYZ SUPPLIERS | -3,00,000.00
-12-10-2025 | Cheque Bounce - 10051 | -50,000.00
-12-10-2025 | Cheque Bounce Charges | -590.00
-15-10-2025 | IMPS - RENT | -75,000.00
-20-10-2025 | LOAN EMI - HDFC001 | -22,500.00
-22-10-2025 | Cash Deposit | 25,000.00
-28-10-2025 | RTGS - XYZ SUPPLIERS | -2,50,000.00
-...
-Closing Balance: 8,45,000.00
+BALANCE SHEET (for year ending 31 Mar 2025)
+    
+LIABILITIES & EQUITY                    | ASSETS
+---------------------------------------------------------------------------
+Accounts Payable          10,00,000     | Cash & Bank           25,00,000
+Short-term Loans          12,00,000     | Accounts Receivable   15,00,000
+Long-term Debt            20,00,000     | Inventory             12,00,000
+Shareholder Equity        40,00,000     | Fixed Assets          30,00,000
+---------------------------------------------------------------------------
+TOTAL L&E                 82,00,000     | TOTAL ASSETS          82,00,000
+
+  PROFIT & LOSS STATEMENT (for year ending 31 Mar 2025)
+ 
+EXPENSES                               | INCOME
+---------------------------------------------------------------------------
+Cost of Goods Sold      28,00,000      | Revenue (Sales)         75,00,000
+Salaries & Wages        18,00,000      | Other Income             3,00,000
+Rent & Utilities         6,00,000      |
+Marketing & Admin        5,00,000      |
+NET PROFIT              21,00,000      |
+---------------------------------------------------------------------------
+TOTAL (Profit + Exp)    78,00,000      | TOTAL INCOME            78,00,000
 `,
                         systemPrompt: `Act as a senior credit analyst. Analyze the provided bank statement excerpt for an SME loan application. Identify key positive indicators, major red flags, and calculate the total loan/EMI payments. Present the output as a concise bulleted list under 'Key Insights'.`
                     },
@@ -722,7 +916,7 @@ Damage: Rear bumper, trunk, taillight."
 
                     const userQuery = this.content[this.activeTab].document;
                     const systemPrompt = this.content[this.activeTab].systemPrompt;
-                    const apiKey = "AIzaSyDO6ujKBC_UXjgMUXHixn0dPHnzsuEH50w"; // API key is handled by the environment
+                    const apiKey = "AIzaSyDXjDXUZyHXyrQKBE-sCUthXipopc4QtZI"; // API key is handled by the environment
                     const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
 
                     const payload = {
