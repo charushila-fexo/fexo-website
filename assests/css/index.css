@@ -2,20 +2,20 @@
          font-family: 'Inter', sans-serif;
         }
         .active-nav {
-        background-color: #f8e9fb;            /* light lavender */
-        color: #3d0754 !important;            /* dark purple text */
-        border-bottom: 3px solid #7b0daa;     /* purple underline */
+        background-color: #f8e9fb;            
+        color: #3d0754;          
+        border-bottom: 3px solid #7b0daa;   
         font-weight: 600;
-        border-radius: 6px 6px 0 0;           /* tab-like rounded edges */
+        border-radius: 6px 6px 0 0;          
         }
         .nav-item {
-        display: flex;                        /* fills the full clickable space */
+        display: flex;                       
         align-items: center;
-        padding: 12px 20px;                   /* creates the rectangular box */
+        padding: 12px 20px;                 
         height: 100%;
         border-radius: 0;
+        transition: all 0.2s ease-in-out;
         }
-        /* UPDATED: Hero background with brand color */
         .hero-bg {
             background: linear-gradient(110deg, #f7ebf6 0%, #ffffff 60%);
         }

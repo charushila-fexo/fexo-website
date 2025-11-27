@@ -1,14 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
   const navLinks = document.querySelectorAll(".nav-item");
 
-  // Only track these sections for highlighting
   const navSectionIds = ["proof", "solutions", "demo", "platform", "contact"];
   const sections = navSectionIds
     .map(id => document.getElementById(id))
     .filter(Boolean);
 
   const ACTIVE_CLASS = "active-nav";
-  let suppressScroll = false;
+
+  let disableScrollHighlight = false;
+  let scrollTimeout = null;
 
   function setActive(id) {
     navLinks.forEach(a => a.classList.remove(ACTIVE_CLASS));
@@ -17,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function updateActiveSection() {
-    if (suppressScroll) return;
+    if (disableScrollHighlight) return;
 
     const midpoint = window.innerHeight / 2;
 
@@ -29,28 +30,41 @@ document.addEventListener("DOMContentLoaded", () => {
     if (currentSection) {
       setActive(currentSection.id);
     } else {
-      // IF in HOME → remove highlight entirely
       navLinks.forEach(a => a.classList.remove(ACTIVE_CLASS));
     }
   }
 
-  // Highlight on click (without glitches)
+  // When a user clicks a nav item — disable scroll-based highlighting
   navLinks.forEach(a => {
     a.addEventListener("click", () => {
       const hash = a.getAttribute("href").split("#")[1];
       if (!hash) return;
 
+      disableScrollHighlight = true;
       setActive(hash);
 
-      suppressScroll = true;
-      setTimeout(() => {
-        suppressScroll = false;
+      // Re-enable after scrolling stops
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        disableScrollHighlight = false;
         updateActiveSection();
-      }, 350);
+      }, 600); // wait for scroll to complete
     });
   });
 
-  window.addEventListener("scroll", updateActiveSection);
+  // Scroll listener
+  window.addEventListener("scroll", () => {
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(() => {
+      disableScrollHighlight = false;
+      updateActiveSection();
+    }, 150);
+
+    if (!disableScrollHighlight) {
+      updateActiveSection();
+    }
+  });
+
   window.addEventListener("resize", updateActiveSection);
 
   updateActiveSection();

@@ -92,7 +92,7 @@
     <main>
 
         <!-- Hero Section -->
-        <section class="hero-bg">
+        <section id="home" class="hero-bg">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                     <!-- Hero Text -->
@@ -128,9 +128,7 @@
                     <!-- Hero Image/Graphic -->
                     <div class="relative">
                         <!-- SEO: Updated alt tag --> 
-                        <video alt="Fexo AI Use Cases" class="rounded-xl shadow-2xl border-4 border-white" autoplay muted loop onerror="this.src='https://placehold.co/600x450/f7ebf6/7b0daa?text=Fexo+AI+Platform+UI'">
-                            <source src="assests\videos\Banking&lending.mp4" type="video/mp4">
-                        </video>
+                        <video id="videoPlayer" autoplay muted playsinline class="rounded-xl shadow-2xl border-4 border-white"></video>
                         <div class="absolute -bottom-8 -left-8 bg-white p-4 rounded-lg shadow-xl border border-gray-200 flex items-center space-x-3">
                             <div class="bg-green-100 text-green-700 p-2 rounded-full">
                                 <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
@@ -402,7 +400,7 @@
                                 
                                 <!-- UPDATED: Button colors -->
                                 <button @click="handleAnalysis" :disabled="isLoading"
-                                    class="w-full bg-[#f77422] text-white px-6 py-3 rounded-lg text-base font-medium shadow-sm hover:bg-[#e66a1e] cta-button flex items-center justify-center mt-6"
+                                    class=" cta-button w-full bg-[#f77422] text-white px-6 py-3 rounded-lg text-base font-medium shadow-sm hover:bg-[#e66a1e] flex items-center justify-center mt-6"
                                     :class="{ 'opacity-50 cursor-not-allowed': isLoading }">
                                     <span x-show="!isLoading">
                                         Analyze Document
@@ -668,8 +666,8 @@
                     Ready to 5x Your Team's Capacity?
                 </h2>
                 <!-- Text color for light-on-dark -->
-                <p class="mt-4 text-lg text-[#f7ebf6] max-w-2xl mx-auto">
-                    See how our Intelligent Co-pilot automates complex workflows in weeks — not months. Schedule a demo to reduce risk, accelerate growth, and unlock ROI from Day One.
+                <p class="mt-3 text-lg text-[#f7ebf6] max-w-2xl mx-auto">
+                    See how our Intelligent Co-pilot automates complex workflows in weeks, not months. Schedule a demo to reduce risk, accelerate growth, and unlock ROI from Day One.
                 </p>
                 <div class="mt-10">
                     <!-- Button text color to CTA Orange -->
@@ -679,64 +677,81 @@
                 </div>
             </div>
         </section>
+        <button id="backToTop" 
+        class="fixed bottom-6 right-6 w-12 h-12 rounded-full border-2 border-[#6A1B9A] 
+            flex items-center justify-center bg-white text-[#6A1B9A] shadow-lg 
+            opacity-0 pointer-events-none transition-all duration-300 hover:bg-[#6A1B9A] hover:text-white">
+        ▲
+    </button>
+
     </main>
 
     <!-- Footer -->
     <footer class="bg-gray-900 text-gray-400">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <!-- Logo & Info -->
-                <div>
-                    <!-- UPDATED: Link to index.html -->
-                    <a href="index.html" aria-label="Fexo Homepage">
-                    <img src="assests\images\icons\logo2.svg" alt="Fexo: It's Possible Logo" width="140" height="40" />
-                    </a>
+    <div class="container mx-auto px-6 sm:px-10 lg:px-16 py-12">
 
-                    <p class="mt-4 text-sm">
-                        Fexo GenAI Technologies Pvt. Ltd.
-                    </p>
-                </div>
-                <!-- Navigation Links -->
-                <div>
-                    <h4 class="text-sm font-semibold text-gray-200 uppercase tracking-wider">Solutions</h4>
-                    <ul class="mt-4 space-y-2">
-                        <!-- UPDATED: Links to new pages -->
-                        <li><a href="solutions-banking.html" class="hover:text-white">Banking & Lending</a></li>
-                        <li><a href="solutions-insurance.html" class="hover:text-white">Insurance</a></li>
-                        <li><a href="solutions-audit.html" class="hover:text-white">Audit & Compliance</a></li>
-                        <li><a href="solutions-invoice.html" class="hover:text-white">Invoice Automation</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-sm font-semibold text-gray-200 uppercase tracking-wider">Company</h4>
-                    <ul class="mt-4 space-y-2">
-                        <!-- UPDATED: Links to new pages -->
-                        <li><a href="company-about.html" class="hover:text-white">About Us</a></li>
-                        <li><a href="company-careers.html" class="hover:text-white">Careers</a></li>
-                        <li><a href="index.html#security" class="hover:text-white">Terms of Service</a></li>
-                        <li><a href="">Privacy Policy</a></li>
-                    </ul>
-                </div>
-                 <div class="md:col-span-1">
-                    <h2 class="text-2xl font-semibold text-gray-200 uppercase tracking-wider">Stay in Touch</h2><br>
-                    <p>Subscribe to Newsletter. We'll be pleased to keep you up to date about modern technology, events, and innovative apps.</p>
-                    <input type="email" placeholder="Your email address" class="mt-4 w-full px-3 py-2  bg-gray-800 text-gray-200 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-[#f77422]" />
-                    <button class="mt-2 w-4xl bg-[#f77422] text-white px-2 py-2 rounded-lg hover:bg-[#e66a1e]">Subscribe</button>
-                </div>
-                <div>
-                    <h4 class="text-sm font-semibold text-gray-200 uppercase tracking-wider">Connect</h4>
-                    <ul class="mt-4 space-y-2">
-                        <li><a href="https://www.linkedin.com/company/fexo/" target="_blank" rel="noopener noreferrer" class="hover:text-white">LinkedIn</a></li>
-                        <li><a href="#contact" class="hover:text-white">Contact Sales</a></li>
-                    </ul>
-                </div>
+        <!-- FIXED: grid-cols-5 so everything stays in one row -->
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-8">
+
+            <!-- Logo -->
+            <div>
+                <a href="index.html" aria-label="Fexo Homepage">
+                    <img src="assests/images/icons/logo2.svg" alt="Fexo Logo" width="140" height="40" />
+                </a>
+                <p class="mt-4 text-sm">Fexo GenAI Technologies Pvt. Ltd.</p>
             </div>
 
-            <div class="mt-8 border-t border-gray-800 pt-8 text-center text-sm">
-                <p>&copy; 2025 Fexo GenAI Technologies Pvt. Ltd. All rights reserved.</p>
+            <!-- Solutions -->
+            <div>
+                <h4 class="text-sm font-semibold text-gray-200 uppercase tracking-wider">Solutions</h4>
+                <ul class="mt-4 space-y-2">
+                    <li><a href="solutions-banking.html" class="hover:text-white">Banking & Lending</a></li>
+                    <li><a href="solutions-insurance.html" class="hover:text-white">Insurance</a></li>
+                    <li><a href="solutions-audit.html" class="hover:text-white">Audit & Compliance</a></li>
+                    <li><a href="solutions-invoice.html" class="hover:text-white">Invoice Automation</a></li>
+                </ul>
+            </div>
+
+            <!-- Company -->
+            <div>
+                <h4 class="text-sm font-semibold text-gray-200 uppercase tracking-wider">Company</h4>
+                <ul class="mt-4 space-y-2">
+                    <li><a href="company-about.html" class="hover:text-white">About Us</a></li>
+                    <li><a href="company-careers.html" class="hover:text-white">Careers</a></li>
+                    <li><a href="#security" class="hover:text-white">Terms of Service</a></li>
+                    <li><a href="" class="hover:text-white">Privacy Policy</a></li>
+                </ul>
+            </div>
+
+            <!-- Connect -->
+            <div>
+                <h4 class="text-sm font-semibold text-gray-200 uppercase tracking-wider">Connect</h4>
+                <ul class="mt-4 space-y-2">
+                    <li><a href="https://www.linkedin.com/company/fexo/" class="hover:text-white">LinkedIn</a></li>
+                    <li><a href="#contact" class="hover:text-white">Contact Sales</a></li>
+                </ul>
+            </div>
+
+            <!-- Stay in Touch -->
+            <div>
+                <h4 class="text-sm font-semibold text-gray-200 uppercase tracking-wider">Stay in Touch</h4>
+                <p class="mt-4">Subscribe to Newsletter. We'll be pleased to keep you up to date.</p>
+
+                <input type="email" placeholder="Your email address"
+                    class="mt-4 w-full px-3 py-2 bg-gray-800 text-gray-200 border border-gray-700 rounded focus:ring-2 focus:ring-[#f77422]" />
+
+                <button class="cta-button mt-4 bg-[#f77422] text-white px-4 py-2 rounded-lg hover:bg-[#e66a1e]">
+                    Subscribe
+                </button>
             </div>
         </div>
-    </footer>
+
+        <div class="mt-8 border-t border-gray-800 pt-8 text-center text-sm">
+            <p>© 2025 Fexo GenAI Technologies Pvt. Ltd. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
     <script type="module" src="assests/js/main.js"></script>
     <!-- Mobile Menu Script -->
     <script>
