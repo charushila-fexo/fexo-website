@@ -16,7 +16,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
+    <link rel="stylesheet" href="assests/css/index.css">
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -67,14 +67,12 @@
                 </div>
                 
                 <!-- Desktop Navigation -->
-                <div class="hidden md:flex md:items-center md:space-x-8">
-                    <!-- Updated links to point to homepage sections -->
-                    <a href="index.html#demo" class="text-gray-600 hover:text-[#c580dd] font-medium">Interactive Demo</a>
-                    <a href="index.html#platform" class="text-gray-600 hover:text-[#c580dd] font-medium">Platform</a>
-                    <a href="index.html#solutions" class="text-gray-600 hover:text-[#c580dd] font-medium">Solutions</a>
-                    <a href="index.html#proof" class="text-gray-600 hover:text-[#c580dd] font-medium">Customer Impact</a>
-                    <a href="index.html#security" class="text-gray-600 hover:text-[#c580dd] font-medium">Security</a>
-                    <a href="index.html#contact" class="bg-[#f77422] text-white px-4 py-2 rounded-lg text-sm font-medium shadow-sm hover:bg-[#e66a1e] cta-button">
+                <div class="hidden md:flex md:items-center md:space-x-1">
+                    <a id="nav-proof" href="index.html#proof" class="nav-item text-gray-600 hover:text-[#c580dd] font-medium">Customer Impact</a>
+                    <a id="nav-solutions" href="index.html#solutions" class="nav-item text-gray-600 hover:text-[#c580dd] font-medium">Solutions</a>
+                    <a id="nav-demo" href="index.html#demo" class="nav-item text-gray-600 hover:text-[#c580dd] font-medium">Interactive Demo</a>
+                    <a id="nav-platform" href="index.html#platform" class="nav-item text-gray-600 hover:text-[#c580dd] font-medium">Platform</a>
+                    <a href="#contact" class="bg-[#f77422] text-white px-4 py-2 rounded-lg text-sm font-medium shadow-sm hover:bg-[#e66a1e] cta-button">
                         Book a Demo
                     </a>
                 </div>
@@ -317,7 +315,7 @@
             </div>
         </div>
     </footer>
-
+    <script src="assests/js/main.js"></script>
     <!-- Mobile Menu Script -->
     <script>
         const menuButton = document.getElementById('mobile-menu-button');

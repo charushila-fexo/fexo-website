@@ -12,73 +12,13 @@
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="assests/css/index.css">
     <!-- Google Fonts - Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- Alpine.js CDN - MOVED to end of body -->
 </head>
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const navLinks = document.querySelectorAll(".nav-item");
-
-  // Only track these sections for highlighting
-  const navSectionIds = ["proof", "solutions", "demo", "platform", "contact"];
-  const sections = navSectionIds
-    .map(id => document.getElementById(id))
-    .filter(Boolean);
-
-  const ACTIVE_CLASS = "active-nav";
-  let suppressScroll = false;
-
-  function setActive(id) {
-    navLinks.forEach(a => a.classList.remove(ACTIVE_CLASS));
-    const el = document.querySelector(`#nav-${id}`);
-    if (el) el.classList.add(ACTIVE_CLASS);
-  }
-
-  function updateActiveSection() {
-    if (suppressScroll) return;
-
-    const midpoint = window.innerHeight / 2;
-
-    let currentSection = sections.find(sec => {
-      const rect = sec.getBoundingClientRect();
-      return rect.top <= midpoint && rect.bottom >= midpoint;
-    });
-
-    if (currentSection) {
-      setActive(currentSection.id);
-    } else {
-      // IF in HOME → remove highlight entirely
-      navLinks.forEach(a => a.classList.remove(ACTIVE_CLASS));
-    }
-  }
-
-  // Highlight on click (without glitches)
-  navLinks.forEach(a => {
-    a.addEventListener("click", () => {
-      const hash = a.getAttribute("href").split("#")[1];
-      if (!hash) return;
-
-      setActive(hash);
-
-      suppressScroll = true;
-      setTimeout(() => {
-        suppressScroll = false;
-        updateActiveSection();
-      }, 350);
-    });
-  });
-
-  window.addEventListener("scroll", updateActiveSection);
-  window.addEventListener("resize", updateActiveSection);
-
-  updateActiveSection();
-});
-</script>
-
 
 <body class="bg-white text-gray-800">
 
@@ -101,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <div class="flex-shrink-0 flex items-center">
                     <!-- UPDATED: Link to index.html -->
                     <a href="index.html" aria-label="Fexo Homepage">
-                    <img src="assests\logo1.svg" alt="Fexo: It's Possible Logo" width="140" height="40" />
+                    <img src="assests\images\icons\logo1.svg" alt="Fexo: It's Possible Logo" width="140" height="40" />
                     </a>
                 </div>
                 
@@ -188,7 +128,9 @@ document.addEventListener("DOMContentLoaded", () => {
                     <!-- Hero Image/Graphic -->
                     <div class="relative">
                         <!-- SEO: Updated alt tag --> 
-                        <img src="https://placehold.co/600x450/f7ebf6/7b0daa?text=Fexo+AI+Platform+UI" alt="Fexo AI Co-pilot analyzing a financial document" class="rounded-xl shadow-2xl border-4 border-white" onerror="this.src='https://placehold.co/600x450/f7ebf6/7b0daa?text=Fexo+AI+Platform+UI'">
+                        <video alt="Fexo AI Use Cases" class="rounded-xl shadow-2xl border-4 border-white" autoplay muted loop onerror="this.src='https://placehold.co/600x450/f7ebf6/7b0daa?text=Fexo+AI+Platform+UI'">
+                            <source src="assests\videos\Banking&lending.mp4" type="video/mp4">
+                        </video>
                         <div class="absolute -bottom-8 -left-8 bg-white p-4 rounded-lg shadow-xl border border-gray-200 flex items-center space-x-3">
                             <div class="bg-green-100 text-green-700 p-2 rounded-full">
                                 <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
@@ -213,15 +155,15 @@ document.addEventListener("DOMContentLoaded", () => {
                     <!-- Logos -->
                     <div class="flex justify-center">
                         <!-- SEO: Updated alt tag -->
-                        <img class="h-20" src="assests\3.svg" alt="Fexo client: Small Finance Banks" onerror="this.src='https://placehold.co/150x40/9ca3af/ffffff?text=Small+Finance+Banks'">
+                        <img class="h-20" src="assests\images\3.svg" alt="Fexo client: Small Finance Banks" onerror="this.src='https://placehold.co/150x40/9ca3af/ffffff?text=Small+Finance+Banks'">
                     </div>
                     <div class="flex justify-center">
                         <!-- SEO: Updated alt tag -->
-                        <img class="h-10" src="assests\4.svg" alt="Fexo client: Leading NBFCs" onerror="this.src='https://placehold.co/150x40/9ca3af/ffffff?text=Leading+NBFCs'">
+                        <img class="h-10" src="assests\images\4.svg" alt="Fexo client: Leading NBFCs" onerror="this.src='https://placehold.co/150x40/9ca3af/ffffff?text=Leading+NBFCs'">
                     </div>
                     <div class="flex justify-center">
                         <!-- SEO: Updated alt tag -->
-                        <img class="h-10" src="assests\5.svg" alt="Fexo client: Government & Compliance" onerror="this.src='https://placehold.co/150x40/9ca3af/ffffff?text=Government+%26+Compliance'">
+                        <img class="h-10" src="assests\images\5.svg" alt="Fexo client: Government & Compliance" onerror="this.src='https://placehold.co/150x40/9ca3af/ffffff?text=Government+%26+Compliance'">
                     </div>
                 </div>
             </div>
@@ -587,7 +529,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <!-- Security & GTM Section -->
                     <div id="security" class="bg-white p-8 md:p-12 rounded-2xl border border-gray-200 shadow-lg">
                         <!-- SEO: Updated alt tag -->
-                        <img class="h-12" src="https://placehold.co/150x48/1f2937/ffffff?text=ISO+27001+Certified" alt="ISO 27001 Certified for Information Security" onerror="this.src='https://placehold.co/150x48/1f2937/ffffff?text=ISO+27001+Certified'">
+                        <img class="h-14" src="assests\images\7.svg" alt="ISO 27001 Certified for Information Security" onerror="this.src='https://placehold.co/150x48/1f2937/ffffff?text=ISO+27001+Certified'">
                         <h3 class="text-2xl font-bold text-gray-900 mt-6">Enterprise-Grade Security & Trust</h3>
                         <p class="mt-2 text-gray-600">
                             We are built for the enterprise. <strong class="text-gray-700">ISO/IEC 27001:2022 Certified</strong> for Information Security Management Systems (ISMS), ensuring your data is always protected by enterprise-grade security.
@@ -595,7 +537,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         
                         <div class="mt-8 border-t border-gray-200 pt-8">
                             <!-- SEO: Updated alt tag -->
-                            <img class="h-10" src="https://placehold.co/180x40/4285F4/ffffff?text=Google+Cloud+Partner" alt="Fexo is a Google Cloud Partner" onerror="this.src='https://placehold.co/180x40/4285F4/ffffff?text=Google+Cloud+Partner'">
+                            <img class="h-10" src="assests\images\2.svg" alt="Fexo is a Google Cloud Partner" onerror="this.src='https://placehold.co/180x40/4285F4/ffffff?text=Google+Cloud+Partner'">
                              <h3 class="text-2xl font-bold text-gray-900 mt-6">Available on Google Cloud Marketplace</h3>
                             <p class="mt-2 text-gray-600">
                                 As an official Google Cloud Partner, our solution is trusted and available on the Google Marketplace. This accelerates procurement and allows Google's sales teams to bring Fexo directly to you.
@@ -608,12 +550,12 @@ document.addEventListener("DOMContentLoaded", () => {
                             <p class="mt-2 text-gray-600">
                                 We partner with the best to build the most powerful, scalable, and secure AI.
                             </p>
-                            <div class="grid grid-cols-2 gap-x-8 gap-y-6 mt-6">
+                            <div class="grid grid-cols-2 gap-x-2 gap-y-5 mt-6">
                                 <!-- SEO: Updated alt tags -->
-                                <img class="h-8" src="https://placehold.co/120x32/808080/ffffff?text=Microsoft" alt="Microsoft Partner" onerror="this.src='https://placehold.co/120x32/808080/ffffff?text=Microsoft'">
-                                <img class="h-8" src="assests\1.svg" alt="AWS Partner" onerror="this.src='https://placehold.co/120x32/808080/ffffff?text=AWS'">
-                                <img class="h-8" src="https://placehold.co/120x32/808080/ffffff?text=Nvidia" alt="Nvidia Partner" onerror="this.src='https://placehold.co/120x32/808080/ffffff?text=Nvidia'">
-                                <img class="h-8" src="https://placehold.co/120x32/808080/ffffff?text=Intel" alt="Intel Partner" onerror="this.src='https://placehold.co/120x32/808080/ffffff?text=Intel'">
+                                <img class="h-12" src="assests\images\2.svg" alt="Microsoft Partner" onerror="this.src='https://placehold.co/120x32/808080/ffffff?text=Microsoft'">
+                                <img class="h-20" src="assests\images\11.svg" alt="AWS Partner" onerror="this.src='https://placehold.co/120x32/808080/ffffff?text=AWS'">
+                                <img class="h-16" src="assests\images\6.svg" alt="Nvidia Partner" onerror="this.src='https://placehold.co/120x32/808080/ffffff?text=Nvidia'">
+                                <img class="h-16" src="assests\images\7.svg" alt="Intel Partner" onerror="this.src='https://placehold.co/120x32/808080/ffffff?text=Intel'">
                             </div>
                         </div>
                     </div>
@@ -747,7 +689,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <div>
                     <!-- UPDATED: Link to index.html -->
                     <a href="index.html" aria-label="Fexo Homepage">
-                    <img src="assests\logo2.svg" alt="Fexo: It's Possible Logo" width="140" height="40" />
+                    <img src="assests\images\icons\logo2.svg" alt="Fexo: It's Possible Logo" width="140" height="40" />
                     </a>
 
                     <p class="mt-4 text-sm">
@@ -775,6 +717,12 @@ document.addEventListener("DOMContentLoaded", () => {
                         <li><a href="">Privacy Policy</a></li>
                     </ul>
                 </div>
+                 <div class="md:col-span-1">
+                    <h2 class="text-2xl font-semibold text-gray-200 uppercase tracking-wider">Stay in Touch</h2><br>
+                    <p>Subscribe to Newsletter. We'll be pleased to keep you up to date about modern technology, events, and innovative apps.</p>
+                    <input type="email" placeholder="Your email address" class="mt-4 w-full px-3 py-2  bg-gray-800 text-gray-200 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-[#f77422]" />
+                    <button class="mt-2 w-4xl bg-[#f77422] text-white px-2 py-2 rounded-lg hover:bg-[#e66a1e]">Subscribe</button>
+                </div>
                 <div>
                     <h4 class="text-sm font-semibold text-gray-200 uppercase tracking-wider">Connect</h4>
                     <ul class="mt-4 space-y-2">
@@ -783,12 +731,13 @@ document.addEventListener("DOMContentLoaded", () => {
                     </ul>
                 </div>
             </div>
+
             <div class="mt-8 border-t border-gray-800 pt-8 text-center text-sm">
                 <p>&copy; 2025 Fexo GenAI Technologies Pvt. Ltd. All rights reserved.</p>
             </div>
         </div>
     </footer>
-
+    <script type="module" src="assests/js/main.js"></script>
     <!-- Mobile Menu Script -->
     <script>
         const menuButton = document.getElementById('mobile-menu-button');
