@@ -1,32 +1,50 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const videos = [
+    "assests/videos/Banking&lending.mp4",
+    "assests/videos/Insurance_claims.mp4",
+    "assests/videos/Audit&Compilance.mp4"
+  ];
 
-    const videos = [
-        "assests/videos/Banking&lending.mp4",
-        "assests/videos/Insurance_claims.mp4",
-        "assests/videos/Audit&Compilance.mp4"
-    ];
+  let index = 0;
+  const player = document.getElementById("videoPlayer");
+  if (!player) return console.error("Video element not found!");
 
-    let index = 0;
-    const player = document.getElementById("videoPlayer");
+  // initialize
+  player.src = videos[index];
+  player.load();
+  player.play().catch(e => console.warn("Autoplay blocked or play error:", e));
+  index = (index + 1) % videos.length;
 
-    if (!player) {
-        console.error("Video element not found!");
-        return;
-    }
+  // When video ends, trigger fade-out and wait for transition to finish
+  player.addEventListener("ended", () => {
+    // add class to start fade-out
+    player.classList.add("fade-out");
+    // wait for CSS transition to complete on opacity
+    const onTransitionEnd = (ev) => {
+      if (ev.propertyName !== "opacity") return;
+      player.removeEventListener("transitionend", onTransitionEnd);
 
-    function playNextVideo() {
-        player.src = videos[index];
+      // swap source AFTER fade-out
+      player.src = videos[index];
+      player.load();
 
-        player.load();   // IMPORTANT
-        player.play().catch(err => console.error("Play error:", err));
+      // try to play, then remove fade-out (fade-in)
+      player.play()
+        .then(() => {
+          // Force a reflow before removing fade-out to ensure transition runs:
+          // read a property to force layout
+          void player.offsetWidth;
+          player.classList.remove("fade-out"); // fades in
+          index = (index + 1) % videos.length;
+        })
+        .catch(err => {
+          console.error("Play error after source swap:", err);
+          // still remove fade to avoid permanent hidden state
+          player.classList.remove("fade-out");
+          index = (index + 1) % videos.length;
+        });
+    };
 
-        index = (index + 1) % videos.length;
-    }
-
-    player.addEventListener("ended", () => {
-        console.log("Video ended, loading next...");
-        playNextVideo();
-    });
-
-    playNextVideo();
+    player.addEventListener("transitionend", onTransitionEnd);
+  });
 });

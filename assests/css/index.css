@@ -36,6 +36,18 @@
             /* UPDATED: Hover border color */
             border-color: #7b0daa;
         }
+        .fade-video {
+        width: 100%;
+        height: auto;
+        object-fit: cover; 
+        transition: opacity 0.5s ease-in-out;
+        opacity: 1;
+        background: black; 
+        }
+        .fade-video.fade-out {
+        opacity: 0;
+        }
+
         .solution-card:hover .solution-icon {
             transform: scale(1.1);
         }
