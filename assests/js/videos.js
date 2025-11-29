@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
   const videos = [
     "assests/videos/Banking&lending.mp4",
-    "assests/videos/Insurance_claims.mp4",
-    "assests/videos/Audit&Compilance.mp4"
+    "assests/videos/Audit&Compliance.mp4",
+    "assests/videos/Insurance_claims.mp4"
   ];
 
   let index = 0;
