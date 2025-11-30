@@ -68,25 +68,15 @@
 </head>
 <body class="bg-white text-gray-800">
 
-    <!-- Top Banner for StartUpIndia -->
-    <div id="top-banner" class="bg-gray-50 border-b border-gray-200">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-2 flex flex-col sm:flex-row justify-center items-center space-y-1 sm:space-y-0 sm:space-x-4">
-            <img class="h-8" src="https://placehold.co/200x32/f3f4f6/000000?text=StartUpIndia+Logo" alt="StartUpIndia Recognition Logo" onerror="this.src='https://placehold.co/200x32/f3f4f6/000000?text=StartUpIndia+Logo'">
-            <p class="text-xs sm:text-sm font-medium text-gray-700">
-                Recognized by DPIIT: Certificate No. DIPP186545
-            </p>
-        </div>
-    </div>
-
     <!-- Header -->
-    <header class="bg-white border-b border-gray-200 sticky top-0 z-50">
-        <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <header class="bg-white sticky top-0 z-50">
+        <nav class="container mx-auto px-4 py-2 sm:px-6 lg:px-9">
             <div class="flex justify-between items-center h-16">
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
-                    <!-- Updated to link to index.html -->
+                    <!-- UPDATED: Link to index.html -->
                     <a href="index.html" aria-label="Fexo Homepage">
-                    <img src="assests\images\icons\logo1.svg" alt="Fexo: It's Possible Logo" width="140" height="45" />
+                    <img src="assests\images\icons\logo1.svg" alt="Fexo: It's Possible Logo" width="140" height="40" />
                     </a>
                 </div>
                 
@@ -95,14 +85,15 @@
                     <a id="nav-proof" href="index.html#proof" class="nav-item text-gray-600 hover:text-[#c580dd] font-medium">Customer Impact</a>
                     <a id="nav-solutions" href="index.html#solutions" class="nav-item text-gray-600 hover:text-[#c580dd] font-medium">Solutions</a>
                     <a id="nav-demo" href="index.html#demo" class="nav-item text-gray-600 hover:text-[#c580dd] font-medium">Interactive Demo</a>
-                    <a id="nav-platform" href="index.html#platform" class="nav-item text-gray-600 hover:text-[#c580dd] font-medium">Platform</a>
-                    <a href="#contact" class="bg-[#f77422] text-white px-4 py-2 rounded-lg text-sm font-medium shadow-sm hover:bg-[#e66a1e] cta-button">
+                    <a id="nav-platform" href="index.html#platform" class="nav-item text-gray-600 pr-9 hover:text-[#c580dd] font-medium">Platform</a>
+                    <a href="#contact" class="ml-10 bg-[#f77422] text-white px-4 py-2 rounded-lg text-sm font-medium shadow-sm hover:bg-[#e66a1e] cta-button">
                         Book a Demo
                     </a>
                 </div>
 
                 <!-- Mobile Menu Button -->
                 <div class="md:hidden flex items-center">
+                    <!-- UPDATED: Hover color -->
                     <button aria-label="Toggle mobile menu" id="mobile-menu-button" class="text-gray-700 hover:text-[#7b0daa] p-2 rounded-md">
                         <svg id="menu-icon-open" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
@@ -114,15 +105,17 @@
                 </div>
             </div>
         </nav>
-
+        
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="md:hidden hidden border-t border-gray-200">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <!-- UPDATED: Links to new pages -->
+                <a href="index.html#proof" class="text-gray-600 hover:bg-gray-100 hover:text-[#7b0daa] block px-3 py-2 rounded-md text-base font-medium">Customer Impact</a>
                 <a href="index.html#solutions" class="text-gray-600 hover:bg-gray-100 hover:text-[#7b0daa] block px-3 py-2 rounded-md text-base font-medium">Solutions</a>
                 <a href="index.html#demo" class="text-gray-600 hover:bg-gray-100 hover:text-[#7b0daa] block px-3 py-2 rounded-md text-base font-medium">Interactive Demo</a>
                 <a href="index.html#platform" class="text-gray-600 hover:bg-gray-100 hover:text-[#7b0daa] block px-3 py-2 rounded-md text-base font-medium">Platform</a>
-                <a href="index.html#proof" class="text-gray-600 hover:bg-gray-100 hover:text-[#7b0daa] block px-3 py-2 rounded-md text-base font-medium">Customer Impact</a>
-                <a href="index.html#security" class="text-gray-600 hover:bg-gray-100 hover:text-[#7b0daa] block px-3 py-2 rounded-md text-base font-medium">Security</a>
+                <a href="company-about.html" class="text-gray-600 hover:bg-gray-100 hover:text-[#7b0daa] block px-3 py-2 rounded-md text-base font-medium">About Us</a>
+                <!-- UPDATED: CTA Button Colors -->
                 <a href="#contact" class="bg-[#f77422] text-white block w-full text-left px-4 py-2 rounded-lg text-base font-medium shadow-sm hover:bg-[#e66a1e] cta-button">
                     Book a Demo
                 </a>
@@ -265,53 +258,76 @@
 
     <!-- Footer -->
     <footer class="bg-gray-900 text-gray-400">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="container mx-auto px-6 sm:px-10 lg:px-16 py-12">
+
+            <!-- FIXED: grid-cols-5 so everything stays in one row -->
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <!-- Logo & Info -->
+
+                <!-- Logo -->
                 <div>
-                    <!-- Updated to link to index.html -->
                     <a href="index.html" aria-label="Fexo Homepage">
-                    <img src="assests\images\icons\logo2.svg" alt="Fexo: It's Possible Logo" width="140" height="40" />
+                        <img src="assests/images/icons/logo2.svg" alt="Fexo Logo" width="140" height="40" />
                     </a>
-                    <p class="mt-2 text-sm">Unstructured Documents, Structured Results. Accurately.</p>
-                    <p class="mt-4 text-sm">
-                        Fexo GenAI Technologies Pvt. Ltd.
-                    </p>
+                    <p class="mt-4 text-sm">Bengaluru | Mumbai | Dubai</p>
+                    <div class="ml-8 mt-5 flex justify-start items-center space-x-4">
+                        <!-- Mail -->
+                        <a href="mailto:hello@fexo.io" aria-label="Send email to hello@fexo.io">
+                            <div class="email-button">
+                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="30" width="30" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M928 160H96c-17.7 0-32 14.3-32 32v640c0 17.7 14.3 32 32 32h832c17.7 0 32-14.3 32-32V192c0-17.7-14.3-32-32-32zm-40 110.8V792H136V270.8l-27.6-21.5 39.3-50.5 42.8 33.3h643.1l42.8-33.3 39.3 50.5-27.7 21.5zM833.6 232L512 482 190.4 232l-42.8-33.3-39.3 50.5 27.6 21.5 341.6 265.6a55.99 55.99 0 0 0 68.7 0L888 270.8l27.6-21.5-39.3-50.5-42.7 33.2z">
+                                    </path>
+                                </svg> 
+                            </div>
+                        </a>
+                        <a href="https://www.linkedin.com/company/fexo" target="_blank" rel="noopener noreferrer" class="socials" aria-label="Linkedin"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="30" width="30" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z">
+                            </path>
+                        </svg>
+                    </a>
                 </div>
-                <!-- Navigation Links -->
+                </div>
+
+                <!-- Solutions -->
                 <div>
                     <h4 class="text-sm font-semibold text-gray-200 uppercase tracking-wider">Solutions</h4>
                     <ul class="mt-4 space-y-2">
-                        <!-- Updated links -->
                         <li><a href="solutions-banking.html" class="hover:text-white">Banking & Lending</a></li>
                         <li><a href="solutions-insurance.html" class="hover:text-white">Insurance</a></li>
                         <li><a href="solutions-audit.html" class="hover:text-white">Audit & Compliance</a></li>
                         <li><a href="solutions-invoice.html" class="hover:text-white">Invoice Automation</a></li>
                     </ul>
                 </div>
+
+                <!-- Company -->
                 <div>
                     <h4 class="text-sm font-semibold text-gray-200 uppercase tracking-wider">Company</h4>
                     <ul class="mt-4 space-y-2">
-                        <!-- Updated links -->
-                        <li><a href="about.html" class="hover:text-white">About Us</a></li>
-                        <li><a href="careers.html" class="hover:text-white">Careers</a></li>
-                        <li><a href="index.html#security" class="hover:text-white">Terms of Service</a></li>
-                        <li><a href="">Privacy Policy</a></li>
+                        <li><a href="company-about.html" class="hover:text-white">About Us</a></li>
+                        <li><a href="company-careers.html" class="hover:text-white">Careers</a></li>
+                        <li><a href="" class="hover:text-white">Insights & Blog</a></li>
+                        <li><a href="#security" class="hover:text-white">Terms of Service</a></li>
                     </ul>
                 </div>
+                <!-- Stay in Touch -->
                 <div>
-                    <h4 class="text-sm font-semibold text-gray-200 uppercase tracking-wider">Connect</h4>
-                    <ul class="mt-4 space-y-2">
-                        <li><a href="https://www.linkedin.com/company/fexo/" target="_blank" rel="noopener noreferrer" class="hover:text-white">LinkedIn</a></li>
-                        <li><a href="#contact" class="hover:text-white">Contact Sales</a></li>
-                    </ul>
+                    <h4 class="text-sm font-semibold text-gray-200 uppercase tracking-wider">Stay in Touch</h4>
+                    <p class="mt-4">Stay updated on our progress and the AI trends reshaping BFSI - subscribe to our monthly newsletter.</p>
+                    
+                    <a href="mailto:ir@fexo.io">
+                    <button class="cta-button mt-4 bg-[#f77422] text-white px-4 py-2 rounded-lg hover:bg-[#e66a1e]">
+                        Subscribe
+                    </button>
+                    </a>
                 </div>
             </div>
+
             <div class="mt-8 border-t border-gray-800 pt-8 text-center text-sm">
-                <p>&copy; 2025 Fexo GenAI Technologies Pvt. Ltd. All rights reserved.</p>
+                <p>© 2025 Fexo GenAI Technologies Pvt. Ltd. All rights reserved.</p>
             </div>
         </div>
     </footer>
+    <!-- Alpine.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script src="assests/js/main.js"></script>
     <!-- Mobile Menu Script -->
     <script>
@@ -342,8 +358,6 @@
             });
         }
     </script>
-    
-    <!-- Alpine.js CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
 </body>
 </html>

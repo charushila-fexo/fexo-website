@@ -1,202 +1,238 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Future of Agentic AI in Banking | Fexo Insights</title>
-    <meta name="description" content="Discover how Agentic AI is replacing traditional OCR in banking, enabling 100% automation for complex lending workflows and non-standard document analysis.">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>The Future of Agentic AI in Banking | Fexo Insights</title>
+        <meta name="description" content="Discover how Agentic AI is replacing traditional OCR in banking, enabling 100% automation for complex lending workflows and non-standard document analysis.">
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <style>
-        body { font-family: 'Inter', sans-serif; }
-        .cta-button:hover { transform: translateY(-2px); box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); }
-    </style>
-</head>
+        <!-- Tailwind CSS -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+        
+        <style>
+            body { font-family: 'Inter', sans-serif; }
+            .cta-button:hover { transform: translateY(-2px); box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); }
+        </style>
+    </head>
 
 <body class="bg-white text-gray-800">
+    <!-- header -->
+    <header class="bg-white sticky top-0 z-50">
+        <nav class="container mx-auto px-4 py-2 sm:px-6 lg:px-9">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <!-- UPDATED: Link to index.html -->
+                    <a href="index.html" aria-label="Fexo Homepage">
+                    <img src="assests\images\icons\logo1.svg" alt="Fexo: It's Possible Logo" width="140" height="40" />
+                    </a>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex md:items-center md:space-x-1">
+                    <a id="nav-proof" href="index.html#proof" class="nav-item text-gray-600 hover:text-[#c580dd] font-medium">Customer Impact</a>
+                    <a id="nav-solutions" href="index.html#solutions" class="nav-item text-gray-600 hover:text-[#c580dd] font-medium">Solutions</a>
+                    <a id="nav-demo" href="index.html#demo" class="nav-item text-gray-600 hover:text-[#c580dd] font-medium">Interactive Demo</a>
+                    <a id="nav-platform" href="index.html#platform" class="nav-item text-gray-600 pr-9 hover:text-[#c580dd] font-medium">Platform</a>
+                    <a href="#contact" class="ml-10 bg-[#f77422] text-white px-4 py-2 rounded-lg text-sm font-medium shadow-sm hover:bg-[#e66a1e] cta-button">
+                        Book a Demo
+                    </a>
+                </div>
 
-    <!-- Header (Same as Index) -->
-    <header class="bg-white border-b border-gray-200 sticky top-0 z-50">
-        <nav class="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
-            <div class="flex-shrink-0 flex items-center">
-                <a href="index.html" aria-label="Fexo Homepage">
-                    <svg width="120" height="40" viewBox="0 0 148 45" xmlns="http://www.w3.org/2000/svg">
-                        <text x="0" y="32" font-family="Inter, sans-serif" font-size="34" font-weight="800" fill="#7b0daa">fex</text>
-                        <text x="0" y="44" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#7b0daa">IT'S POSSIBLE!</text>
-                        <g transform="translate(85, 9)">
-                            <path d="M16.5 8.25C16.5 12.8063 12.8063 16.5 8.25 16.5C3.69365 16.5 0 12.8063 0 8.25C0 3.69365 3.69365 0 8.25 0C12.8063 0 16.5 3.69365 16.5 8.25Z" stroke="#7b0daa" stroke-width="4"/>
-                            <path d="M18 0H8V10H18V0Z" fill="#f77422"/>
-                        </g>
-                    </svg>
-                </a>
-            </div>
-            <div class="hidden md:flex md:items-center md:space-x-8">
-                <a href="index.html#solutions" class="text-gray-600 hover:text-[#c580dd] font-medium">Solutions</a>
-                <a href="index.html#insights" class="text-[#7b0daa] font-semibold">Resources</a> <!-- Active State -->
-                <a href="index.html#contact" class="bg-[#f77422] text-white px-4 py-2 rounded-lg text-sm font-medium shadow-sm hover:bg-[#e66a1e] cta-button">Book a Demo</a>
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <!-- UPDATED: Hover color -->
+                    <button aria-label="Toggle mobile menu" id="mobile-menu-button" class="text-gray-700 hover:text-[#7b0daa] p-2 rounded-md">
+                        <svg id="menu-icon-open" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                        <svg id="menu-icon-close" class="h-6 w-6 hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
             </div>
         </nav>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden border-t border-gray-200">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <!-- UPDATED: Links to new pages -->
+                <a href="index.html#proof" class="text-gray-600 hover:bg-gray-100 hover:text-[#7b0daa] block px-3 py-2 rounded-md text-base font-medium">Customer Impact</a>
+                <a href="index.html#solutions" class="text-gray-600 hover:bg-gray-100 hover:text-[#7b0daa] block px-3 py-2 rounded-md text-base font-medium">Solutions</a>
+                <a href="index.html#demo" class="text-gray-600 hover:bg-gray-100 hover:text-[#7b0daa] block px-3 py-2 rounded-md text-base font-medium">Interactive Demo</a>
+                <a href="index.html#platform" class="text-gray-600 hover:bg-gray-100 hover:text-[#7b0daa] block px-3 py-2 rounded-md text-base font-medium">Platform</a>
+                <a href="company-about.html" class="text-gray-600 hover:bg-gray-100 hover:text-[#7b0daa] block px-3 py-2 rounded-md text-base font-medium">About Us</a>
+                <!-- UPDATED: CTA Button Colors -->
+                <a href="#contact" class="bg-[#f77422] text-white block w-full text-left px-4 py-2 rounded-lg text-base font-medium shadow-sm hover:bg-[#e66a1e] cta-button">
+                    Book a Demo
+                </a>
+            </div>
+        </div>
     </header>
 
-    <main class="py-12 md:py-20">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            
-            <!-- Breadcrumb -->
-            <div class="text-sm text-gray-500 mb-8">
-                <a href="index.html" class="hover:text-[#7b0daa]">Home</a> <span class="mx-2">/</span> 
-                <a href="index.html#insights" class="hover:text-[#7b0daa]">Resources</a> <span class="mx-2">/</span> 
-                <span class="text-gray-800">The Future of Agentic AI in Banking</span>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        <main class="py-12 md:py-20">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                 
-                <!-- Main Article Content (8 cols) -->
-                <article class="lg:col-span-8 prose prose-lg max-w-none text-gray-700">
-                    <span class="bg-indigo-50 text-[#7b0daa] px-3 py-1 rounded-full text-sm font-bold uppercase tracking-wide">Whitepaper</span>
-                    <h1 class="text-4xl font-extrabold text-[#3d0754] mt-4 mb-4">The Future of Agentic AI in Banking: Beyond OCR</h1>
-                    <div class="flex items-center space-x-4 text-gray-500 text-sm mb-8">
-                        <span>October 24, 2025</span>
-                        <span>•</span>
-                        <span>8 min read</span>
-                    </div>
+                <!-- Breadcrumb -->
+                <div class="text-sm text-gray-500 mb-8">
+                    <a href="index.html" class="hover:text-[#7b0daa]">Home</a> <span class="mx-2">/</span> 
+                    <a href="index.html#insights" class="hover:text-[#7b0daa]">Resources</a> <span class="mx-2">/</span> 
+                    <span class="text-gray-800">The Future of Agentic AI in Banking</span>
+                </div>
 
-                    <img src="https://placehold.co/800x400/f7ebf6/7b0daa?text=Agentic+AI+Workflow" alt="Diagram of Agentic AI Workflow in Banking" class="rounded-xl shadow-md mb-8 w-full">
-
-                    <p class="lead text-xl text-gray-600 mb-6">
-                        Traditional Optical Character Recognition (OCR) hit its ceiling years ago. While it can read text, it cannot understand context. In the complex world of SME lending, where every borrower’s financial story is unique, this lack of understanding creates a massive bottleneck. Enter Agentic AI.
-                    </p>
-
-                    <h2 class="text-2xl font-bold text-[#3d0754] mt-8 mb-4">Why "Template-Based" Automation Fails</h2>
-                    <p class="mb-4">
-                        Most automation tools rely on templates. If a bank statement comes in a standard format, they work. But if a borrower submits a blurred photo of a ledger, or a non-standard invoice from a local vendor, the system breaks. This forces credit teams to revert to manual review, killing efficiency.
-                    </p>
-
-                    <h2 class="text-2xl font-bold text-[#3d0754] mt-8 mb-4">The Agentic Difference</h2>
-                    <p class="mb-4">
-                        Agentic AI, like FexoLM, doesn't just "read" documents; it reasons about them. It acts like a human analyst:
-                    </p>
-                    <ul class="list-disc pl-6 space-y-2 mb-6">
-                        <li><strong>It Plans:</strong> It looks at the document and decides the best strategy to extract data.</li>
-                        <li><strong>It Triangulates:</strong> It cross-references the invoice amount with the bank statement transaction.</li>
-                        <li><strong>It Adapts:</strong> If it encounters a new format, it uses logic to interpret it, rather than failing.</li>
-                    </ul>
-
-                    <div class="bg-[#f7ebf6] p-6 rounded-lg border-l-4 border-[#7b0daa] my-8">
-                        <h4 class="font-bold text-[#3d0754] text-lg mb-2">Key Takeaway</h4>
-                        <p class="text-[#3d0754]">
-                            Banks deploying Agentic AI are seeing a <strong>5x increase in processing capacity</strong> and a <strong>40% reduction in fraud</strong> by catching inconsistencies that standard OCR misses.
-                        </p>
-                    </div>
-
-                    <h2 class="text-2xl font-bold text-[#3d0754] mt-8 mb-4">Conclusion</h2>
-                    <p>
-                        The future of banking isn't just digital; it's intelligent. By moving beyond static templates to dynamic, agentic workflows, lenders can finally automate the "messy" 20% of work that consumes 80% of their time.
-                    </p>
-                </article>
-
-                <!-- Sidebar (4 cols) -->
-                <aside class="lg:col-span-4 space-y-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
                     
-                    <!-- CTA Box -->
-                    <div class="bg-[#3d0754] p-8 rounded-xl text-white shadow-lg sticky top-24">
-                        <h3 class="text-2xl font-bold mb-4">See Agentic AI in Action</h3>
-                        <p class="text-gray-200 mb-6">Don't just take our word for it. Upload a complex document and see Fexo analyze it in real-time.</p>
-                        <a href="index.html#contact" class="block w-full text-center bg-[#f77422] text-white font-bold py-3 rounded-lg hover:bg-[#e66a1e] transition-colors cta-button">
-                            Book a Personalized Demo
-                        </a>
-                        <p class="text-xs text-gray-400 mt-4 text-center">Trusted by Small Finance Banks & Leading NBFCs</p>
-                    </div>
-
-                    <!-- Related Articles -->
-                    <div>
-                        <h3 class="text-lg font-bold text-gray-900 border-b border-gray-200 pb-2 mb-4">Related Insights</h3>
-                        <div class="space-y-4">
-                            <a href="#" class="block group">
-                                <h4 class="text-md font-semibold text-gray-800 group-hover:text-[#7b0daa] transition-colors">Mastering IndAS 116 Compliance</h4>
-                                <p class="text-sm text-gray-500 mt-1">Technical Guide • 12 min read</p>
-                            </a>
-                            <a href="#" class="block group">
-                                <h4 class="text-md font-semibold text-gray-800 group-hover:text-[#7b0daa] transition-colors">Case Study: Reducing Claims Leakage</h4>
-                                <p class="text-sm text-gray-500 mt-1">Case Study • 5 min read</p>
-                            </a>
+                    <!-- Main Article Content (8 cols) -->
+                    <article class="lg:col-span-8 prose prose-lg max-w-none text-gray-700">
+                        <span class="bg-indigo-50 text-[#7b0daa] px-3 py-1 rounded-full text-sm font-bold uppercase tracking-wide">Whitepaper</span>
+                        <h1 class="text-4xl font-extrabold text-[#3d0754] mt-4 mb-4">The Future of Agentic AI in Banking: Beyond OCR</h1>
+                        <div class="flex items-center space-x-4 text-gray-500 text-sm mb-8">
+                            <span>October 24, 2025</span>
+                            <span>•</span>
+                            <span>8 min read</span>
                         </div>
+
+                        <img src="https://placehold.co/800x400/f7ebf6/7b0daa?text=Agentic+AI+Workflow" alt="Diagram of Agentic AI Workflow in Banking" class="rounded-xl shadow-md mb-8 w-full">
+
+                        <p class="lead text-xl text-gray-600 mb-6">
+                            Traditional Optical Character Recognition (OCR) hit its ceiling years ago. While it can read text, it cannot understand context. In the complex world of SME lending, where every borrower’s financial story is unique, this lack of understanding creates a massive bottleneck. Enter Agentic AI.
+                        </p>
+
+                        <h2 class="text-2xl font-bold text-[#3d0754] mt-8 mb-4">Why "Template-Based" Automation Fails</h2>
+                        <p class="mb-4">
+                            Most automation tools rely on templates. If a bank statement comes in a standard format, they work. But if a borrower submits a blurred photo of a ledger, or a non-standard invoice from a local vendor, the system breaks. This forces credit teams to revert to manual review, killing efficiency.
+                        </p>
+
+                        <h2 class="text-2xl font-bold text-[#3d0754] mt-8 mb-4">The Agentic Difference</h2>
+                        <p class="mb-4">
+                            Agentic AI, like FexoLM, doesn't just "read" documents; it reasons about them. It acts like a human analyst:
+                        </p>
+                        <ul class="list-disc pl-6 space-y-2 mb-6">
+                            <li><strong>It Plans:</strong> It looks at the document and decides the best strategy to extract data.</li>
+                            <li><strong>It Triangulates:</strong> It cross-references the invoice amount with the bank statement transaction.</li>
+                            <li><strong>It Adapts:</strong> If it encounters a new format, it uses logic to interpret it, rather than failing.</li>
+                        </ul>
+
+                        <div class="bg-[#f7ebf6] p-6 rounded-lg border-l-4 border-[#7b0daa] my-8">
+                            <h4 class="font-bold text-[#3d0754] text-lg mb-2">Key Takeaway</h4>
+                            <p class="text-[#3d0754]">
+                                Banks deploying Agentic AI are seeing a <strong>5x increase in processing capacity</strong> and a <strong>40% reduction in fraud</strong> by catching inconsistencies that standard OCR misses.
+                            </p>
+                        </div>
+
+                        <h2 class="text-2xl font-bold text-[#3d0754] mt-8 mb-4">Conclusion</h2>
+                        <p>
+                            The future of banking isn't just digital; it's intelligent. By moving beyond static templates to dynamic, agentic workflows, lenders can finally automate the "messy" 20% of work that consumes 80% of their time.
+                        </p>
+                    </article>
+
+                    <!-- Sidebar (4 cols) -->
+                    <aside class="lg:col-span-4 space-y-8">
+                        
+                        <!-- CTA Box -->
+                        <div class="bg-[#3d0754] p-8 rounded-xl text-white shadow-lg sticky top-24">
+                            <h3 class="text-2xl font-bold mb-4">See Agentic AI in Action</h3>
+                            <p class="text-gray-200 mb-6">Don't just take our word for it. Upload a complex document and see Fexo analyze it in real-time.</p>
+                            <a href="index.html#contact" class="block w-full text-center bg-[#f77422] text-white font-bold py-3 rounded-lg hover:bg-[#e66a1e] transition-colors cta-button">
+                                Book a Personalized Demo
+                            </a>
+                            <p class="text-xs text-gray-400 mt-4 text-center">Trusted by Small Finance Banks & Leading NBFCs</p>
+                        </div>
+
+                        <!-- Related Articles -->
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-900 border-b border-gray-200 pb-2 mb-4">Related Insights</h3>
+                            <div class="space-y-4">
+                                <a href="#" class="block group">
+                                    <h4 class="text-md font-semibold text-gray-800 group-hover:text-[#7b0daa] transition-colors">Mastering IndAS 116 Compliance</h4>
+                                    <p class="text-sm text-gray-500 mt-1">Technical Guide • 12 min read</p>
+                                </a>
+                                <a href="#" class="block group">
+                                    <h4 class="text-md font-semibold text-gray-800 group-hover:text-[#7b0daa] transition-colors">Case Study: Reducing Claims Leakage</h4>
+                                    <p class="text-sm text-gray-500 mt-1">Case Study • 5 min read</p>
+                                </a>
+                            </div>
+                        </div>
+
+                    </aside>
+
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-gray-900 text-gray-400">
+            <div class="container mx-auto px-6 sm:px-10 lg:px-16 py-12">
+
+                <!-- FIXED: grid-cols-5 so everything stays in one row -->
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+
+                    <!-- Logo -->
+                    <div>
+                        <a href="index.html" aria-label="Fexo Homepage">
+                            <img src="assests/images/icons/logo2.svg" alt="Fexo Logo" width="140" height="40" />
+                        </a>
+                        <p class="mt-4 text-sm">Bengaluru | Mumbai | Dubai</p>
+                        <div class="ml-8 mt-5 flex justify-start items-center space-x-4">
+                            <!-- Mail -->
+                            <a href="mailto:hello@fexo.io" aria-label="Send email to hello@fexo.io">
+                                <div class="email-button">
+                                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="30" width="30" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M928 160H96c-17.7 0-32 14.3-32 32v640c0 17.7 14.3 32 32 32h832c17.7 0 32-14.3 32-32V192c0-17.7-14.3-32-32-32zm-40 110.8V792H136V270.8l-27.6-21.5 39.3-50.5 42.8 33.3h643.1l42.8-33.3 39.3 50.5-27.7 21.5zM833.6 232L512 482 190.4 232l-42.8-33.3-39.3 50.5 27.6 21.5 341.6 265.6a55.99 55.99 0 0 0 68.7 0L888 270.8l27.6-21.5-39.3-50.5-42.7 33.2z">
+                                        </path>
+                                    </svg> 
+                                </div>
+                            </a>
+                            <a href="https://www.linkedin.com/company/fexo" target="_blank" rel="noopener noreferrer" class="socials" aria-label="Linkedin"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="30" width="30" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z">
+                                </path>
+                            </svg>
+                        </a>
+                    </div>
                     </div>
 
-                </aside>
+                    <!-- Solutions -->
+                    <div>
+                        <h4 class="text-sm font-semibold text-gray-200 uppercase tracking-wider">Solutions</h4>
+                        <ul class="mt-4 space-y-2">
+                            <li><a href="solutions-banking.html" class="hover:text-white">Banking & Lending</a></li>
+                            <li><a href="solutions-insurance.html" class="hover:text-white">Insurance</a></li>
+                            <li><a href="solutions-audit.html" class="hover:text-white">Audit & Compliance</a></li>
+                            <li><a href="solutions-invoice.html" class="hover:text-white">Invoice Automation</a></li>
+                        </ul>
+                    </div>
 
+                    <!-- Company -->
+                    <div>
+                        <h4 class="text-sm font-semibold text-gray-200 uppercase tracking-wider">Company</h4>
+                        <ul class="mt-4 space-y-2">
+                            <li><a href="company-about.html" class="hover:text-white">About Us</a></li>
+                            <li><a href="company-careers.html" class="hover:text-white">Careers</a></li>
+                            <li><a href="" class="hover:text-white">Insights & Blog</a></li>
+                            <li><a href="#security" class="hover:text-white">Terms of Service</a></li>
+                        </ul>
+                    </div>
+                    <!-- Stay in Touch -->
+                    <div>
+                        <h4 class="text-sm font-semibold text-gray-200 uppercase tracking-wider">Stay in Touch</h4>
+                        <p class="mt-4">Stay updated on our progress and the AI trends reshaping BFSI - subscribe to our monthly newsletter.</p>
+                        
+                        <a href="mailto:ir@fexo.io">
+                        <button class="cta-button mt-4 bg-[#f77422] text-white px-4 py-2 rounded-lg hover:bg-[#e66a1e]">
+                            Subscribe
+                        </button>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="mt-8 border-t border-gray-800 pt-8 text-center text-sm">
+                    <p>© 2025 Fexo GenAI Technologies Pvt. Ltd. All rights reserved.</p>
+                </div>
             </div>
-        </div>
-    </main>
+        </footer>
 
-<!-- Footer -->
-    <footer class="bg-gray-900 text-gray-400">
-    <div class="container mx-auto px-6 sm:px-10 lg:px-16 py-12">
-
-        <!-- FIXED: grid-cols-5 so everything stays in one row -->
-        <div class="grid grid-cols-1 md:grid-cols-5 gap-8">
-
-            <!-- Logo -->
-            <div>
-                <a href="index.html" aria-label="Fexo Homepage">
-                    <img src="assests/images/icons/logo2.svg" alt="Fexo Logo" width="140" height="40" />
-                </a>
-                <p class="mt-4 text-sm">Bengaluru | Mumbai | Dubai</p>
-            </div>
-
-            <!-- Solutions -->
-            <div>
-                <h4 class="text-sm font-semibold text-gray-200 uppercase tracking-wider">Solutions</h4>
-                <ul class="mt-4 space-y-2">
-                    <li><a href="solutions-banking.html" class="hover:text-white">Banking & Lending</a></li>
-                    <li><a href="solutions-insurance.html" class="hover:text-white">Insurance</a></li>
-                    <li><a href="solutions-audit.html" class="hover:text-white">Audit & Compliance</a></li>
-                    <li><a href="solutions-invoice.html" class="hover:text-white">Invoice Automation</a></li>
-                </ul>
-            </div>
-
-            <!-- Company -->
-            <div>
-                <h4 class="text-sm font-semibold text-gray-200 uppercase tracking-wider">Company</h4>
-                <ul class="mt-4 space-y-2">
-                    <li><a href="company-about.html" class="hover:text-white">About Us</a></li>
-                    <li><a href="company-careers.html" class="hover:text-white">Careers</a></li>
-                    <li><a href="#security" class="hover:text-white">Terms of Service</a></li>
-                    <li><a href="" class="hover:text-white">Privacy Policy</a></li>
-                </ul>
-            </div>
-
-            <!-- Connect -->
-            <div>
-                <h4 class="text-sm font-semibold text-gray-200 uppercase tracking-wider">Connect</h4>
-                <ul class="mt-4 space-y-2">
-                    <li><a href="https://www.linkedin.com/company/fexo/" class="hover:text-white">LinkedIn</a></li>
-                    <li><a href="#contact" class="hover:text-white">Contact Sales</a></li>
-                </ul>
-            </div>
-
-            <!-- Stay in Touch -->
-            <div>
-                <h4 class="text-sm font-semibold text-gray-200 uppercase tracking-wider">Stay in Touch</h4>
-                <p class="mt-4">Subscribe to Newsletter. For monthly update on AI in BFSI.</p>
-
-                <input type="email" placeholder="Your email address"
-                    class="mt-4 w-full px-3 py-2 bg-gray-800 text-gray-200 border border-gray-700 rounded focus:ring-2 focus:ring-[#f77422]" />
-
-                <button class="cta-button mt-4 bg-[#f77422] text-white px-4 py-2 rounded-lg hover:bg-[#e66a1e]">
-                    Subscribe
-                </button>
-            </div>
-        </div>
-
-        <div class="mt-8 border-t border-gray-800 pt-8 text-center text-sm">
-            <p>© 2025 Fexo GenAI Technologies Pvt. Ltd. All rights reserved.</p>
-        </div>
-    </div>
-</footer>
-
-</body>
+    </body>
 </html>
