@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Legal & Compliance | Fexo</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="assests/css/contentStyle.css" rel="stylesheet">
+
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Alpine.js (for tabs) -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .tab-active {
+            color: #3d0754;
+            border-bottom: 3px solid #3d0754;
+        }
+
+        .tab-inactive {
+            color: #111;
+            border-bottom: 1px solid #d1d5db;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+    <!-- Header -->
+    <header class="bg-white sticky top-0 z-50">
+        <nav class="container mx-auto px-4 py-2 sm:px-6 lg:px-9">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <!-- UPDATED: Link to index.html -->
+                    <a href="index.html" aria-label="Fexo Homepage">
+                    <img src="assests\images\icons\logo1.svg" alt="Fexo: It's Possible Logo" width="140" height="40" />
+                    </a>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex md:items-center md:space-x-1">
+                    <a href="index.html" class="ml-10 bg-[#f77422] text-white px-4 py-2 rounded-lg text-sm font-medium shadow-sm hover:bg-[#e66a1e] cta-button">
+                        Home
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <!-- UPDATED: Hover color -->
+                    <button aria-label="Toggle mobile menu" id="mobile-menu-button" class="text-gray-700 hover:text-[#7b0daa] p-2 rounded-md">
+                        <svg id="menu-icon-open" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                        <svg id="menu-icon-close" class="h-6 w-6 hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden border-t border-gray-200">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            
+                <a href="index.html" class="bg-[#f77422] text-white block w-full text-left px-4 py-2 rounded-lg text-base font-medium shadow-sm hover:bg-[#e66a1e] cta-button">
+                    Home
+                </a>
+            </div>
+        </div>
+    </header>
+    <div class="max-w-6xl mx-auto px-6 py-12"
+        x-data="{ activeTab: 'terms' }">
+
+        <!-- TABS -->
+        <div class="flex flex-wrap gap-8 border-b border-gray-300 pb-3">
+
+            <template x-for="tab in [
+                { id: 'terms', label: 'Terms of Service' },
+                { id: 'privacy', label: 'Privacy Policy' },
+                { id: 'subprocessors', label: 'Subprocessors' },
+                { id: 'gdpr', label: 'GDPR' },
+                { id: 'security', label: 'Security Policy' },
+                { id: 'cookie', label: 'Cookie policy' },
+                { id: 'sla', label: 'Service Levels' }
+            ]">
+                <button @click="activeTab = tab.id"
+                    class="pb-3 text-[18px] font-medium"
+                    :class="activeTab === tab.id ? 'tab-active' : 'tab-inactive'">
+                    <span x-text="tab.label"></span>
+                </button>
+            </template>
+        </div>
+
+        <!-- CONTENT SECTIONS -->
+
+        <!-- TERMS OF SERVICE -->
+        <div x-show="activeTab === 'terms'" x-transition class="mt-10 leading-relaxed">
+            <div class="middle-container bg-zinc-100 pt-5">
+                <div class="text-justify">
+                    <p class="text-stone-900 text-base font-normal ">Effective From: 1st November 2024</p>
+                    <h2 class="static-subheading">1. INTRODUCTION</h2>
+                    <p class="text-stone-900 text-base font-normal ">The Terms of Services ("Agreement" “Terms”) governs the use of
+                        the software platform by name Fexo (“Service”) provided by Fexo GenAI Technologies Private Limited (“Fexo”
+                        “Company” “we” “us” “our”) to you (“Customer” “User” “your” “you”).<br><br>By accessing or using the
+                        Service, you agree to these Terms.<br></p>
+                    <h2 class="static-subheading">2. ACCEPTANCE OF TERMS OF SERVICES</h2>
+                    <p class="text-stone-900 text-base font-normal ">By creating and registering an account on Services’ website,
+                        located at <a class="underline text-purple-800" rel="noopener noreferrer" href="https://www.fexo.io"
+                            target="_blank">www.fexo.io</a> ("Website") or any subdomains, like <a class="underline text-purple-800"
+                            rel="noopener noreferrer" href="https://app.fexo.io" target="_blank">app.fexo.io</a> ("Website"), and
+                        mutually executing one or more order forms referencing these terms (each, an "Order"), or by accessing or
+                        using the Service in any manner, you hereby agree to be bound by these terms. This Agreement, together with
+                        all order forms, constitutes the entire understanding between the parties, to the exclusion of all other
+                        terms. You affirm that (A) you are at least 18 years of age; (B) you have the authority to enter into this
+                        agreement; and (C) if entering into this agreement on behalf of an organization or entity, you have the
+                        authority to bind such entity and its affiliates to these terms. In such cases, the terms "Customer," "You,"
+                        and "Your" shall refer to the entity and its affiliates. If you lack such authority or disagree with the
+                        terms of this agreement, you are not permitted to use or access the services in any manner. Acceptance, if
+                        the terms are considered an offer, is expressly limited to such terms.<br></p>
+                    <h2 class="static-subheading">3. SERVICE &amp; LICENSE</h2>
+                    <p class="text-stone-900 text-base font-normal ">3.1 Services. Fexo provides Services to its Customers, located
+                        at its Website, fully described under an applicable "Order" (as defined under Section 3.4). Fexo will use
+                        commercially reasonable efforts to make the Services on its Website available to the Customer, subject to
+                        receipt of the applicable Fees (as detailed under an Order).<br><br>3.2 License to Fexo Services. Fexo
+                        grants the Customer a limited, non-exclusive, non-sub-licensable, non-transferable, non-assignable right to
+                        access and use the Website for the Term (as defined under Section 8.1), solely for internal business
+                        purposes and in compliance with any additional limitations specified under an applicable Order.<br><br>3.3
+                        On-Premise Deployment. If Customer accesses the Website through an on-premises deployment, the right to
+                        access such service is limited to the time period mentioned in the applicable Order. Use of the Services
+                        through such deployment is limited, non-exclusive, non-sub-licensable, non-transferable, and non-assignable.
+                        Upon the lapse of the applicable Service duration, Customer must destroy and permanently delete all Fexo
+                        data from their premises. Fexo retains the right to inspect and audit customer's servers for Fexo usage data
+                        and any violation of the limited license for one year after the lapse of the applicable Service duration.
+                        Unauthorized consumption of additional licenses without prior payment constitutes a material breach,
+                        remediable only by pro-rata payment to Fexo.<br><br>3.4 Order. For the purposes of this Agreement, an
+                        "Order" is defined as an order form or other similar document (including but not limited to an online order
+                        form) that details the Services being provided hereunder and the applicable Fees to be paid by the Customer
+                        to Fexo. The Order may also provide details regarding the service level terms (if any). In the event of a
+                        conflict between the Order and the Terms of Service, the Order will prevail.<br><br>3.5 Trials. If Customer
+                        accesses the Service on a trial basis, use is limited to specified service levels, and the trial is provided
+                        "as-is" without indemnification, support, or warranties.<br><br>3.6 No-Fee Access. If Customer uses the
+                        Service on a no-fee basis (Limited Use), use is subject to specified service levels, and the Limited Use is
+                        provided "as-is" without indemnification, support, or warranties.<br><br>3.7 Support Services. Fexo may
+                        provide Support Services subject to additional Fees detailed in an applicable Order.<br><br>3.8 Service
+                        Suspension. Fexo may suspend Customer's access to the Services for security reasons, insolvency, breach of
+                        the Agreement, or failure to pay Fees.<br></p>
+                    <h2 class="static-subheading">4. RESTRICTIONS &amp; RESERVATIONS</h2>
+                    <p class="text-stone-900 text-base font-normal ">4.1 Restrictions. Customers agree to use the Services in
+                        compliance with applicable laws, including data protection and privacy laws. Customers must not alter
+                        proprietary notices, reverse engineer, or allow third-party access.<br><br>4.2 Reservation. The Services are
+                        provided under license, and nothing grants ownership rights. Fexo and its licensors retain all rights,
+                        title, and interest in the Services, except as expressly granted in this Agreement.<br></p>
+                    <h2 class="static-subheading">5. PROPRIETARY RIGHTS</h2>
+                    <p class="text-stone-900 text-base font-normal ">5.1 Ownership. Fexo retains all rights, title, and interest,
+                        whether pre-existing or otherwise, in and to the Services, as well as any software, products, works, or
+                        other intellectual property created, used, provided, or made available by Fexo under or in connection with
+                        the Services pursuant to this Agreement. Additionally, Fexo is the owner of the "Service Software" embedded
+                        in the Services. For the purpose of this Agreement, "Service Software" encompasses any Fexo or third-party
+                        software code, computer program, documentation, new versions, updates, enhancements, upgrades, revisions,
+                        improvements, and modifications of the foregoing that Fexo has embedded into the Services. This proprietary
+                        Service Software is owned by Fexo and is provided to the Customer under this Agreement. The Customer
+                        acknowledges that Fexo holds all rights related to the Service Software. Subject to the terms and conditions
+                        of this Agreement, including the receipt of all applicable fees, Fexo grants the Customer a limited,
+                        non-exclusive, non-transferable, non-assignable, and non-sub-licensable license to run such Service Software
+                        solely as necessary to make use of the Services.<br><br>5.2 Restrictions. The Customer agrees not to: (a)
+                        exceed the scope of the licenses granted in Section 5.1; (b) make copies of the Service Software; (c)
+                        distribute, sublicense, assign, delegate, rent, lease, sell, time-share, or otherwise transfer the benefits
+                        of, use under, or rights to the license granted in Section 3.2 and Section 5.1; (d) reverse engineer,
+                        decompile, disassemble, or otherwise attempt to learn the source code, structure, or algorithms underlying
+                        the software, except to the extent required to be permitted under applicable law; (e) modify, translate, or
+                        create derivative works of the Service Software; (f) remove any copyright, trademark, patent, or other
+                        proprietary notice that appears on the Service Software or copies thereof; or (g) combine or distribute any
+                        of the Service Software with any third-party software that is licensed under terms requiring the provision
+                        of software (or any associated intellectual property rights) in source code form (e.g., as "open source"),
+                        licensed to others to allow the creation or distribution of derivative works, or distributed without
+                        charge.<br><br>5.3 Feedback. Customer may provide suggestions, comments, or other feedback to Fexo regarding
+                        the Services ("Feedback"). Customer grants Fexo a nonexclusive, worldwide, perpetual, irrevocable,
+                        transferable, sub-licensable, royalty-free, fully paid-up license to use and exploit the Feedback for any
+                        purpose.<br><br>5.4 Disclaimer. Nothing in this Agreement will impair Fexo's right to develop, acquire,
+                        license, market, promote, or distribute products, software, or technologies that perform the same or similar
+                        functions as, or otherwise compete with any products, software, or technologies that the Customer may
+                        develop, produce, market, or distribute.<br></p>
+                    <h2 class="static-subheading">6. DATA PRIVACY</h2>
+                    <p class="text-stone-900 text-base font-normal ">6.1 Fexo Privacy Policy. Fexo's current Privacy Policy is
+                        accessible at the <a class="underline text-purple-800" rel="noopener noreferrer" hhref="#privacy" @click.prevent="activeTab = 'privacy'"
+                            target="_blank">"Privacy Policy"</a> (the "Privacy Policy"), and it is incorporated herein by reference.
+                        Please review the Privacy Policy to understand Fexo's information collection, usage, and disclosure
+                        practices with respect to information collected through the Services.<br><br>6.2 Customer Data. Customer
+                        Data is and shall remain the property of the Customer. For the purpose of this Agreement, "Customer Data"
+                        refers to any data, information, or other material provided, uploaded, or submitted by the Customer to the
+                        Service during the use of the Services. Customer, not Fexo, is solely responsible for the accuracy, quality,
+                        integrity, legality, reliability, appropriateness, and intellectual property ownership or right to use all
+                        Customer Data. Customer grants Fexo a non-exclusive, non-transferable, non-sub-licensable, worldwide,
+                        royalty-free license to use, collect, transfer, and process the Customer Data solely for providing the
+                        Services to the Customer under the terms of the applicable Order and this Agreement.<br><br>6.3 Derived
+                        Data. Customer understands and acknowledges that Fexo may generate "Derived Data" from the Customer Data.
+                        "Derived Data" refers to data submitted to, collected by, or generated by Fexo from the Customer Data in
+                        connection with the Customer's use of the Services. Customer agrees that Fexo may use Derived Data for its
+                        internal business purposes, including improving, testing, operating, promoting, and marketing Fexo's
+                        products and services.<br><br>6.4 Customer Responsibility. Customer is solely responsible for Customer Data,
+                        including but not limited to: (a) compliance with all applicable laws and this Agreement; (b) any claims
+                        related to Customer Data; (c) any claims that Customer Data infringes, misappropriates, or otherwise
+                        violates the rights of any third party; and (d) backing up and maintaining Customer Data.<br><br>6.5 GDPR
+                        Reference. If Fexo processes Customer's "Personal Data" under this Agreement, and such Personal Data is
+                        subject to the EU General Data Protection Regulation (GDPR), the Customer may require Fexo to enter into a
+                        Data Processing Agreement ("DPA"). Under such a DPA, Fexo shall be the data "Processor," and the Customer
+                        shall be the data "Controller." The processing of Personal Data under this Agreement is subject to Fexo's
+                        DPA. The Customer may request to enter into the Fexo DPA in reference to the Services by sending a request
+                        to <span class="underline text-purple-800 cursor-pointer">hello@fexo.io</span>. All capitalized terms not
+                        defined under this Section 6.5 shall have the same meaning as ascribed to them under Article 4 of
+                        GDPR.<br><br>6.6 Fexo's Responsibility. Fexo will use commercially reasonable efforts to maintain the
+                        security and integrity of the Services and all Customer Data controlled by Fexo. Fexo is not responsible for
+                        unauthorized access to Customer Data or the unauthorized use of the Services unless such access is directly
+                        due to Fexo's gross negligence or willful misconduct. Customer is responsible for the use of the Services by
+                        any person to whom Customer has given access, even if Customer did not authorize such use. Fexo reserves the
+                        right to retain Customer Data for up to ninety (90) days following the termination or expiration of the
+                        corresponding Order. Thereafter, Customer agrees and acknowledges that Customer Data may be irretrievably
+                        deleted.<br></p>
+                    <h2 class="static-subheading">7. FEES, ORDERS, AND TAXES</h2>
+                    <p class="text-stone-900 text-base font-normal ">7.1 Fees. Customer shall pay Fexo the fees as set forth in each
+                        applicable Order(s) (collectively, the "Fees"). Customer acknowledges that it has no right to return the
+                        Services, and all Fees are non-refundable. If Fexo is required to initiate legal action due to non-payment
+                        of fees, Customer shall bear all costs resulting from the collection of such fees.<br><br>7.2 Additional
+                        Services. Customer may place Orders for additional Services or extend the term of existing Services by
+                        specifying order details in an Order form agreed to in writing by the parties, referencing the terms and
+                        conditions of this Agreement.<br><br>7.3 Taxes. If Fexo has the legal obligation under applicable law to pay
+                        or collect taxes for which the Customer is responsible, the appropriate amount shall be invoiced to and paid
+                        by the Customer. This includes but is not limited to sales, use, transfer, privilege, excise, and all other
+                        taxes and duties imposed by reason of Fexo's performance.<br></p>
+                    <h2 class="static-subheading">8. TERM AND TERMINATION</h2>
+                    <p class="text-stone-900 text-base font-normal ">8.1 Duration. This Agreement becomes effective on the
+                        "Effective Date" and remains in force until the conclusion of the term specified in the last Order (the
+                        "Term"), unless earlier terminated as outlined in Section 8. The Effective Date refers to when the Customer
+                        enters into this Agreement, signs an Order, or commences the use of our Services during the Trial. Each
+                        Order will automatically renew at the end of its term, unless either party provides written notice of
+                        non-renewal before the current term concludes.<br><br>8.2 Termination for Breach. Either party may terminate
+                        this Agreement or specific Orders: (a) if the other party materially breaches the Agreement, with a 30-day
+                        notice for remediable breaches, or immediate notice for non-remediable breaches; or (b) if Fexo, with
+                        written notice, determines that Customer has made attempts to assign for the benefit of creditors,
+                        compositions with creditors, or has actions or proceedings under bankruptcy or insolvency laws within an
+                        unresolved 60-day period.<br><br>8.3 Consequences of Termination. Upon expiration or termination, Customer
+                        must (i) cease Service use and (ii) return all Fexo Confidential Information, provided software, and related
+                        materials. Termination does not exempt Customer from the obligation to pay all Fees accrued before
+                        termination. If Fexo terminates under Section 8.2 (a), Customer must pay all Fees for the entire term
+                        specified in the corresponding Order(s).<br><br>8.4 Survival. Provisions in Sections 5.1 (Ownership), 8.3
+                        (Consequences of Termination), 8.4 (Survival), 9 (Confidentiality), 10.1 (Customer Indemnification), 12
+                        (Limitation of Liability), and 14 (Miscellaneous) persist after Agreement termination.<br></p>
+                    <h2 class="static-subheading">9. CONFIDENTIALITY</h2>
+                    <p class="text-stone-900 text-base font-normal ">During this Agreement's term, both parties may share
+                        confidential and proprietary materials and information ("Confidential Information"). Any information
+                        identified as "Confidential" or similar, and information the receiving party should reasonably know is the
+                        disclosing party's Confidential Information, is considered Confidential Information. The Agreement itself
+                        and all pricing terms fall under Fexo Confidential Information. The receiving party must maintain
+                        confidentiality, not disclose to third parties without written consent, and use the information internally
+                        for agreed-upon purposes. Exceptions include information publicly available without breach, independently
+                        developed, disclosed by a third party without restrictions, or lawfully possessed by the receiving party
+                        before disclosure. The receiving party may disclose Confidential Information under legal requirements, with
+                        prompt written notice to the disclosing party.<br></p>
+                    <h2 class="static-subheading">10. INDEMNIFICATION</h2>
+                    <p class="text-stone-900 text-base font-normal ">10.1 Customer's Indemnification. Customer will defend,
+                        indemnify, and hold Fexo, its affiliates, suppliers, and licensors, along with their officers, directors,
+                        employees, and representatives, harmless from claims, damages, losses, liabilities, costs, and expenses
+                        (including reasonable attorneys' fees) related to: (a) Customer Data; (b) breach of this Agreement or
+                        violation of applicable law by Customer; or (c) alleged infringement or misappropriation of third-party
+                        intellectual property rights resulting from Customer Data or caused by the Customer.<br><br>10.2 Fexo'
+                        Indemnification. Fexo will defend, indemnify, and hold Customer harmless from third-party claims, damages,
+                        losses, liabilities, costs, and expenses (including reasonable attorneys' fees) arising from claims that
+                        Customer's use of the Service directly infringes or misappropriates a third party's intellectual property
+                        rights ("Infringement Claim"). Fexo has no obligation for Infringement Claims arising from: (a) combining
+                        Customer Data with the Service; (b) combining third-party products or services (excluding Fexo-provided)
+                        with the Service; or (c) non-discretionary designs or specifications provided by Customer causing the
+                        Infringement Claim. Customer must reimburse Fexo for damages, losses, costs, and expenses due to the
+                        mentioned actions.<br><br>10.3 Claim Notice and Indemnity Procedure. In seeking indemnity, the Indemnified
+                        Party must (a) notify the indemnifying party in writing within 30 days of a claim, providing necessary
+                        information for evaluation, and (b) allow the indemnifying party to control the defense, including choosing
+                        counsel. Cooperation is required. The indemnifying party has no obligation for losses, damages, or
+                        settlements incurred by the Indemnified Party without prior written consent. This Section constitutes the
+                        complete understanding of the parties regarding liability, including Infringement Claims, and
+                        indemnification.<br></p>
+                    <h2 class="static-subheading">11. WARRANTY</h2>
+                    <p class="text-stone-900 text-base font-normal ">11.1 Service Warranty. The Services, used as specified in this
+                        Agreement and in compliance with applicable specifications, will perform the functions described in the
+                        corresponding Order ("Specification") in all material respects throughout the Order's term.<br><br>11.2
+                        Remedies. Customer must report any breach of the warranty in Section 11.1 to Fexo. In case of a breach by
+                        Fexo, Customer's exclusive remedy and Fexo's sole liability is the prompt correction of material
+                        non-conformance to minimize adverse effects on Customer's business.<br><br>11.3 No Implied Warranties. Fexo
+                        does not guarantee uninterrupted or error-free Service operation, or compatibility with external hardware,
+                        software, systems, or data not provided by Fexo. Except for Section 11.1, Fexo excludes all other express or
+                        implied warranties, including but not limited to merchantability, fitness for a particular purpose,
+                        satisfactory quality, or non-infringement.<br></p>
+                    <h2 class="static-subheading">12. Disclaimer and Limitation of Liability</h2>
+                    <p class="text-stone-900 text-base font-normal ">12.1 Fexo is a Decision-Support Tool. Customer acknowledges
+                        that the Fexo platform and the services it provides are designed to be a decision-support tool. The platform
+                        automates the collation, extraction, and analysis of data from documents you provide. The reports,
+                        summaries, risk flags, and recommendations generated by the platform are for informational purposes only and
+                        are intended to assist your expert human review. <span class="font-semibold">The Fexo platform does not make
+                            final decisions.</span> The ultimate responsibility for any business decision (such as approving a loan,
+                        paying a claim, or entering into a contract) rests solely with you and your authorized personnel.</p><br>
+                    <p>12.2 Accuracy of Information and "As Is" Service. While Fexo utilizes AI to ensure the highest possible
+                        accuracy in data extraction, triangulation, and analysis, we do not guarantee that the output will be 100%
+                        free of errors, omissions, or inaccuracies. The quality of the platform's output is inherently dependent on
+                        the quality, clarity, and legibility of the documents Customer uploads. The service is provided on an "as
+                        is" and "as available" basis. Fexo makes no warranties, express or implied, regarding the completeness,
+                        accuracy, reliability, or suitability of the information generated by the platform for any particular
+                        purpose.</p><br>
+                    <p>12.3 User Responsibility for Verification. Customer and its users are solely responsible for reviewing and
+                        independently verifying all information and analysis generated by the Fexo platform before taking any action
+                        or making any decision based on that output. You agree that you will not rely on the platform's output as a
+                        sole basis for any financial, operational, or legal commitment.</p><br>
+                    <p>12.4 No Professional Advice. The output generated by the Fexo platform does not constitute financial,
+                        investment, legal, accounting, or any other form of professional advice. It is a technology-driven synthesis
+                        of the data Customer provides and should not be interpreted as a recommendation or endorsement from Fexo.
+                    </p><br>
+                    <p>12.5 Limitation of Liability. To the fullest extent permitted by law, Fexo, its affiliates, directors, and
+                        employees shall not be liable for any direct, indirect, incidental, special, consequential, or exemplary
+                        damages, including but not limited to, damages for loss of profits, goodwill, use, data, or other intangible
+                        losses (even if Fexo has been advised of the possibility of such damages), resulting from:
+                    <ul class="my-2 space-y-1">
+                        <li>The use or the inability to use the service;</li>
+                        <li>Any decision made or action taken in reliance on the information generated by the service;</li>
+                        <li>The cost of procurement of substitute goods and services;</li>
+                        <li>Any unauthorized access to or alteration of your transmissions or data.</li>
+                    </ul>In any event, Fexo's total aggregate liability to Customer for all claims arising out of or relating to the
+                    use of the service is limited to the amount Customer has paid to Fexo for the service in the one (1) month
+                    preceding the claim.</p>
+                    <h2 class="static-subheading">13. Advertising and Publicity</h2>
+                    <p class="text-stone-900 text-base font-normal ">Subject to applicable Proprietary Rights, Data Privacy and
+                        Confidentiality obligations, either Party may reference the other’s name, logo, or credentials to identify
+                        their business relationship in marketing materials, case studies, presentations, press releases, websites,
+                        or other public communications, provided such use is accurate, professional, and not harmful to the other
+                        Party’s reputation.<br><br>Each Party grants the other a non-exclusive, royalty-free, worldwide license for
+                        such limited use and may request, in writing, that any specific reference be discontinued, which the other
+                        Party shall honor within a reasonable time.</p>
+                    <h2 class="static-subheading">14. MISCELLANEOUS</h2>
+                    <p class="text-stone-900 text-base font-normal ">14.1 Export Control. Customer certifies compliance with current
+                        Indian Export Control laws and agrees to indemnify Fexo for any liability resulting from Customer's
+                        violation of Indian Export Control laws.<br><br>14.2 Compliance with Laws. Customer must comply with all
+                        applicable laws and regulations when using any Service. Customer agrees to defend, indemnify, and hold Fexo
+                        harmless from claims, losses, liabilities, damages, judgments, and costs arising from any third-party claim
+                        of Customer's violation of privacy laws or regulations.<br><br>14.3 Assignment. Neither party can transfer
+                        rights and obligations under this Agreement without the other party's written consent. However, Fexo may
+                        transfer its rights under this Agreement without consent in cases of a change in control, acquisition, or
+                        substantial asset sale.<br><br>14.4 Force Majeure. Neither party is responsible for performance failure or
+                        delay due to events beyond reasonable control, constituting a Force Majeure. If a Force Majeure lasts over
+                        30 days, either party may terminate the agreement with written notice.<br><br>14.5 Independent Contractor.
+                        Both parties acknowledge that Fexo operates as an independent contractor. This Agreement does not create any
+                        agency, partnership, joint venture, or employment relationship. The Customer lacks the authority to bind
+                        Fexo in any manner.<br><br>14.6 Governing Law. This Agreement is exclusively governed and construed
+                        according to the laws of the Republic of India, without considering conflict of law provisions. Disputes
+                        arising from or related to this Agreement, excluding those subject to Section 14.8 (Binding Arbitration),
+                        shall be exclusively adjudicated by the courts of the city of Bengaluru located in the state of Karnataka in
+                        India. Both parties consent to the jurisdiction of these courts and waive any right to challenge their
+                        appropriateness, whether based on the doctrine of forum non conveniens or otherwise. The United Nations
+                        Convention on Contracts for the International Sale of Goods does not apply to this Agreement or any Orders
+                        issued under it.<br><br>14.7 Binding Arbitration. Any unresolved dispute or claim arising from this
+                        Agreement, except as otherwise provided or for intellectual property disputes seeking provisional or
+                        equitable remedies, will undergo mandatory and binding arbitration. The dispute shall be referred to and
+                        finally resolved by arbitration presided over by a mutually appointed sole arbitrator. The proceedings shall
+                        be conducted as per the Arbitration and Conciliation Act, 1996 and the rules framed thereunder with its seat
+                        and venue in Bengaluru, Karnataka, India. The language and award of the arbitration shall be English. The
+                        decision of the arbitrator shall be final and binding upon the Parties, and judgment may be entered in any
+                        court with jurisdiction. Limited discovery is allowed before the arbitration hearing, covering
+                        interrogatories, admissions, exchange of witness lists and documents, and depositions of all party
+                        witnesses. Depositions adhere to the Arbitration and Conciliation Act, 1996, and the arbitrator must provide
+                        a written basis for the award or order. All hearings are recorded by a court reporter, constituting the
+                        official transcript.<br><br>14.8 Marketing. Customer grants Fexo permission to identify them as a Fexo’s
+                        Customer, using their name, mark, and/or logo on Fexo's website and marketing materials related to the
+                        Customer's use of the Service.<br><br>14.9 Entire Agreement. This Agreement constitutes the comprehensive
+                        and exclusive understanding between the parties, superseding all prior written or oral agreements,
+                        communications, and understandings related to its subject matter. Any waivers or modifications must be in
+                        writing and signed by both parties, unless otherwise provided herein. If any term or provision of this
+                        Agreement is illegal or unenforceable, it will be interpreted to the fullest extent possible to be valid,
+                        with the validity or enforceability of the remaining terms unaffected. In case of a conflict between this
+                        Agreement and the Order document, the terms of this Agreement shall prevail, except for expressly modified
+                        terms in any Order regarding that specific Order.<br><br>14.10 Notice. Written notices between parties can
+                        be personally delivered, sent by registered courier services or certified mail (return receipt) to
+                        hello@fexo.io<br><br>If you do not agree to the Terms, we request that you stop using the Services
+                        immediately. As long as you continue to use the Services, you are bound by the Terms mentioned here.</p><br>
+                </div>
+            </div>
+        </div>
+
+        <!-- PRIVACY POLICY -->
+        <div x-show="activeTab === 'privacy'" x-transition class="mt-10">
+            <div class="middle-container bg-zinc-100 pt-5">
+            <div class="text-justify">
+                <p class="text-stone-900 text-base font-normal">Effective Date: 1st November 2024<br></p>
+                <h2 class="static-subheading">1. Overview.</h2>
+                <p class="text-stone-900 text-base font-normal text-justify">Fexo GenAI Technologies Private Limited ("Fexo"
+                    “Company” "we" "us" "our") is committed to protecting the privacy and security of your (“Customer” “User”
+                    “your” “you”) information. This Privacy Statement explains how we collect, use, disclose, and safeguard your
+                    data when you use the software platform by name Fexo (“Service”).<br><br>We are dedicated to safeguarding
+                    your personal information and respecting your privacy rights. If you have any inquiries or concerns
+                    regarding this privacy notice or how we handle your personal information, please reach out to us at
+                    hello@fexo.io.<br><br>When you explore our website at <a class="underline text-purple-800"
+                        rel="noopener noreferrer" href="https://www.fexo.io" target="_blank">www.fexo.io</a> or more broadly any
+                    subdomains, such as <a class="underline text-purple-800" rel="noopener noreferrer"
+                        href="https://app.fexo.io" target="_blank">app.fexo.io</a> and utilize any of our Services, encompassing
+                    the Website, you entrust us with your personal information. We treat your privacy with the utmost
+                    seriousness. In this privacy notice, we aim to clarify what information we gather, how we use it, and the
+                    rights you possess concerning it. We encourage you to read it thoroughly, as it holds
+                    significance.<br><br>This privacy policy covers all information collected through our Services, as outlined
+                    above (encompassing our Website), as well as any associated services, sales, marketing, or events. Kindly
+                    review this privacy notice carefully, as it provides insights into how we handle the information we
+                    gather.<br><br>By using the Services, including from the Website, you agree to the terms outlined in this
+                    Privacy Statement.<br></p>
+                <h2 class="static-subheading">2. Information we collect.</h2>
+                <p class="text-stone-900 text-base font-normal">2.1 Personal Information. We gather personal information that
+                    you disclose to us voluntarily.<br><br>This occurs when you register on the Website, express interest in
+                    learning more about us or our products and services, engage in Website activities, or contact us directly.
+                    The personal information collected depends on your interactions, choices, and use of products and features.
+                    Examples of such information include names, phone numbers, email addresses, mailing addresses, job titles,
+                    usernames, passwords, contact preferences, authentication data, and similar details. Additionally, we may
+                    collect data necessary to process your payment if you make purchases, such as your payment instrument
+                    details (like credit or debit card number), and the security code associated with your payment instrument.
+                    All payment data is stored by our payment processors. You may review their privacy policies at their
+                    website.<br><br>All personal information that you provide to us must be true and accurate, and you must
+                    notify us of any changes to such personal information.<br><br>2.2 Information collected by the
+                    Website.<br><br>Certain information, such as your Internet Protocol (IP) address, browser, and device
+                    characteristics, is automatically gathered when you visit our Website. This data, collectively known as
+                    device and usage information, does not disclose your specific identity, including personal details like your
+                    name or contact information. It encompasses details like IP address, browser and device specifications,
+                    operating system, language preferences, referring URLs, device name, country, location, and technical
+                    information related to your interaction with our Website.<br><br>This information is crucial for maintaining
+                    the security and functionality of our Website, as well as for internal analytics and reporting purposes.
+                    Similar to many businesses, we employ cookies and comparable technologies to collect this data.<br><br>The
+                    collected information also includes log and usage data, which encompasses service-related, diagnostic,
+                    usage, and performance details automatically recorded by our servers. Depending on your interactions, this
+                    may involve IP address, device information, browser type and settings, and specifics about your Website
+                    activity. Device data, such as information about the device you use, is also collected, covering details
+                    like IP address, device identification numbers, location, browser type, hardware model, Internet service
+                    provider, and operating system information.<br><br>Furthermore, location data is gathered to understand your
+                    device's location, either precisely or imprecisely, depending on your device type and settings. Techniques
+                    like GPS may be used for geolocation data based on your IP address. You have the option to decline this
+                    information collection by denying access or disabling the Location setting on your device. It's important to
+                    note that opting out may limit your ability to use certain aspects of the Services.<br><br>2.3 Information
+                    collected from external sources.<br><br>To improve our ability to deliver relevant marketing, offers, and
+                    services tailored to you, as well as to maintain accurate records, we may gather information from various
+                    sources, including public databases, joint marketing partners, affiliate programs, data providers, and
+                    social media platforms. This information may encompass mailing addresses, job titles, email addresses, phone
+                    numbers, intent data (or user behavior data), Internet Protocol (IP) addresses, social media profiles,
+                    social media URLs, and custom profiles, all utilized for targeted advertising and event promotion purposes.
+                    Should you engage with us via a social media platform using your account credentials (e.g., Facebook or
+                    Twitter), we may receive personal details such as your name, email address, and gender. However, the
+                    collection of any personal information from your social media account is contingent upon your privacy
+                    settings on said platform.</p>
+                <h2 class="static-subheading">3. How we utilize the collected information.</h2>
+                <p class="text-stone-900 text-base font-normal">We process your information for various purposes grounded in
+                    legitimate business interests, fulfilling contractual obligations, complying with legal requirements, and/or
+                    obtaining your consent.<br><br>The personal information collected through our Website serves several
+                    business objectives, and we process it based on our legitimate business interests, contractual necessity,
+                    consent, and legal obligations. The specific grounds for processing are indicated next to each purpose
+                    outlined below:</p><br><br>
+                <ul class="list-disc">
+                    <li>Facilitate Account Creation and Logon Process: If you opt to link your account with us to a third-party
+                        account (such as Google or Facebook), we use information obtained from those third parties to streamline
+                        the account creation and logon process as part of our contractual performance.</li><br>
+                    <li>Post Testimonials: Testimonials containing personal information are posted on our Website. Before
+                        posting, we secure your consent to use your name and testimonial content. To update or delete your
+                        testimonial, please contact us at hello@fexo.io, providing your name, testimonial location, and contact
+                        information.</li><br>
+                    <li>Request Feedback: Your information may be used to request feedback and contact you regarding your
+                        Website usage.</li><br>
+                    <li>Enable User-to-User Communications: Information may be utilized to facilitate user-to-user
+                        communications with individual consent.</li><br>
+                    <li>Manage User Accounts: Information is employed for managing our accounts and ensuring their proper
+                        functionality.</li><br>
+                    <li>Send Administrative Information: Personal information may be used to send product, service, and new
+                        feature information, as well as updates to our terms, conditions, and policies.</li><br>
+                    <li>Protect Our Services: Information is utilized in efforts to maintain the safety and security of our
+                        Website, including fraud monitoring and prevention.</li><br>
+                    <li>Enforce Terms, Conditions, and Policies: Information may be processed for business purposes, legal and
+                        regulatory compliance, or in connection with our contractual obligations.</li><br>
+                    <li>Respond to Legal Requests and Prevent Harm: In case of legal / regulatory request, we may inspect held
+                        data to determine an appropriate response.</li><br>
+                    <li>Fulfill and Manage Orders: Information is employed to fulfill and manage orders, payments, returns, and
+                        exchanges made through the Website.</li><br>
+                    <li>Deliver and Facilitate Service Delivery: Information is used to provide the requested service to users.
+                    </li><br>
+                    <li>Respond to User Inquiries/Offer Support: Information may be used to address user inquiries and provide
+                        support for any issues related to our Services.</li><br>
+                    <li>Send Marketing and Promotional Communications: Personal information may be used for marketing purposes
+                        in accordance with your preferences, and you can opt-out at any time.</li><br>
+                    <li>Administer loyalty benefits: Information is utilized to administer offers from competitions, prize draws
+                        and other loyalty benefits for participants.</li><br>
+                    <li>Deliver Targeted Advertising: Information is utilized to create and display personalized content and
+                        advertising tailored to user interests and/or location, measuring its effectiveness. We may collaborate
+                        with third parties for these purposes.</li><br>
+                </ul>
+                <h2 class="static-subheading">4. Will the collected information be shared with anyone?</h2>
+                <p class="text-stone-900 text-base font-normal">We only share your information under specific circumstances,
+                    including with your consent, to comply with laws, to provide services, to protect your rights, or to fulfill
+                    business obligations. The legal bases for processing or sharing your data include:<br><br></p>
+                <ul class="list-disc">
+                    <li>Consent: We may process your data if you have provided explicit consent for a specific purpose.</li><br>
+                    <li>Legitimate Interests: Data may be processed when necessary to achieve our legitimate business interests.
+                    </li><br>
+                    <li>Performance of a Contract: If a contract is in place, we process personal information to fulfill its
+                        terms.</li><br>
+                    <li>Legal Obligations: Information may be disclosed to comply with applicable laws, governmental requests,
+                        court orders, or legal processes, such as responding to a subpoena.</li><br>
+                    <li>Vital Interests: Data may be disclosed when necessary to investigate, prevent, or take action regarding
+                        potential policy violations, fraud, threats to safety, illegal activities, or as evidence in litigation.
+                    </li><br>
+                </ul>
+                <p class="text-stone-900 text-base font-normal">Situations where data processing or sharing may occur include,
+                    but not limited, to the below:</p><br>
+                <ul class="list-disc">
+                    <li>Business Transfers: Information may be shared during negotiations or in connection with a merger, sale
+                        of assets, financing, or acquisition of our business.</li>
+                    <li>Vendors, Consultants, and Third-Party Service Providers: Data may be shared with entities providing
+                        services on our behalf, such as payment processing, data analysis, and marketing. Selected third parties
+                        may use tracking technology on the Website for analytics and understanding online activity.</li>
+                    <li>Affiliates: Information may be shared with our affiliates, including our parent company, subsidiaries,
+                        or companies under common control.</li>
+                    <li>Business Partners: Data may be shared with business partners for offering specific products, services,
+                        or promotions.</li>
+                </ul>
+                <p class="text-stone-900 text-base font-normal">We only share information with specific third parties,
+                    categorized based on the purpose of data collection and processing. If your data was processed based on
+                    consent, and you want to revoke it, contact us on hello@fexo.io.</p><br>
+                <h2 class="static-subheading">5. Do we use cookies and other tracking technologies?</h2>
+                <p class="text-stone-900 text-base font-normal">We may employ cookies and similar tracking technologies to
+                    collect and store information. Details on their usage and how to refuse certain cookies are outlined in our
+                    Cookie Notice. We use cookies and similar technologies to enhance your experience, analyze usage patterns,
+                    and personalize content.</p><br>
+                <h2 class="static-subheading">6. How do we protect your information with us?</h2>
+                <p class="text-stone-900 text-base font-normal">We aim to protect your personal information through a system of
+                    organizational and technical security measures. We utilize industry-standard security measures to safeguard
+                    your data from unauthorized access, disclosure, alteration, and destruction. These measures include but are
+                    not limited to encryption protocols, firewalls, secure server infrastructure, access controls, regular
+                    security audits and access controls. By implementing these robust security practices, we strive to maintain
+                    the confidentiality, integrity, and availability of your data. <br><br>While we implement safeguards and
+                    make every effort to secure your information, it's important to note that no electronic transmission over
+                    the Internet or storage technology can be guaranteed to be completely secure. As such, we cannot ensure or
+                    warrant that hackers, cybercriminals, or other unauthorized third parties will not circumvent our security
+                    measures to improperly collect, access, steal, or modify your information. While we are committed to
+                    protecting your personal information to the best of our ability. As such, we advise accessing the Website
+                    only within a secure environment.<br></p>
+                <h2 class="static-subheading">7. Is your information transferred outside your country?</h2>
+                <p class="text-stone-900 text-base font-normal">We may transfer, store, and process your information in
+                    countries other than your own. Our servers are located in India, the United States, the EU and the Middle
+                    East. Please be aware that your information may be transferred to, stored, and processed by us in our
+                    facilities and by those third parties with whom we may share your personal information, in and other
+                    countries. For further clarifications, if any, reach out to us on the contact details mentioned in this
+                    page.</p><br>
+                <h2 class="static-subheading">8. How long do we keep the information?</h2>
+                <p class="text-stone-900 text-base font-normal">We keep your information for as long as necessary to fulfill the
+                    purposes outlined in this privacy notice unless otherwise required by law. We will retain your personal
+                    information only for as long as it is necessary to fulfill the purposes outlined in this privacy notice,
+                    unless a longer retention period is mandated or allowed by law (such as for tax, accounting, or other legal
+                    obligations). Once we no longer have a legitimate business need to process your personal information, we
+                    will either delete or anonymize it. If deletion or anonymization is not feasible (for instance, due to
+                    storage in backup archives), we will securely store your personal information and restrict it from further
+                    processing until deletion becomes feasible.</p><br>
+                <h2 class="static-subheading">9. Your privacy choices.</h2>
+                <p class="text-stone-900 text-base font-normal">We understand the importance of providing you with control over
+                    your personal information. Therefore, you have the following options to manage your account information and
+                    communication preferences:</p><br>
+                <ul class="list-disc">
+                    <li>Update Your Account Information: You have the ability to review and update your account details, such as
+                        your name, email address, and contact information, by accessing your profile/account settings.</li><br>
+                    <li>Manage Communication Preferences: You can choose the types of communications you receive from us and how
+                        you prefer to receive them. This includes opting in or out of promotional emails, newsletters, and other
+                        marketing communications.</li><br>
+                    <li>Opt-Out of Promotional Communications: If you no longer wish to receive promotional communications from
+                        us, you have the option to unsubscribe by following the instructions provided in our emails or by
+                        contacting us directly.</li><br>
+                </ul>
+                <p class="text-stone-900 text-base font-normal">We respect your choices and will honor the requests you make
+                    regarding the use and disclosure of your personal information for marketing purposes.<br><br>You can contact
+                    us on the contact details provided in this page.</p><br>
+                <h2 class="static-subheading">10. Updates to this Privacy Statement.</h2>
+                <p class="text-stone-900 text-base font-normal">We update this Privacy Statement periodically. We encourage you
+                    to review this privacy notice frequently to be informed of how we are protecting your information. We will
+                    notify you of any material changes by posting the updated statement on our Website; send you a notification
+                    on the platform; send you a direct notification.</p><br>
+                <h2 class="static-subheading">11. Notice.</h2>
+                <p class="text-stone-900 text-base font-normal">Written notices between parties can be personally delivered,
+                    sent by registered courier services or certified mail (return receipt) to hello@fexo.io.<br><br>If you do
+                    not agree to our privacy policy, we request that you stop using the Services immediately. As long as you
+                    continue to use the Services, you are bound by the Privacy Statements mentioned here.<br><br></p>
+            </div>
+        </div>
+        </div>
+
+        <!-- SUBPROCESSORS -->
+        <div x-show="activeTab === 'subprocessors'" x-transition class="mt-10">
+            <div class="middle-container bg-zinc-100 pt-5">
+                <div class="mb-14">
+                    <p class="text-stone-900 text-base font-normal  leading-relaxed tracking-wide">Effective Date: 1st November
+                        2024<br><br>Fexo presently relies on third-party subprocessors to deliver essential infrastructure services
+                        and customer support. Before involving any third-party subprocessor, Fexo assesses their privacy, security,
+                        and confidentiality protocols and formalizes an agreement to enforce relevant obligations.<br><br> Fexo
+                        engages with the following subprocessors to host data, provide support and for other accessory services on
+                        Fexo.<br><br>
+                    <table>
+                        <tr>
+                            <th>Subprocessor Name</th>
+                            <th>Purpose</th>
+                        </tr>
+                        <tr>
+                            <td>Google Analytics</td>
+                            <td>Analytics</td>
+                        </tr>
+                        <tr>
+                            <td>Calendly</td>
+                            <td>Customer support services</td>
+                        </tr>
+                        <tr>
+                            <td>Amazon Web Services</td>
+                            <td>Cloud infrastructure</td>
+                        </tr>
+                        <tr>
+                            <td>Google Cloud Services</td>
+                            <td>Cloud infrastructure</td>
+                        </tr>
+                        <tr>
+                            <td>Microsoft Azure</td>
+                            <td>Cloud infrastructure</td>
+                        </tr>
+                        <tr>
+                            <td>OpenAI</td>
+                            <td>Parser</td>
+                        </tr>
+                        <tr>
+                            <td>Tally</td>
+                            <td>Integration</td>
+                        </tr>
+                        <tr>
+                            <td>Zoho</td>
+                            <td>Integration</td>
+                        </tr>
+                    </table>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- GDPR -->
+        <div x-show="activeTab === 'gdpr'" x-transition class="mt-10">
+            <div class="middle-container bg-zinc-100 pt-5">
+                <div classname="text-justify">
+                    <p class="text-stone-900 text-base font-normal ">Effective Date: 1st November 2024<br><br>Privacy and security
+                        form the bedrock of Fexo's approach to product development and business. We consistently assess all our
+                        practices to enhance the protection of your information. In alignment with this commitment, we adhere to the
+                        General Data Protection Regulation ("GDPR") and assist Fexo's customers in achieving GDPR
+                        compliance.<br><br>What is GDPR?<br>Effective May 25, 2018, the General Data Protection Regulation (GDPR)
+                        comes into force, expanding data privacy rights for European individuals and empowering them with greater
+                        control over their data. Companies handling the personal data of these European individuals are mandated to
+                        comply with a new set of relevant regulations.<br><br>The GDPR stipulates specific requirements for these
+                        companies to meet, and outlines the rights that European individuals can exercise. For more details on the
+                        GDPR, refer to the European Union’s official website: <a class="underline text-purple-800"
+                            rel="noopener noreferrer" href="https://ec.europa.eu/info/law/law-topic/data-protection_en"
+                            target="_blank">https://ec.europa.eu/info/law/law-topic/data-protection_en</a>.<br><br>Features
+                        Supporting GDPR Requirements: Fexo offers functionalities to assist you in fulfilling your data portability
+                        requirements under the GDPR. You can effortlessly request the permanent deletion of all your data by sending
+                        an email to hello@fexo.io.<br><br>If you have further questions, please reach out to hello@fexo.io.<br><br>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECURITY POLICY -->
+        <div x-show="activeTab === 'security'" x-transition class="mt-10">
+            <div class="middle-container bg-zinc-100 pt-5">
+                <div>
+                    <p class="text-stone-900 text-base font-normal ">Effective Date: 1st November 2024<br><br>Fexo places utmost
+                        importance on safeguarding customer data. This security policy outlines the organizational and technical
+                        measures implemented on Fexo Websites to prevent unauthorized access, use, alteration, or disclosure of
+                        customer data. Unless specified otherwise, this policy pertains to Fexo activities within its instance on
+                        Amazon Web Services ("AWS"), Microsoft 365 and Azure (“MS”) and Google Play Services (“Google”). It is
+                        recommended to review our <a class="underline text-purple-800" rel="noopener noreferrer"
+                            target="_blank" href="#terms" @click.prevent="activeTab = 'terms'">Terms of Service</a> and<a class="underline text-purple-800"
+                            rel="noopener noreferrer" target="_blank" href="#privacy" @click.prevent="activeTab = 'privacy'"> Privacy Policy</a> for a comprehensive
+                        understanding of Fexo practices.<br><br>Security Team<br><br>Our dedicated infrastructure and security team
+                        comprises individuals with significant experience in designing, building, and operating highly secure
+                        internet-facing systems across geographies and companies of varied sizes.<br><br></p>
+                    <p class="text-stone-900 text-base font-normal ">1. Best Practices</p><br>
+                    <ul class="list-disc">
+                        <li>Incident Response Plan<br><br>Fexo has instituted a formal procedure for security events, with all staff
+                            members educated on our policies. Detected security events are escalated to our emergency alias,
+                            triggering prompt response and resolution. Post-event, a comprehensive post-mortem analysis is
+                            conducted, reviewed across the company, and includes action items for future prevention.<br><br>Fexo
+                            commits to notifying you promptly in writing upon verifying a security breach affecting your data.
+                            Further details about our incident response plan are available here.<br><br></li>
+                        <li>Build Process Automation<br><br>Functional and frequently used automation is in place for secure and
+                            reliable changes to our application and operating platform within minutes. With multiple code
+                            deployments daily, we ensure rapid deployment of security fixes when necessary.<br><br></li>
+                    </ul>
+                    <p class="text-stone-900 text-base font-normal ">2. Infrastructure</p><br>All Fexo services operate in the
+                    cloud, with no proprietary routers, load balancers, DNS servers, or physical servers. Hosted on AWS, MS and
+                    Google facilities, our services and data benefit from the security protocols of the respective cloud
+                    infrastructure provider. The details are mentioned on the appropriate websites of AWS, MS and Google. Disaster
+                    recovery considerations have been integral to our service architecture.<br><br>Our servers reside within a
+                    dedicated virtual private cloud (VPC) with network access control lists (ACLs) preventing unauthorized access to
+                    our internal network. Fexo employs backup solutions for datastores containing customer data.<br><br>3.
+                    Data<br><br>All customer data is stored in India within multi-tenant datastores. While individual datastores per
+                    customer are not maintained, robust privacy controls in our application code ensure data separation, with
+                    regular unit and integration tests validating their effectiveness. The configuration and patching of systems
+                    processing customer data align with industry-recognized hardening standards.<br><br>Certain subprocessors are
+                    engaged for processing customer data, listed <a class="underline text-purple-800" rel="noopener noreferrer"
+                        href="/subprocessors" target="_blank">here</a>, subject to updates by Fexo.<br><br>4. Data
+                    Transfer<br><br>All data transmitted to or from the Fexo Website is encrypted in transit using 256-bit
+                    encryption. Our API and application endpoints operate exclusively on TLS/SSL, earning an "A+" rating on SSL
+                    Labs' tests. Additionally, industry-standard AES-256 encryption secures data at rest.<br><br>5.
+                    Authentication<br><br>Fexo is served entirely over HTTPS, with no corporate resources or additional privileges
+                    from being on Fexo's network. Two-factor authentication (2FA) and robust password policies on AWS, MS and Google
+                    enhance access protection to cloud services.<br><br>6. Permissions and Admin Controls<br><br>Fexo offers
+                    configurable permission levels for employees to access the Fexo Website, covering app settings, billing, user
+                    data, and messaging capabilities.<br><br>7. Security Audits and Certifications<br><br>Bi-annual engagements with
+                    third-party auditors assess our codebase, with SOC 2 Type II compliance and an attested SOC 2 Type II report.
+                    Information on AWS, MS and Google security certifications are accessible at their respective security
+                    websites.<br><br>All payment instrument processing is handled by Stripe, adhering to their security practices as
+                    mentioned on their website.<br><br>8. Customer Responsibilities<br><br>Customers are responsible for managing
+                    their user accounts and roles within Fexo Websites, ensuring account and credential protection through 2FA.
+                    Compliance with service agreements, including legal requirements, is imperative. Prompt notification to Fexo is
+                    essential in cases of compromised credentials or suspected security threats affecting services or accounts.
+                    Security penetration tests or assessments require Fexo' express advance written consent.<br><br>We can be
+                    reached at hello@fexo.io.<br><br>
+                </div>
+            </div>
+        </div>
+
+        <!-- COOKIE POLICY -->
+        <div x-show="activeTab === 'cookie'" x-transition class="mt-10">
+            <div class="middle-container bg-zinc-100 pt-5">
+                <div class="text-justify">
+                    <p class="text-stone-900 text-base font-normal ">Effective Date: 1st November 2024<br><br>Fexo Websites utilize
+                        cookies to personalize your user experience and ensure uninterrupted services. By using this Website,
+                        certain information about your usage is automatically collected through cookies. It is advisable to read and
+                        make informed decisions regarding your use of this Website.<br><br>Understanding Cookies and Their
+                        Functions<br><br>In order to provide a tailored experience and remember your preferences, this Website's
+                        servers need to uniquely identify you. Cookies, small text files containing character strings, are placed on
+                        your device. Upon your next visit, these cookies are sent by your browser to our servers, enabling device
+                        identification and a customized response.<br><br>Types of Cookies Used<br><br>Fexo Website employs the
+                        following types of cookies:<br><br>
+                    <ul class="list-disc">
+                        <li>Session Cookies: Temporary cookies created each time you use the website and deleted when your browser
+                            is closed. They remember your preferences as you navigate between pages.</li><br><br>
+                        <li>Persistent Cookies: Help identify and recall your settings and preferences during each visit, ensuring
+                            faster and more convenient access. Personalization is enhanced, and repeated logins may be unnecessary.
+                        </li><br><br>
+                        <li>Third-Party Cookies: Certain website components provided by third parties set cookies to facilitate
+                            their services. Refer to the third-party cookie policy for details.</li><br><br>
+                    </ul class="list-disc">Control and Management of Cookies<br><br>By using the Fexo Websites, you agree to the storage of cookies on
+                    your device. While you can manage cookies through various methods, some are essential for the Website's proper
+                    functioning. Adjusting cookie settings may impact specific features or render them unavailable.<br><br>Control
+                    cookies through your browser settings.<br><br>Updates to Cookie Policy<br><br>This Cookie Policy will undergo
+                    periodic updates, with the latest revision date mentioned above. Stay informed about how this Website's cookies
+                    are utilized by checking this policy regularly.<br><br></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLA -->
+        <div x-show="activeTab === 'sla'" x-transition class="mt-10">
+            <div class="middle-container bg-zinc-100 pt-5">
+                <div class="text-justify">
+                    <p class="text-stone-900 text-base font-normal ">Effective Date: 1st November 2024<br><br>This Support Policy is
+                        to be read in conjunction with the Orders mentioned in the <a class="underline text-purple-800"
+                            rel="noopener noreferrer" href="#terms" @click.prevent="activeTab = 'terms'" target="_blank">Terms of Service </a>, and is
+                        available to you (“Customer”) upon acceptance of the Order.<br><br>Capitalized terms used in this SLA that
+                        are not defined herein have the meanings given to them in the Terms of Use (“Agreement”).<br><br>Fexo will
+                        use reasonable efforts to make the Service available with an uptime of 99.5% of each calendar month ("Target
+                        Availability").<br><br>Exclusions. The calculation of uptime will not include unavailability to the extent
+                        due to: (a) use of the Service by Customer in a manner not authorized in the Agreement or the applicable
+                        Documentation; (b) general Internet problems, force majeure events or other factors outside of Fexo's
+                        reasonable control; (c) Customer's equipment, software, network connections or other infrastructure; (d)
+                        Subprocessors’ acts or omissions; or (e) Scheduled Maintenance or reasonable emergency
+                        maintenance.<br><br>Scheduled Maintenance. "Scheduled Maintenance" means Fexo's scheduled routine
+                        maintenance of the Services for which Fexo shall notify you at least twenty-four (24) hours in advance.
+                        Scheduled Maintenance will not exceed eight (8) hours per month. Fexo typically performs Scheduled
+                        Maintenance once per month.<br><br>Remedy for Failure to Meet Target Availability. If there is a verified
+                        failure of a Service to meet Target Availability in two (2) consecutive months, then Customer may terminate
+                        the applicable Order by sending written notice of termination within thirty (30) days after the end of the
+                        second such month. In such a case, Fexo will refund to the Customer, fees that the Customer would have
+                        prepaid for use of such Service for the terminated portion of the applicable Order. This termination and
+                        refund right is Customer's sole and exclusive remedy, and Fexo's sole and exclusive liability, for Fexo's
+                        failure to meet the Target Availability for the Service.<br><br></p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+        <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400">
+        <div class="container mx-auto px-6 sm:px-10 lg:px-16 py-12">
+
+            <!-- FIXED: grid-cols-5 so everything stays in one row -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+
+                <!-- Logo -->
+                <div>
+                    <a href="index.html" aria-label="Fexo Homepage">
+                        <img src="assests/images/icons/logo2.svg" alt="Fexo Logo" width="140" height="40" />
+                    </a>
+                    <p class="mt-4 text-sm">Bengaluru | Mumbai | Dubai</p>
+                    <div class="ml-8 mt-5 flex justify-start items-center space-x-4">
+                        <!-- Mail -->
+                        <a href="mailto:hello@fexo.io" aria-label="Send email to hello@fexo.io">
+                            <div class="email-button">
+                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="30" width="30" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M928 160H96c-17.7 0-32 14.3-32 32v640c0 17.7 14.3 32 32 32h832c17.7 0 32-14.3 32-32V192c0-17.7-14.3-32-32-32zm-40 110.8V792H136V270.8l-27.6-21.5 39.3-50.5 42.8 33.3h643.1l42.8-33.3 39.3 50.5-27.7 21.5zM833.6 232L512 482 190.4 232l-42.8-33.3-39.3 50.5 27.6 21.5 341.6 265.6a55.99 55.99 0 0 0 68.7 0L888 270.8l27.6-21.5-39.3-50.5-42.7 33.2z">
+                                    </path>
+                                </svg> 
+                            </div>
+                        </a>
+                        <a href="https://www.linkedin.com/company/fexo" target="_blank" rel="noopener noreferrer" class="socials" aria-label="Linkedin"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="30" width="30" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z">
+                            </path>
+                        </svg>
+                    </a>
+                </div>
+                </div>
+
+                <!-- Solutions -->
+                <div>
+                    <h4 class="text-sm font-semibold text-gray-200 uppercase tracking-wider">Solutions</h4>
+                    <ul class="mt-4 space-y-2">
+                        <li><a href="solutions-banking.html" class="hover:text-white">Banking & Lending</a></li>
+                        <li><a href="solutions-insurance.html" class="hover:text-white">Insurance</a></li>
+                        <li><a href="solutions-audit.html" class="hover:text-white">Audit & Compliance</a></li>
+                        <li><a href="solutions-invoice.html" class="hover:text-white">Invoice Automation</a></li>
+                    </ul>
+                </div>
+
+                <!-- Company -->
+                <div>
+                    <h4 class="text-sm font-semibold text-gray-200 uppercase tracking-wider">Company</h4>
+                    <ul class="mt-4 space-y-2">
+                        <li><a href="company-about.html" class="hover:text-white">About Us</a></li>
+                        <li><a href="company-careers.html" class="hover:text-white">Careers</a></li>
+                        <li><a href="" class="hover:text-white">Insights & Blog</a></li>
+                        <li><a href="termsofservice.html" class="hover:text-white">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <!-- Stay in Touch -->
+                <div>
+                    <h4 class="text-sm font-semibold text-gray-200 uppercase tracking-wider">Stay in Touch</h4>
+                    <p class="mt-4 pb-2">Stay updated on our progress and the AI trends reshaping BFSI - subscribe to our monthly newsletter.</p>
+                    
+                    <a href="mailto:ir@fexo.io">
+                    <button class="bg-[#f77422] text-white px-4 py-2 rounded-lg text-sm font-medium shadow-sm hover:bg-[#e66a1e] cta-button">
+                        Subscribe
+                    </button>
+                    </a>
+                </div>
+            </div>
+
+            <div class="mt-8 border-t border-gray-800 pt-8 text-center text-sm">
+                <p>© 2025 Fexo GenAI Technologies Pvt. Ltd. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

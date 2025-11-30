@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const navLinks = document.querySelectorAll(".nav-item");
 
-  const navSectionIds = ["proof", "solutions", "demo", "platform", "contact"];
+  const navSectionIds = ["proof", "solutions", "demo", "platform", "insights"];
   const sections = navSectionIds
     .map(id => document.getElementById(id))
     .filter(Boolean);

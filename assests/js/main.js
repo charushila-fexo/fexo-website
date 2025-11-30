@@ -1,5 +1,6 @@
 import './navbar.js';
 import './movetop.js';
+import './BookDemo.js';
 //import './geminidemo.js';
 import './videos.js';
 

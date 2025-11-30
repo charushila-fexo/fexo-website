@@ -21,6 +21,21 @@
         body {
             font-family: 'Inter', sans-serif;
         }
+        .active-nav {
+            background-color: #f8e9fb;            
+            color: #3d0754;          
+            border-bottom: 3px solid #7b0daa;   
+            font-weight: 600;
+            border-radius: 6px 6px 0 0;          
+        }
+        .nav-item {
+            display: flex;                       
+            align-items: center;
+            padding: 12px 20px;                 
+            height: 100%;
+            border-radius: 0;
+            transition: all 0.2s ease-in-out;
+        }
         .hero-bg {
             background: linear-gradient(110deg, #f7ebf6 0%, #ffffff 60%);
         }
@@ -47,13 +62,14 @@
 
 
     <!-- Header -->
-    <header class="bg-white border-b border-gray-200 sticky top-0 z-50">
-        <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <header class="bg-white sticky top-0 z-50">
+        <nav class="container mx-auto px-4 py-2 sm:px-6 lg:px-9">
             <div class="flex justify-between items-center h-16">
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
+                    <!-- UPDATED: Link to index.html -->
                     <a href="index.html" aria-label="Fexo Homepage">
-                    <img src="assests\images\icons\logo1.svg" alt="Fexo: It's Possible Logo" width="140" height="45" />
+                    <img src="assests\images\icons\logo1.svg" alt="Fexo: It's Possible Logo" width="140" height="40" />
                     </a>
                 </div>
                 
@@ -63,13 +79,15 @@
                     <a id="nav-solutions" href="index.html#solutions" class="nav-item text-gray-600 hover:text-[#c580dd] font-medium">Solutions</a>
                     <a id="nav-demo" href="index.html#demo" class="nav-item text-gray-600 hover:text-[#c580dd] font-medium">Interactive Demo</a>
                     <a id="nav-platform" href="index.html#platform" class="nav-item text-gray-600 hover:text-[#c580dd] font-medium">Platform</a>
-                    <a href="#contact" class="bg-[#f77422] text-white px-4 py-2 rounded-lg text-sm font-medium shadow-sm hover:bg-[#e66a1e] cta-button">
+                    <a id="nav-insights" href="index.html#insights" class="nav-item text-gray-600 pr-9 hover:text-[#c580dd] font-medium">Resources</a>
+                    <a href="#" class="bookDemoBtn ml-10 bg-[#f77422] text-white px-4 py-2 rounded-lg text-sm font-medium shadow-sm hover:bg-[#e66a1e] cta-button">
                         Book a Demo
                     </a>
                 </div>
 
                 <!-- Mobile Menu Button -->
                 <div class="md:hidden flex items-center">
+                    <!-- UPDATED: Hover color -->
                     <button aria-label="Toggle mobile menu" id="mobile-menu-button" class="text-gray-700 hover:text-[#7b0daa] p-2 rounded-md">
                         <svg id="menu-icon-open" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
@@ -81,16 +99,18 @@
                 </div>
             </div>
         </nav>
-
+        
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="md:hidden hidden border-t border-gray-200">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <!-- UPDATED: Links to new pages -->
+                <a href="index.html#proof" class="text-gray-600 hover:bg-gray-100 hover:text-[#7b0daa] block px-3 py-2 rounded-md text-base font-medium">Customer Impact</a>
                 <a href="index.html#solutions" class="text-gray-600 hover:bg-gray-100 hover:text-[#7b0daa] block px-3 py-2 rounded-md text-base font-medium">Solutions</a>
                 <a href="index.html#demo" class="text-gray-600 hover:bg-gray-100 hover:text-[#7b0daa] block px-3 py-2 rounded-md text-base font-medium">Interactive Demo</a>
                 <a href="index.html#platform" class="text-gray-600 hover:bg-gray-100 hover:text-[#7b0daa] block px-3 py-2 rounded-md text-base font-medium">Platform</a>
-                <a href="index.html#proof" class="text-gray-600 hover:bg-gray-100 hover:text-[#7b0daa] block px-3 py-2 rounded-md text-base font-medium">Customer Impact</a>
-                <a href="index.html#security" class="text-gray-600 hover:bg-gray-100 hover:text-[#7b0daa] block px-3 py-2 rounded-md text-base font-medium">Security</a>
-                <a href="index.html#contact" class="bg-[#f77422] text-white block w-full text-left px-4 py-2 rounded-lg text-base font-medium shadow-sm hover:bg-[#e66a1e] cta-button">
+                <a href="index.html#insights" class="text-gray-600 hover:bg-gray-100 hover:text-[#7b0daa] block px-3 py-2 rounded-md text-base font-medium">Resources</a>
+                <!-- UPDATED: CTA Button Colors -->
+                <a href="#" class="bookDemoBtn bg-[#f77422] text-white block w-full text-left px-4 py-2 rounded-lg text-base font-medium shadow-sm hover:bg-[#e66a1e] cta-button">
                     Book a Demo
                 </a>
             </div>
@@ -174,30 +194,30 @@
                     
                     <!-- Team Member 1 -->
                     <div class="team-card bg-white p-6 rounded-xl text-center">
-                        <img class="w-32 h-32 rounded-full mx-auto bg-gray-200" src="https://placehold.co/128x128/e0e7ff/6366f1?text=CEO" alt="Headshot of Fexo CEO">
+                        <img class="w-32 h-32 rounded-full mx-auto bg-gray-200" src="assests\images\kk.svg" alt="Headshot of Fexo CEO">
                         <h3 class="text-xl font-semibold text-gray-900 mt-5">Kaustubh K</h3>
                         <p class="text-[#7b0daa] font-medium mt-1">Founder & CEO</p>
-                        <a href="#" target="_blank" rel="noopener" class="text-gray-400 hover:text-[#f77422] mt-2 inline-block">
+                        <a href="https://www.linkedin.com/in/kkashyap/" aria-label="linkedin" target="_blank" rel="noopener" class="text-gray-400 hover:text-[#f77422] mt-2 inline-block">
                             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.783-1.75-1.75s.784-1.75 1.75-1.75 1.75.783 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd"/></svg>
                         </a>
                     </div>
 
                     <!-- Team Member 2 -->
                     <div class="team-card bg-white p-6 rounded-xl text-center">
-                        <img class="w-32 h-32 rounded-full mx-auto bg-gray-200" src="https://placehold.co/128x128/e0e7ff/6366f1?text=CTO" alt="Headshot of Fexo CTO">
+                        <img class="w-32 h-32 rounded-full mx-auto bg-gray-200" src="assests\images\sg.svg" alt="Headshot of Fexo CTO">
                         <h3 class="text-xl font-semibold text-gray-900 mt-5">Sajal Gupta</h3>
                         <p class="text-[#7b0daa] font-medium mt-1">Co-Founder & Director</p>
-                        <a href="#" target="_blank" rel="noopener" class="text-gray-400 hover:text-[#f77422] mt-2 inline-block">
+                        <a href="https://www.linkedin.com/in/sajal/" aria-label="linkedin" target="_blank" rel="noopener" class="text-gray-400 hover:text-[#f77422] mt-2 inline-block">
                             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.783-1.75-1.75s.784-1.75 1.75-1.75 1.75.783 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd"/></svg>
                         </a>
                     </div>
 
                     <!-- Team Member 3 -->
                     <div class="team-card bg-white p-6 rounded-xl text-center">
-                        <img class="w-32 h-32 rounded-full mx-auto bg-gray-200" src="https://placehold.co/128x128/e0e7ff/6366f1?text=Head" alt="Headshot of Fexo Head of Product">
+                        <img class="w-32 h-32 rounded-full mx-auto bg-gray-200" src="assests\images\mk.svg" alt="Headshot of Fexo Head of Product">
                         <h3 class="text-xl font-semibold text-gray-900 mt-5">Meghana K</h3>
                         <p class="text-[#7b0daa] font-medium mt-1">Head of Product</p>
-                        <a href="#" target="_blank" rel="noopener" class="text-gray-400 hover:text-[#f77422] mt-2 inline-block">
+                        <a href="https://www.linkedin.com/in/meghana-kalarickal-b828aa39/" aria-label="linkedin" target="_blank" rel="noopener" class="text-gray-400 hover:text-[#f77422] mt-2 inline-block">
                             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.783-1.75-1.75s.784-1.75 1.75-1.75 1.75.783 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd"/></svg>
                         </a>
                     </div>
@@ -231,7 +251,7 @@
                         
                         <div class="mt-8 border-t border-gray-200 pt-8">
                             <!-- SEO: Updated alt tag -->
-                            <img class="h-10" src="assests\images\google.svg" alt="Fexo is a Google Cloud Partner" onerror="this.src='https://placehold.co/180x40/4285F4/ffffff?text=Google+Cloud+Partner'">
+                            <img class="h-14" src="assests\images\google-cart.svg" alt="Fexo is a Google Cloud Partner" onerror="this.src='https://placehold.co/180x40/4285F4/ffffff?text=Google+Cloud+Partner'">
                              <h3 class="text-2xl font-bold text-gray-900 mt-6">Available on Google Cloud Marketplace</h3>
                             <p class="mt-2 text-gray-600">
                                 As an official Google Cloud Partner, our solution is trusted and available on the Google Marketplace. This accelerates procurement and allows Google's sales teams to bring Fexo directly to you.
@@ -247,7 +267,7 @@
                             <div class="grid grid-cols-3 gap-x-7 gap-y-3 mt-6">
                                 <!-- SEO: Updated alt tags -->
                                 <img class="h-12" src="assests\images\google.svg" alt="Google Partner" onerror="this.src='https://placehold.co/120x32/808080/ffffff?text=Google'">
-                                <img class="h-12" src="assests\images\microsoft.svg" alt="Microsoft Partner" onerror="this.src='https://placehold.co/120x32/808080/ffffff?text=Microsoft'">
+                                <img class="h-14" src="assests\images\microsoft.svg" alt="Microsoft Partner" onerror="this.src='https://placehold.co/120x32/808080/ffffff?text=Microsoft'">
                                 <img class="h-17 w-20" src="assests\images\aws.svg" alt="AWS Partner" onerror="this.src='https://placehold.co/120x32/808080/ffffff?text=AWS'">
                                 <img class="h-16" src="assests\images\nvidia.svg" alt="Nvidia Partner" onerror="this.src='https://placehold.co/120x32/808080/ffffff?text=Nvidia'">
                                 <img class="h-16" src="assests\images\intel.svg" alt="Intel Partner" onerror="this.src='https://placehold.co/120x32/808080/ffffff?text=Intel'">
@@ -332,10 +352,10 @@
                 <!-- Stay in Touch -->
                 <div>
                     <h4 class="text-sm font-semibold text-gray-200 uppercase tracking-wider">Stay in Touch</h4>
-                    <p class="mt-4">Stay updated on our progress and the AI trends reshaping BFSI - subscribe to our monthly newsletter.</p>
+                    <p class="mt-4 pb-2">Stay updated on our progress and the AI trends reshaping BFSI - subscribe to our monthly newsletter.</p>
                     
                     <a href="mailto:ir@fexo.io">
-                    <button class="cta-button mt-4 bg-[#f77422] text-white px-4 py-2 rounded-lg hover:bg-[#e66a1e]">
+                    <button class="bg-[#f77422] text-white px-4 py-2 rounded-lg text-sm font-medium shadow-sm hover:bg-[#e66a1e] cta-button">
                         Subscribe
                     </button>
                     </a>
@@ -377,9 +397,14 @@
             });
         }
     </script>
-    
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+
     <!-- Alpine.js CDN -->
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+
     <script type="module" src="main.js"></script>
 </body>
 </html>

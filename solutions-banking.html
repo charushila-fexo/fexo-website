@@ -21,9 +21,20 @@
         body { font-family: 'Inter', sans-serif; }
         .hero-bg { background: linear-gradient(110deg, #f7ebf6 0%, #ffffff 60%); }
         .cta-button { transition: all 0.3s ease; }
-        .cta-button:hover { transform: translateY(-2px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); }
+        .cta-button:hover { transform: translateY(-2px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px
+        rgba(0, 0, 0, 0.05); }
+        .feature-card {
+        border: 1px solid #e2e8f0;
+        transition: all 0.3s ease;
+        }
+        .feature-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
+        border-color: #c580dd;
+        }
         .metric-card { border: 1px solid #e2e8f0; transition: all 0.3s ease; }
-        .metric-card:hover { transform: translateY(-4px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); border-color: #7b0daa; }
+        .metric-card:hover { transform: translateY(-4px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px
+        -5px rgba(0, 0, 0, 0.04); border-color: #7b0daa; }
     </style>
 </head>
 <body class="bg-white text-gray-800">
@@ -45,8 +56,9 @@
                     <a id="nav-proof" href="index.html#proof" class="nav-item text-gray-600 hover:text-[#c580dd] font-medium">Customer Impact</a>
                     <a id="nav-solutions" href="index.html#solutions" class="nav-item text-gray-600 hover:text-[#c580dd] font-medium">Solutions</a>
                     <a id="nav-demo" href="index.html#demo" class="nav-item text-gray-600 hover:text-[#c580dd] font-medium">Interactive Demo</a>
-                    <a id="nav-platform" href="index.html#platform" class="nav-item text-gray-600 pr-9 hover:text-[#c580dd] font-medium">Platform</a>
-                    <a href="#contact" class="ml-10 bg-[#f77422] text-white px-4 py-2 rounded-lg text-sm font-medium shadow-sm hover:bg-[#e66a1e] cta-button">
+                    <a id="nav-platform" href="index.html#platform" class="nav-item text-gray-600 hover:text-[#c580dd] font-medium">Platform</a>
+                    <a id="nav-insights" href="index.html#insights" class="nav-item text-gray-600 pr-9 hover:text-[#c580dd] font-medium">Resources</a>
+                    <a href="#" class="bookDemoBtn ml-10 bg-[#f77422] text-white px-4 py-2 rounded-lg text-sm font-medium shadow-sm hover:bg-[#e66a1e] cta-button">
                         Book a Demo
                     </a>
                 </div>
@@ -74,9 +86,9 @@
                 <a href="index.html#solutions" class="text-gray-600 hover:bg-gray-100 hover:text-[#7b0daa] block px-3 py-2 rounded-md text-base font-medium">Solutions</a>
                 <a href="index.html#demo" class="text-gray-600 hover:bg-gray-100 hover:text-[#7b0daa] block px-3 py-2 rounded-md text-base font-medium">Interactive Demo</a>
                 <a href="index.html#platform" class="text-gray-600 hover:bg-gray-100 hover:text-[#7b0daa] block px-3 py-2 rounded-md text-base font-medium">Platform</a>
-                <a href="company-about.html" class="text-gray-600 hover:bg-gray-100 hover:text-[#7b0daa] block px-3 py-2 rounded-md text-base font-medium">About Us</a>
+                <a href="index.html#insights" class="text-gray-600 hover:bg-gray-100 hover:text-[#7b0daa] block px-3 py-2 rounded-md text-base font-medium">Resources</a>
                 <!-- UPDATED: CTA Button Colors -->
-                <a href="#contact" class="bg-[#f77422] text-white block w-full text-left px-4 py-2 rounded-lg text-base font-medium shadow-sm hover:bg-[#e66a1e] cta-button">
+                <a href="#" class="bookDemoBtn bg-[#f77422] text-white block w-full text-left px-4 py-2 rounded-lg text-base font-medium shadow-sm hover:bg-[#e66a1e] cta-button">
                     Book a Demo
                 </a>
             </div>
@@ -98,7 +110,7 @@
                     From loan origination to credit monitoring, Fexo's AI Co-pilot automates your most complex document workflows for faster, safer lending decisions.
                 </p>
                 <div class="mt-10">
-                    <a href="#contact" class="bg-[#f77422] text-white px-8 py-3 rounded-lg text-base font-medium shadow-sm hover:bg-[#e66a1e] cta-button">
+                    <a href="#" class="bookDemoBtn bg-[#f77422] text-white px-8 py-3 rounded-lg text-base font-medium shadow-sm hover:bg-[#e66a1e] cta-button">
                         Book Your Personalized Demo
                     </a>
                 </div>
@@ -128,7 +140,7 @@
         <section class="py-20 md:py-28 bg-gray-50">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                    <img src="https://placehold.co/600x400/f7ebf6/7b0daa?text=Automated+Credit+Memo" alt="Fexo AI generating an automated credit memo" class="rounded-xl shadow-xl md:order-last">
+                    <img src="assests/images/banking2.svg" alt="Fexo AI generating an automated credit memo" class="rounded-xl shadow-xl md:order-last">
                     <div>
                         <span class="text-[#7b0daa] font-semibold">THE SOLUTION</span>
                         <h2 class="text-3xl md:text-4xl font-extrabold text-[#3d0754] mt-2">
@@ -153,29 +165,29 @@
                 </div>
                 <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
                     <!-- Features from Brief -->
-                    <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                    <div class="feature-card bg-white p-6 rounded-xl shadow-md">
                         <h4 class="text-lg font-semibold text-[#3d0754]">Full Spectrum Financial Analysis</h4>
-                        <p class="mt-2 text-gray-600">(MCA & non-MCA Financial statements)</p>
+                        <p class="mt-2 text-gray-600">MCA & non-MCA Financial statements</p>
                     </div>
-                    <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                    <div class="feature-card bg-white p-6 rounded-xl shadow-md">
                         <h4 class="text-lg font-semibold text-[#3d0754]">Triangulated Business Insights</h4>
-                        <p class="mt-2 text-gray-600">(Bank statements, ITRs, GST, Voice notes)</p>
+                        <p class="mt-2 text-gray-600">Bank statements, ITRs, GST, Voice notes</p>
                     </div>
-                    <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                    <div class="feature-card bg-white p-6 rounded-xl shadow-md">
                         <h4 class="text-lg font-semibold text-[#3d0754]">External Risk Monitoring</h4>
-                        <p class="mt-2 text-gray-600">(Web, 3rd-party data, industry analysis)</p>
+                        <p class="mt-2 text-gray-600">Web, 3rd-party data, industry analysis</p>
                     </div>
-                    <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                    <div class="feature-card bg-white p-6 rounded-xl shadow-md">
                         <h4 class="text-lg font-semibold text-[#3d0754]">Automated Credit Memo Generation</h4>
-                        <p class="mt-2 text-gray-600">(Generates the final, auditable report)</p>
+                        <p class="mt-2 text-gray-600">Generates the final, auditable report</p>
                     </div>
-                    <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                    <div class="feature-card bg-white p-6 rounded-xl shadow-md">
                         <h4 class="text-lg font-semibold text-[#3d0754]">Covenant Monitoring</h4>
-                        <p class="mt-2 text-gray-600">(Automated post-disbursal monitoring of loan covenants)</p>
+                        <p class="mt-2 text-gray-600">Automated post-disbursal monitoring of loan covenants</p>
                     </div>
-                    <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                    <div class="feature-card bg-white p-6 rounded-xl shadow-md">
                         <h4 class="text-lg font-semibold text-[#3d0754]">KYC/KYB Automation</h4>
-                        <p class="mt-2 text-gray-600">(Speeds up onboarding with document verification)</p>
+                        <p class="mt-2 text-gray-600">Speeds up onboarding with document verification</p>
                     </div>
                 </div>
             </div>
@@ -239,10 +251,10 @@
                 <!-- Stay in Touch -->
                 <div>
                     <h4 class="text-sm font-semibold text-gray-200 uppercase tracking-wider">Stay in Touch</h4>
-                    <p class="mt-4">Stay updated on our progress and the AI trends reshaping BFSI - subscribe to our monthly newsletter.</p>
+                    <p class="mt-4 pb-2">Stay updated on our progress and the AI trends reshaping BFSI - subscribe to our monthly newsletter.</p>
                     
                     <a href="mailto:ir@fexo.io">
-                    <button class="cta-button mt-4 bg-[#f77422] text-white px-4 py-2 rounded-lg hover:bg-[#e66a1e]">
+                    <button class="bg-[#f77422] text-white px-4 py-2 rounded-lg text-sm font-medium shadow-sm hover:bg-[#e66a1e] cta-button">
                         Subscribe
                     </button>
                     </a>
@@ -282,6 +294,9 @@
             });
         }
     </script>
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script type="module" src="assests/js/main.js"></script>
 </body>
