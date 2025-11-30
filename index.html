@@ -124,10 +124,11 @@
             <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-9">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                     <div class="text-center md:text-left">
-                        
-                        <img src="assests/images/8.svg" 
-                            alt="StartUp India Logo" 
-                            class="h-100 w-100 px-1 pb-4 md:h-20 mr-4" />
+                        <div class="flex justify-center md:justify-start"> 
+                            <img src="assests/images/8.svg" 
+                                alt="StartUp India Logo" 
+                                class="h-20 w-auto px-1 pb-4 md:h-20 mr-4" />
+                        </div>
 
                         <h1 class="inline-block text-[#3d0754] font-semibold px-1 py-7  text-xl">
                             The Intelligent Co-pilot for BFSI & Audit
@@ -611,7 +612,7 @@
                 <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
                     
                     <!-- Article 1: Whitepaper -->
-                    <a href="agenticai.html" class="group block h-full">
+                    <a href="whitepaper1.html" class="group block h-full">
                         <div class="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 h-full flex flex-col">
                             <div class="h-48 bg-[#f7ebf6] flex items-center justify-center overflow-hidden">
                                 <!-- Placeholder for Article Image -->
@@ -660,24 +661,35 @@
                     </a>
 
                     <!-- Article 3: Technical Guide -->
-                    <a href="article.html" class="group block h-full">
+                    <!-- Article Card: History of IDP -->
+                    <a href="whitepaper2.html" class="group block h-full">
                         <div class="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 h-full flex flex-col">
+                            <!-- Image Section -->
                             <div class="h-48 bg-[#f7ebf6] flex items-center justify-center overflow-hidden">
-                                <img src="https://placehold.co/600x400/f7ebf6/7b0daa?text=Compliance+Guide" alt="Compliance Guide Image" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300">
+                                <img src="https://placehold.co/600x400/f7ebf6/7b0daa?text=History+of+IDP" alt="Evolution of Document Processing" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300">
                             </div>
+                            
+                            <!-- Content Section -->
                             <div class="p-6 flex-1 flex flex-col">
+                                <!-- Metadata -->
                                 <div class="flex items-center space-x-2 text-sm text-[#7b0daa] font-medium mb-3">
-                                    <span class="bg-indigo-50 px-2 py-1 rounded">Technical Guide</span>
-                                    <span>• 12 min read</span>
+                                    <span class="bg-indigo-50 px-2 py-1 rounded">Industry Analysis</span>
+                                    <span>• 10 min read</span>
                                 </div>
+                                
+                                <!-- Title -->
                                 <h3 class="text-xl font-bold text-gray-900 group-hover:text-[#7b0daa] transition-colors">
-                                    Mastering IndAS 116 Compliance
+                                    A History of Intelligent Document Processing
                                 </h3>
+                                
+                                <!-- Description -->
                                 <p class="mt-2 text-gray-600 text-sm flex-1">
-                                    A technical guide for auditors on using AI to automate lease obligation checks across annual reports.
+                                    Trace the brutal history of document automation—from paper to brittle OCR to slow IDP. Discover the Fexo AI-First approach that delivers instant intelligence.
                                 </p>
+                                
+                                <!-- CTA Link -->
                                 <div class="mt-4 flex items-center text-[#f77422] font-medium text-sm">
-                                    Read Guide <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                                    Read Article <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
                                 </div>
                             </div>
                         </div>
@@ -695,8 +707,8 @@
                 </h2>
                 <!-- Text color for light-on-dark -->
                 <p class="mt-3 text-lg text-[#f7ebf6] max-w-1xl mx-auto">
-                   <span class="whitespace-nowrap">See how our Intelligent Co-pilot automates complex workflows in weeks, not months.</span>
-                   <span class="whitespace-nowrap">Schedule a demo to reduce risk, accelerate growth, and unlock ROI from Day One.</span>
+                   <span class="md:whitespace-nowrap">See how our Intelligent Co-pilot automates complex workflows in weeks, not months.</span>
+                   <span class="md:whitespace-nowrap">Schedule a demo to reduce risk, accelerate growth, and unlock ROI from Day One.</span>
                     
                 </p>
                 <div class="mt-10">
@@ -931,7 +943,28 @@ Document 3: Claim Form (Excerpt)
 Time: 2:30 PM
 Description: My car was stationary at a red light when a white truck hit me from behind at high speed and fled the scene.
 Damage: Rear bumper, trunk, taillight."`,
-                fixedOutput: `...ADD CLAIMS FIXED OUTPUT HERE...`
+                fixedOutput: `
+Key Insights:
+Claim #9021 Consistency Analysis
+
+Data Triangulation Findings:
+
+* Vehicle and Identification: The vehicle (Blue Sedan, DL-01-AB-1234) is consistent across the FIR and Surveyor Report.
+ 
+* Incident Details: The Date (15 Oct), Time (Approx. 2:30 PM), and Cause of Loss (Rear-end collision by a white truck that fled the scene) are perfectly aligned across all three documents.
+ 
+* Damage Profile: The damage descriptions are highly consistent. The FIR lists "rear bumper and trunk," which is expanded upon by the Surveyor Report and the Claim Form to include the "taillight" (specifically the right taillight based on the full damage description). The Surveyor's finding of "white paint transfer" corroborates the insured's description of the striking vehicle.
+ 
+* Physical Evidence: The Surveyor explicitly noted "No signs of prior damage," validating that the reported damage is solely attributable to this incident.
+ 
+* Motion/Circumstance: While the FIR states the car "was hit," and the Claim Form specifies "stationary at a red light," this is a minor narrative nuance. Both descriptions support the core incident type: a rear-end collision by a speeding external vehicle.
+
+Identified Red Flags or Inconsistencies:
+* None. The documentation provides a cohesive and well-supported narrative. The physical evidence (surveyor findings) strongly validates the loss description (FIR and Claim Form).
+Recommendation:
+
+* Process for STP (Straight-Through Processing). The claim is well-documented, internally consistent, and the loss is confirmed by independent physical assessment.
+`
             },
 
             audit: {
@@ -943,7 +976,34 @@ Excerpt: IndAS 116 Compliance Check - Annual Report 2024
 
 ...A short-term lease for a 6-month marketing event space was expensed (Total cost: 15 Lacs)."
 `,
-                fixedOutput: `...ADD AUDIT FIXED OUTPUT HERE...`
+                fixedOutput: `
+Key Insights:
+Based on the excerpt for compliance with IndAS 116 below are the insights:
+
+ IndAS 116 Compliance Assessment
+ 1. Compliant Actions (Statements consistent with IndAS 116 requirements):
+ 
+* Core Recognition Model: The Company correctly affirms the recognition of a Right-of-Use (RoU) asset and a corresponding lease liability for non-exempt leases, adhering to the fundamental principle of IndAS 116.
+ 
+* Adoption of Exemptions: The policy clearly adopts the recognized practical expedients allowed under IndAS 116 for short-term leases (12 months or less) and low-value assets, treating them as expense.
+ 
+* Expense Recognition Method: The requirement to expense short-term/low-value leases on a straight-line basis is explicitly stated and followed, which aligns with IndAS 116, paragraph 6.
+ 
+* Present Value Calculation Implied: For the 5-year corporate office lease, the liability recognized (4.1 Cr) is correctly lower than the total undiscounted payment (5 Cr), indicating that the required calculation of the Present Value of payments (i.e., using a discount rate) has been performed.
+ 
+* Short-Term Lease Consistency: The 6-month marketing space lease was correctly treated as an expense, aligning with the stated short-term lease policy.
+
+2. Potential Areas for Further Review (Risk/Documentation Gaps):
+ 
+* RoU Asset Initialization Detail: The RoU asset (4.1 Cr) exactly matches the lease liability (4.1 Cr) for the corporate office. While possible, this requires verification that the RoU asset calculation included all required elements (e.g., initial direct costs, any lease incentives, or prepaid rent), as the RoU asset should equal the initial liability plus/minus these items (IndAS 116, para 24).
+ 
+* Discount Rate Documentation: The disclosure lacks specific information regarding the discount rate used (e.g., the implicit rate in the lease or the incremental borrowing rate). Documentation must confirm the appropriate rate was determined and consistently applied in calculating the 4.1 Cr liability (IndAS 116, para 26).
+ 
+* Low-Value Asset Threshold Definition: The policy references the 'low value' exemption but does not define the monetary threshold used. Documentation must confirm the company has established and consistently applied a reasonable threshold that meets the intent of the standard (typically based on the value of a new asset when new).
+
+3. Clear Non-Compliant Statements:
+* None identified. Based purely on the excerpt, all treatments and statements align with the optional application or mandatory requirements of IndAS 116.
+`
             }
         },
 
